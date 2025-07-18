@@ -1,6 +1,7 @@
 # vsim -c tb 
-# Start time: 15:34:08 on Jul 17,2025
+# Start time: 13:25:13 on Jul 18,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: testbench.sv(12): (vopt-2958) Implicit wire 'pwrite' does not have any driver.
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
 # //
@@ -19,7 +20,6 @@
 # Loading mtiUvm.uvm_pkg
 # Loading work.testbench_sv_unit(fast)
 # Loading work.tb(fast)
-# Loading work.apb_slave(fast)
 # Loading mtiUvm.questa_uvm_pkg(fast)
 # Loading work.top_if(fast)
 # Loading /tools/mentor/questasim_10.6c/questasim/uvm-1.1d/linux/uvm_dpi.so
@@ -59,5 +59,5 @@
 # [Questa UVM]     2
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
 #    Time: 0 ns  Iteration: 0  Instance: /tb
-# End time: 15:34:14 on Jul 17,2025, Elapsed time: 0:00:06
-# Errors: 0, Warnings: 0
+# End time: 13:25:20 on Jul 18,2025, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 1

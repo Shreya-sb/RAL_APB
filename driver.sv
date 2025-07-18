@@ -1,4 +1,4 @@
-class driver extends uvm_driver#(transaction);
+class driver extends uvm_driver#(seq_item);
  `uvm_component_utils(driver)
   seq_item tr;
   virtual top_if vif;
@@ -50,13 +50,13 @@ class driver extends uvm_driver#(transaction);
   begin
   vif.pwdata <= tr.pwdata;
   @(posedge vif.clk);
-  `uvm_info("DRV", $sformatf("Data Write -> Wdata : %0d",vif.din),UVM_NONE);
+  `uvm_info("DRV", $sformatf("Data Write -> Wdata : %0d",vif.pwdata),UVM_NONE);
   end
   else
   begin 
   tr.prdata <= vif.prdata;//<= or =??
   @(posedge vif.clk);
-  `uvm_info("DRV", $sformatf("Data Read -> Rdata : %0d",vif.dout),UVM_NONE);
+  `uvm_info("DRV", $sformatf("Data Read -> Rdata : %0d",vif.prdata),UVM_NONE);
   end 
   endtask
   

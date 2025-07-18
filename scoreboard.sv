@@ -1,6 +1,6 @@
 class scoreboard extends uvm_scoreboard;
   `uvm_component_utils(scoreboard)
-  uvm_analysis_imp#(transaction,scoreboard) recieved_value;
+  uvm_analysis_imp#(seq_item,scoreboard) received_value;
   bit [7:0] temp_data;
   bit [31:0] temp;
 
@@ -40,14 +40,14 @@ class scoreboard extends uvm_scoreboard;
               end
           end
       end*/
-if (tr.PWRITE) begin
-      expected_mem[tr.PADDR] = tr.PWDATA;
-      `uvm_info("SCOREBOARD", $sformatf("WRITE: Addr = %0h, Data = %0h", tr.PADDR, tr.PWDATA), UVM_MEDIUM);
+if (tr.pwrite) begin
+      temp[tr.paddr] = tr.pwdata;
+      `uvm_info("SCOREBOARD", $sformatf("WRITE: Addr = %0h, Data = %0h", tr.paddr, tr.pwdata), UVM_MEDIUM);
     end else begin
-      if (expected_mem[tr.PADDR] !== tr.PRDATA) begin
-        `uvm_error("SCOREBOARD", $sformatf("Mismatch at Addr = %0h, Expected = %0h, Received = %0h", tr.PADDR, expected_mem[tr.PADDR], tr.PRDATA));
+      if (temp[tr.paddr] !== tr.prdata) begin
+        `uvm_error("SCOREBOARD", $sformatf("Mismatch at Addr = %0h, Expected = %0h, Received = %0h", tr.paddr, temp[tr.paddr], tr.prdata));
       end else begin
-        `uvm_info("SCOREBOARD", $sformatf("READ MATCH: Addr = %0h, Data = %0h", tr.PADDR, tr.PRDATA), UVM_MEDIUM);
+        `uvm_info("SCOREBOARD", $sformatf("READ MATCH: Addr = %0h, Data = %0h", tr.paddr, tr.prdata), UVM_MEDIUM);
       end
     end
   endfunction

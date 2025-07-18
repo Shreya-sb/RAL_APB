@@ -5,7 +5,7 @@ class test extends uvm_test;
     super.new(name,parent);
   endfunction
   
-  apb_env env;
+  environment env;
   reg_seq rseq;
 
   virtual function void build_phase(uvm_phase phase);
@@ -22,7 +22,7 @@ class test extends uvm_test;
     phase.phase_done.set_drain_time(this, 20);
   endtask
 endclass
-
+/*
 class reg_sequence_test extends test;
   `uvm_component_utils(reg_sequence_test)
   function new(string name = "reg_sequence_test",uvm_component parent = null);
@@ -41,11 +41,11 @@ class reg_sequence_test extends test;
  
  //run phase 
   virtual task run_phase(uvm_phase phase);
-    reg_sequence seq;
+    reg_seq rseq;
     phase.raise_objection(this);
-    seq = reg_sequence::type_id::create("seq");
-    seq.start(env.agent.seqr);
+    rseq = reg_seq::type_id::create("rseq");
+    rseq.start(env.agent.seqr);
     phase.drop_objection(this);
     phase.phase_done.set_drain_time(this,100); 
   endtask 
-endclass
+endclass*/

@@ -1,3 +1,7 @@
+//`include "uvm_macros.svh"
+//import pkg::*;
+
+
 class monitor extends uvm_monitor;
   `uvm_component_utils(monitor)
   uvm_analysis_port #(seq_item) mon_ap;
@@ -15,14 +19,14 @@ class monitor extends uvm_monitor;
   endfunction
  
   virtual task run_phase(uvm_phase phase);
-    tr = seq_item::type_id::create(seq_item);
+    tr = seq_item::type_id::create("seq_item");
     forever begin
       repeat(3)@(vif.clk);
 	  tr.pwdata = vif.pwdata;
       tr.paddr  =  vif.paddr;
       tr.pwrite =  vif.pwrite;
  	  tr.prdata = vif.prdata;
-      mon_ap.write(seq_item);
+      mon_ap.write(tr);
     end
   endtask
 endclass

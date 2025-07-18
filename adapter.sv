@@ -19,7 +19,7 @@ class top_adapter extends uvm_reg_adapter;
     assert ($cast(apb_item,bus_item));
     rw.kind = (apb_item.pwrite == 1'b1)?UVM_WRITE:UVM_READ;
     rw.data = (apb_item.pwrite == 1'b1)?apb_item.pwdata:apb_item.prdata;
-    rw,addr = apb_item.paddr;
+    rw.addr = apb_item.paddr;
     rw.status = UVM_IS_OK;
   endfunction
 endclass

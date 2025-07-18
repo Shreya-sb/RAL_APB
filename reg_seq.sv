@@ -1,6 +1,6 @@
-`include "uvm_macros.svh"
-`include "reg_block.sv"
-import uvm_pkg ::*;
+//`include "uvm_macros.svh"
+//`include "reg_block.sv"
+//import uvm_pkg ::*;
 
 
 
