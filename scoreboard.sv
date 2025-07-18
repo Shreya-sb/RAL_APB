@@ -11,16 +11,17 @@ class scoreboard extends uvm_scoreboard;
   virtual function void build_phase(uvm_phase phase);
     super.build_phase(phase);
     received_value  = new("received_value", this);
+$display("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
   endfunction
 
   virtual function void write(seq_item tr);
- /*   `uvm_info("SCOREBOARD", $sformatf("Wr :%0b Addr : %0d Din:%0d Dout:%0d", tr.wr, tr.addr, tr.din, tr.dout), UVM_NONE) 
-    if(tr.PWRITE == 1'b1)
+    `uvm_info("SCOREBOARD", $sformatf("Wr :%0b Addr : %0d Din:%0d Dout:%0d", tr.pwrite, tr.paddr, tr.pwdata, tr.prdata), UVM_NONE) 
+    if(tr.pwrite == 1'b1)
       begin
-        if(tr.PADDR == 1'b0) 
+        if(tr.paddr == 1'b0) 
           begin
-            temp_data = tr.din;
-            `uvm_info("SCOREBOARD", $sformatf("Data Stored : %0d", tr.din), UVM_NONE) 
+            temp_data = tr.pwdata;
+            `uvm_info("SCOREBOARD", $sformatf("Data Stored : %0d", tr.pwdata), UVM_NONE) 
           end
         else
           begin
@@ -29,9 +30,9 @@ class scoreboard extends uvm_scoreboard;
       end
     else
       begin
-        if(tr.addr == 1'b0) 
+        if(tr.paddr == 1'b0) 
           begin
-            if(tr.dout == temp_data)begin
+            if(tr.prdata == temp_data)begin
               `uvm_info("SCO", "Test Passed", UVM_NONE) 
             end
             else
@@ -39,7 +40,9 @@ class scoreboard extends uvm_scoreboard;
                 `uvm_info("SCO", "No Such Addr", UVM_NONE);
               end
           end
-      end*/
+      end
+$display("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+/*
 if (tr.pwrite) begin
       temp[tr.paddr] = tr.pwdata;
       `uvm_info("SCOREBOARD", $sformatf("WRITE: Addr = %0h, Data = %0h", tr.paddr, tr.pwdata), UVM_MEDIUM);
@@ -49,7 +52,7 @@ if (tr.pwrite) begin
       end else begin
         `uvm_info("SCOREBOARD", $sformatf("READ MATCH: Addr = %0h, Data = %0h", tr.paddr, tr.prdata), UVM_MEDIUM);
       end
-    end
+    end*/
   endfunction
 endclass
         

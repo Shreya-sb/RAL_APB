@@ -1,7 +1,7 @@
 # vsim -c tb 
-# Start time: 13:25:13 on Jul 18,2025
+# Start time: 15:15:23 on Jul 18,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: testbench.sv(12): (vopt-2958) Implicit wire 'pwrite' does not have any driver.
+# ** Warning: testbench.sv(17): (vopt-2958) Implicit wire 'pclk' does not have any driver.
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
 # //
@@ -45,19 +45,28 @@
 # 
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
-# UVM_FATAL @ 0: reporter [NOCOMP] No components instantiated. You must either instantiate at least one component before calling run_test or use run_test to do so. To run a test using run_test, use +UVM_TESTNAME or supply the test name in the argument to run_test(). Exiting simulation.
+# UVM_INFO @ 0: reporter [RNTST] Running test test...
+# UVM_INFO reg_seq.sv(22) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] Initial Value -> Desired Value : 0 and Mirrored Value : 0
+# UVM_INFO reg_seq.sv(31) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After Set -> Desired Value : 17 and Mirrored Value : 0
+# &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+# UVM_INFO driver.sv(53) @ 30: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 17
+# UVM_INFO reg_seq.sv(37) @ 30: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After Tx to DUT -> Desired Value : 17 and Mirrored Value : 0
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 50: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :    2
+# UVM_INFO :    8
 # UVM_WARNING :    0
 # UVM_ERROR :    0
-# UVM_FATAL :    1
+# UVM_FATAL :    0
 # ** Report counts by id
-# [NOCOMP]     1
+# [DRV]     1
 # [Questa UVM]     2
-# ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_report_object.svh(292)
-#    Time: 0 ns  Iteration: 0  Instance: /tb
-# End time: 13:25:20 on Jul 18,2025, Elapsed time: 0:00:07
+# [RNTST]     1
+# [SEQ]     3
+# [TEST_DONE]     1
+# ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 50 ns  Iteration: 53  Instance: /tb
+# End time: 15:15:30 on Jul 18,2025, Elapsed time: 0:00:07
 # Errors: 0, Warnings: 1

@@ -27,6 +27,7 @@ class monitor extends uvm_monitor;
       tr.pwrite =  vif.pwrite;
  	  tr.prdata = vif.prdata;
       mon_ap.write(tr);
+$display("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
     end
   endtask
 endclass
