@@ -1,6 +1,6 @@
 # vsim -c tb 
-# Start time: 10:10:42 on Jul 21,2025
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 14:24:58 on Jul 21,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
 # //
@@ -45,16 +45,18 @@
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test test...
-# &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+# ------SCOREBOARD BUILD PHASE------
 # UVM_INFO reg_seq.sv(22) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] Initial Value -> Desired Value : 0 and Mirrored Value : 0
 # UVM_INFO reg_seq.sv(31) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After Set -> Desired Value : 17 and Mirrored Value : 0
-# UVM_INFO scoreboard.sv(18) @ 30: uvm_test_top.env.scb [SCOREBOARD] Wr :1 Addr : 4 Din:17 Dout:0
-# UVM_INFO scoreboard.sv(28) @ 30: uvm_test_top.env.scb [SCOREBOARD] No Such Addr
-# &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-# &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-# UVM_INFO driver.sv(53) @ 30: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 17
+# UVM_INFO driver.sv(54) @ 30: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 17
+# -----------DRIVER----------
 # UVM_INFO reg_seq.sv(37) @ 30: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After Tx to DUT -> Desired Value : 17 and Mirrored Value : 0
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 50: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(18) @ 50: uvm_test_top.env.scb [SCOREBOARD] ||pwrite||:1 ||paddrr||:4 ||pwdata||:17 || prdata||:0
+# UVM_INFO scoreboard.sv(28) @ 50: uvm_test_top.env.scb [--SCOREBOARD--] ------------No Such Addr-----------
+# ------------scoreboard end-----------------
+# -----MONITOR END------
 # 
 # --- UVM Report Summary ---
 # 
@@ -64,13 +66,14 @@
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
+# [--SCOREBOARD--]     1
 # [DRV]     1
 # [Questa UVM]     2
 # [RNTST]     1
-# [SCOREBOARD]     2
+# [SCOREBOARD]     1
 # [SEQ]     3
 # [TEST_DONE]     1
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 50 ns  Iteration: 53  Instance: /tb
-# End time: 10:10:52 on Jul 21,2025, Elapsed time: 0:00:10
+# End time: 14:25:04 on Jul 21,2025, Elapsed time: 0:00:06
 # Errors: 0, Warnings: 0

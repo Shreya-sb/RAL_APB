@@ -11,21 +11,21 @@ class scoreboard extends uvm_scoreboard;
   virtual function void build_phase(uvm_phase phase);
     super.build_phase(phase);
     received_value  = new("received_value", this);
-$display("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+    $display("------SCOREBOARD BUILD PHASE------");
   endfunction
 
   virtual function void write(seq_item tr);
-    `uvm_info("SCOREBOARD", $sformatf("Wr :%0b Addr : %0d Din:%0d Dout:%0d", tr.pwrite, tr.paddr, tr.pwdata, tr.prdata), UVM_NONE) 
+    `uvm_info("SCOREBOARD", $sformatf("||pwrite||:%0b ||paddrr||:%0d ||pwdata||:%0d || prdata||:%0d", tr.pwrite, tr.paddr, tr.pwdata, tr.prdata), UVM_NONE) 
     if(tr.pwrite == 1'b1)
       begin
         if(tr.paddr == 1'b0) 
           begin
             temp_data = tr.pwdata;
-            `uvm_info("SCOREBOARD", $sformatf("Data Stored : %0d", tr.pwdata), UVM_NONE) 
+            `uvm_info("--SCOREBOARD--", $sformatf("--->Data Stored : %0d", tr.pwdata), UVM_NONE) 
           end
         else
           begin
-            `uvm_info("SCOREBOARD", "No Such Addr", UVM_NONE)
+            `uvm_info("--SCOREBOARD--", "------------No Such Addr-----------", UVM_NONE)
           end
       end
     else
@@ -33,15 +33,15 @@ $display("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
         if(tr.paddr == 1'b0) 
           begin
             if(tr.prdata == temp_data)begin
-              `uvm_info("SCO", "Test Passed", UVM_NONE) 
+              `uvm_info("SCO","==========================Test Passed===========================", UVM_NONE) 
             end
             else
               begin
-                `uvm_info("SCO", "No Such Addr", UVM_NONE);
+                `uvm_info("SCO", "=======================Test failed===========================", UVM_NONE);
               end
           end
       end
-$display("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+    $display("------------scoreboard end-----------------");
 /*
 if (tr.pwrite) begin
       temp[tr.paddr] = tr.pwdata;
@@ -53,6 +53,7 @@ if (tr.pwrite) begin
         `uvm_info("SCOREBOARD", $sformatf("READ MATCH: Addr = %0h, Data = %0h", tr.paddr, tr.prdata), UVM_MEDIUM);
       end
     end*/
+   
   endfunction
 endclass
         

@@ -21,13 +21,14 @@ class monitor extends uvm_monitor;
   virtual task run_phase(uvm_phase phase);
     tr = seq_item::type_id::create("seq_item");
     forever begin
-      repeat(3)@(vif.clk);
+      repeat(3)@(posedge vif.clk);
+      $display("-----MONITOR BEGIN-----");
 	  tr.pwdata = vif.pwdata;
       tr.paddr  =  vif.paddr;
       tr.pwrite =  vif.pwrite;
  	  tr.prdata = vif.prdata;
       mon_ap.write(tr);
-$display("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+      $display("-----MONITOR END------");
     end
   endtask
 endclass

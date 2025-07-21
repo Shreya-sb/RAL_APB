@@ -35,7 +35,8 @@ class driver extends uvm_driver#(seq_item);
   forever begin
   seq_item_port.get_next_item(tr);
   drive();
-  seq_item_port.item_done(); 
+  seq_item_port.item_done();
+  $display("-----------DRIVER----------"); 
   end
   endtask
   
