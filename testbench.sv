@@ -12,9 +12,11 @@ module tb;
   logic [31:0] paddr;
   logic [31:0] pwdata;
   logic [31:0] prdata;
-  //apb_slave DUT(.clk(clk),.rst(rst),.pwrite(pwrite),.paddr(paddr),.pwdata(pwdata),.prdata(prdata));
+  top DUT(.pclk(clk),.presetn(rst),.psel(psel),.penable(penable),.pwrite(pwrite),.paddr(paddr),.pwdata(pwdata),.prdata(prdata));
   
-  apb_slave DUT(.PCLK(pclk),.PRESETn(rst),.PSEL(psel),.PENABLE(penable),.PWRITE(pwrite),.PADDR(paddr),.PWDATA(pwdata),.PRDATA(prdata));
+
+
+//  top DUT(.PCLK(pclk),.PRESETn(rst),.PSEL(psel),.PENABLE(penable),.PWRITE(pwrite),.PADDR(paddr),.PWDATA(pwdata),.PRDATA(prdata));
   //apb_slave DUT(.clk(PCLK),.rst(PRESETn),.psel(PSEL),.penable(PENABLE),.pwrite(PWRITE),.paddr(PADDR),.pwdata(PWDATA),.prdata(PRDATA));
   top_if vif(.clk(clk),.rst(rst));
 
