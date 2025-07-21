@@ -18,13 +18,13 @@ class environment extends uvm_env;
     regmodel.build();
     adapter_inst = top_adapter::type_id::create("adapter_inst",, get_full_name());
   //  predictor_inst = uvm_reg_predictor#(seq_item)::type_id::create("predictor_inst", this);
-    //scb = scoreboard::type_id::create("scb", this);
+    scb = scoreboard::type_id::create("scb", this);
   endfunction
 
 
   function void connect_phase(uvm_phase phase);
   super.connect_phase(phase);
-    
+    agent_inst.mon.mon_ap.connect(scb.received_value); 
   regmodel.default_map.set_sequencer( .sequencer(agent_inst.seqr), .adapter(adapter_inst) );
   regmodel.default_map.set_base_addr(0);
     
