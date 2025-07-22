@@ -51,14 +51,9 @@ class driver extends uvm_driver#(seq_item);
   begin
   vif.pwdata <= tr.pwdata;
   @(posedge vif.clk);
-  `uvm_info("DRV", $sformatf("Data Write -> Wdata : %0d",vif.pwdata),UVM_NONE);
+  `uvm_info("DRV", $sformatf("Data Write -> Wdata : %0h",vif.pwdata),UVM_NONE);
   end
-  else
-  begin 
-  tr.prdata <= vif.prdata;//<= or =??
-  @(posedge vif.clk);
-  `uvm_info("DRV", $sformatf("Data Read -> Rdata : %0d",vif.prdata),UVM_NONE);
-  end 
+  
   endtask
   
 endclass

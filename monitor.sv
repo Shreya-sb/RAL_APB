@@ -28,6 +28,8 @@ class monitor extends uvm_monitor;
       tr.pwrite =  vif.pwrite;
  	  tr.prdata = vif.prdata;
       mon_ap.write(tr);
+      //tr.print();
+      $display("pwdata:%0h,prdata:%0h",tr.pwdata,tr.prdata);
       $display("-----MONITOR END------");
     end
   endtask

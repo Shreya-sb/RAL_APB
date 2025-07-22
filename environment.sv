@@ -32,7 +32,7 @@ class environment extends uvm_env;
   //predictor_inst.adapter = adapter_inst;
     
  // agent_inst.moni.mon_ap.connect(predictor_inst.bus_in);
-  regmodel.default_map.set_auto_predict(0);
+  regmodel.default_map.set_auto_predict(1);
     
   endfunction
 

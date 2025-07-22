@@ -114,19 +114,19 @@ class reg_block extends uvm_reg_block;
     
     default_map = create_map("default_map",0,4,UVM_LITTLE_ENDIAN);
     default_map.add_reg(cntrl_inst,'h0,"RW");  
-    default_map.add_reg(reg1_inst,'h4,"RW");
-    default_map.add_reg(reg2_inst,'h8,"RW");
-    default_map.add_reg(reg3_inst,'hc,"RW");
+    default_map.add_reg(reg1_inst,'h04,"RW");
+    default_map.add_reg(reg2_inst,'h08,"RW");
+    default_map.add_reg(reg3_inst,'h0c,"RW");
     default_map.add_reg(reg4_inst,'h10,"RW");
-    default_map.set_auto_predict(1);
+    //default_map.set_auto_predict(1);
     lock_model();
   endfunction 
  
 endclass
-  module tb;
+/*  module tb;
   reg_block t1;
   initial begin
     t1 = new("reg_block");
     t1.build();
   end
-endmodule 
+endmodule */
