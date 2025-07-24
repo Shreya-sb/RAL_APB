@@ -1,9 +1,3 @@
-//`include "uvm_macros.svh"
-//import uvm_pkg::*;
-//`include "package.sv"
-
-//`include "registers.sv"
-
 class cntrl_field extends uvm_reg;
   `uvm_object_utils(cntrl_field)
 
@@ -118,15 +112,7 @@ class reg_block extends uvm_reg_block;
     default_map.add_reg(reg2_inst,'h08,"RW");
     default_map.add_reg(reg3_inst,'h0c,"RW");
     default_map.add_reg(reg4_inst,'h10,"RW");
-    //default_map.set_auto_predict(1);
     lock_model();
   endfunction 
  
 endclass
-/*  module tb;
-  reg_block t1;
-  initial begin
-    t1 = new("reg_block");
-    t1.build();
-  end
-endmodule */
