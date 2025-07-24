@@ -1,53 +1,3 @@
-//`include "uvm_macros.svh"
-//`include "reg_block.sv"
-//import uvm_pkg ::*;
-
-/*
-
-class reg_seq extends uvm_sequence;
-  `uvm_object_utils(reg_seq)
-  reg_block regmodel;
-
-  function new (string name = "reg_seq"); 
-    super.new(name); 
-  endfunction
-
-  virtual task body; 
-    uvm_status_e status;
-    bit [7:0] rdata,rdata_m,dout;
-
-    `uvm_info("SEQ", "====== REG2 ======", UVM_NONE);
-    ////////////////////////initial value
-    rdata = regmodel.reg2_inst.get();
-    rdata_m = regmodel.reg2_inst.get_mirrored_value();
-    `uvm_info("SEQ", $sformatf("Initial Value -> Desired Value : %0h and Mirrored Value : %0h", rdata, rdata_m),UVM_NONE);
-
-    ////////////////// update desire value
-    regmodel.reg2_inst.set(8'h11);
-
-
-    ///////////////// get desire value
-    rdata = regmodel.reg2_inst.get();
-    rdata_m = regmodel.reg2_inst.get_mirrored_value();
-    `uvm_info("SEQ", $sformatf("After Set -> Desired Value : %0h and Mirrored Value : %0h", rdata, rdata_m), UVM_NONE);
-
-    
-    ///////////////// call write method 
-    //regmodel.reg2_inst.write(status,32'h25);
-    regmodel.reg2_inst.update(status);
-    rdata = regmodel.reg2_inst.get();
-    rdata_m = regmodel.reg2_inst.get_mirrored_value();
-    `uvm_info("SEQ", $sformatf("After write update -> Desired Value : %0h and Mirrored Value : %0h", rdata, rdata_m),UVM_NONE);
-    
-   // regmodel.reg2_inst.read(status,dout);
-   // rdata = regmodel.reg2_inst.get();
-    //rdata_m = regmodel.reg2_inst.get_mirrored_value();
-    //`uvm_info("SEQ", $sformatf("After Tx to DUT -> Desired Value : %0h and Mirrored Value : %0h and Read data:%0h", rdata, rdata_m,dout),UVM_NONE);
-
-  endtask
-endclass
-
-*/
 class reg_seq extends uvm_sequence;
   `uvm_object_utils(reg_seq)
 
@@ -176,4 +126,3 @@ class reg_seq extends uvm_sequence;
   */
   endtask
 endclass
-
