@@ -3,16 +3,10 @@
 `include "seq_item.sv"
 `include "adapter.sv"
 `include "reg_seq.sv"
-//`include "registers.sv"
-//`include "sequence.sv"
 `include "sequencer.sv"
 `include "driver.sv"
 `include "monitor.sv"
-
-//`include "design.v"
-
 `include "agent.sv"
 `include "scoreboard.sv"
 `include "environment.sv"
 `include "test.sv"
-//`include "interface.sv"
