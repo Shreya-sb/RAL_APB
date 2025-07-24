@@ -4,7 +4,7 @@ class driver extends uvm_driver#(seq_item);
   virtual top_if vif;
  
   function new(input string path = "driver", uvm_component parent = null);
-  super.new(path,parent);
+    super.new(path,parent);
   endfunction
  
   virtual function void build_phase(uvm_phase phase);
@@ -31,6 +31,13 @@ class driver extends uvm_driver#(seq_item);
 
   ///////////////main task of driver
   virtual task run_phase(uvm_phase phase);
+        bit [31:0] data;
+        vif.rst <= 1'b1;
+        vif.psel <= 0;
+        vif.penable <= 0;
+        vif.pwrite <= 0;
+        vif.paddr <= 0;
+        vif.pwdata <= 0;
   tr = seq_item::type_id::create("tr");
   forever begin
   seq_item_port.get_next_item(tr);
@@ -41,19 +48,39 @@ class driver extends uvm_driver#(seq_item);
   endtask
   
   
-     //////////////drive DUT
+  //////////////drive DUT
   task drive();
+ // if(vif.rst == 1'b1)begin
+  if(tr.pwrite == 1'b1)
+  begin 
   @(posedge vif.clk);
-  vif.rst <= 1'b0;
-  vif.pwrite <= tr.pwrite;
-  vif.paddr <= tr.paddr;
-    if(tr.pwrite == 1'b1)
+  //vif.rst <= 1'b1;
+     vif.paddr <= tr.paddr;
+     vif.pwrite <= 1'b1;
+     vif.pwdata <= tr.pwdata;
+     vif.psel <= 1'b1;
+     repeat(2)@(posedge vif.clk);
+     vif.penable <= 1'b1; 
+     `uvm_info("DRV", $sformatf("Data Write -> Wdata : %0h",vif.pwdata),UVM_NONE);
+     @(posedge vif.clk);
+     vif.psel <= 1'b0;
+     vif.penable <=1'b0;
+   end
+ else
   begin
-  vif.pwdata <= tr.pwdata;
-  @(posedge vif.clk);
-  `uvm_info("DRV", $sformatf("Data Write -> Wdata : %0h",vif.pwdata),UVM_NONE);
+     @(posedge vif.clk);
+     vif.pwrite <= 1'b0;
+     vif.paddr <= tr.paddr;
+     vif.psel <= 1'b1;
+     repeat(2)@(posedge vif.clk);
+     vif.penable <= 1'b1; 
+     `uvm_info("DRV", $sformatf("Data READ -> read data : %0h",vif.prdata),UVM_NONE);
+     @(posedge vif.clk);
+     vif.psel <= 1'b0;
+     vif.penable <=1'b0;
+     tr.prdata = vif.prdata;
   end
-  
+ // end
   endtask
   
 endclass

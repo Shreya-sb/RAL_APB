@@ -19,14 +19,18 @@ module tb;
 //  top DUT(.PCLK(pclk),.PRESETn(rst),.PSEL(psel),.PENABLE(penable),.PWRITE(pwrite),.PADDR(paddr),.PWDATA(pwdata),.PRDATA(prdata));
   //apb_slave DUT(.clk(PCLK),.rst(PRESETn),.psel(PSEL),.penable(PENABLE),.pwrite(PWRITE),.paddr(PADDR),.pwdata(PWDATA),.prdata(PRDATA));
   top_if vif(.clk(clk),.rst(rst));
+ initial begin
+ clk = 0;
+ //rst = 1;
+ end
 
   always #10 clk = ~clk;
   
-  initial begin
-   rst=0;
-   #10 rst=1;
-   #10 rst=0;
-  end
+ // initial begin
+  // rst=0;
+  // #10 rst=1;
+  // #10 rst=0;
+ // end
   initial begin
   uvm_config_db#(virtual top_if)::set(null, "*", "vif", vif);
   $dumpfile("dump.vcd");
