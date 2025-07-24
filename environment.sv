@@ -15,10 +15,12 @@ class environment extends uvm_env;
   super.build_phase(phase);
     agent_inst = agent::type_id::create("agent_inst", this);
     regmodel = reg_block::type_id::create("regmodel", this);
-    regmodel.build();
     adapter_inst = top_adapter::type_id::create("adapter_inst",, get_full_name());
   //  predictor_inst = uvm_reg_predictor#(seq_item)::type_id::create("predictor_inst", this);
     scb = scoreboard::type_id::create("scb", this);
+    regmodel.configure(null,"");
+    regmodel.build();
+    regmodel.lock_model();
   endfunction
 
 

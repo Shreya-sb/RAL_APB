@@ -3,7 +3,7 @@ class driver extends uvm_driver#(seq_item);
   seq_item tr;
   virtual top_if vif;
  
-  function new(input string path = "driver", uvm_component parent = null);
+  function new(string path = "driver", uvm_component parent = null);
     super.new(path,parent);
   endfunction
  
@@ -31,17 +31,17 @@ class driver extends uvm_driver#(seq_item);
 
   ///////////////main task of driver
   virtual task run_phase(uvm_phase phase);
-        bit [31:0] data;
+  /*      bit [31:0] data;
         vif.rst <= 1'b1;
         vif.psel <= 0;
         vif.penable <= 0;
         vif.pwrite <= 0;
         vif.paddr <= 0;
-        vif.pwdata <= 0;
+        vif.pwdata <= 0;*/
   tr = seq_item::type_id::create("tr");
   forever begin
   seq_item_port.get_next_item(tr);
-  drive();
+  drive(tr);
   seq_item_port.item_done();
   $display("-----------DRIVER----------"); 
   end
@@ -49,12 +49,23 @@ class driver extends uvm_driver#(seq_item);
   
   
   //////////////drive DUT
-  task drive();
+  task drive(seq_item tr);
  // if(vif.rst == 1'b1)begin
+ /*@(posedge vif.clk);
+    vif.psel    <= 1'b1;
+    vif.penable <= 1'b0;
+    vif.paddr   <= tr.paddr;
+    vif.pwrite  <= tr.pwrite;
+    vif.pwdata  <= tr.pwdata;
+ 
+    // Step 2: Enable phase
+    repeat(2) @(posedge vif.clk);
+    vif.penable <= 1'b1;
+ */
   if(tr.pwrite == 1'b1)
   begin 
   @(posedge vif.clk);
-  //vif.rst <= 1'b1;
+  vif.rst <= 1'b1;
      vif.paddr <= tr.paddr;
      vif.pwrite <= 1'b1;
      vif.pwdata <= tr.pwdata;

@@ -6,19 +6,19 @@
 module tb;
   bit clk;
   bit rst;
-  logic psel;
+ /* logic psel;
   logic penable;
   logic pwrite;
   logic [31:0] paddr;
   logic [31:0] pwdata;
-  logic [31:0] prdata;
-  top DUT(.pclk(clk),.presetn(rst),.psel(psel),.penable(penable),.pwrite(pwrite),.paddr(paddr),.pwdata(pwdata),.prdata(prdata));
+  logic [31:0] prdata;*/
+  top_if vif(.clk(clk),.rst(rst));
+  top DUT(.pclk(vif.clk),.presetn(vif.rst),.psel(vif.psel),.penable(vif.penable),.pwrite(vif.pwrite),.paddr(vif.paddr),.pwdata(vif.pwdata),.prdata(vif.prdata));
   
 
 
 //  top DUT(.PCLK(pclk),.PRESETn(rst),.PSEL(psel),.PENABLE(penable),.PWRITE(pwrite),.PADDR(paddr),.PWDATA(pwdata),.PRDATA(prdata));
   //apb_slave DUT(.clk(PCLK),.rst(PRESETn),.psel(PSEL),.penable(PENABLE),.pwrite(PWRITE),.paddr(PADDR),.pwdata(PWDATA),.prdata(PRDATA));
-  top_if vif(.clk(clk),.rst(rst));
  initial begin
  clk = 0;
  //rst = 1;
