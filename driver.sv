@@ -14,21 +14,6 @@ class driver extends uvm_driver#(seq_item);
       `uvm_error("drv","Unable to access Interface");
   endfunction
   
-  ///////////////reset DUT at the start
-/*  task reset_dut();
-  @(posedge vif.clk);
-  vif.rst <= 1'b1;
-  vif.pwrite <= 1'b0;
-  vif.pwdata <= 8'h00;
-  vif.paddr <= 1'b0;
-  vif.prdata <= 1'0;
- 
-   repeat(5)@(posedge vif.clk);
-  `uvm_info("DRV", "System Reset", UVM_NONE);
-     vif.rst <= 1'b0;
-  endtask
-*/
-
   ///////////////main task of driver
   virtual task run_phase(uvm_phase phase);
   /*      bit [31:0] data;
@@ -51,21 +36,10 @@ class driver extends uvm_driver#(seq_item);
   //////////////drive DUT
   task drive(seq_item tr);
  // if(vif.rst == 1'b1)begin
- /*@(posedge vif.clk);
-    vif.psel    <= 1'b1;
-    vif.penable <= 1'b0;
-    vif.paddr   <= tr.paddr;
-    vif.pwrite  <= tr.pwrite;
-    vif.pwdata  <= tr.pwdata;
- 
-    // Step 2: Enable phase
-    repeat(2) @(posedge vif.clk);
-    vif.penable <= 1'b1;
- */
-  if(tr.pwrite == 1'b1)
+ if(tr.pwrite == 1'b1)
   begin 
   @(posedge vif.clk);
-  vif.rst <= 1'b1;
+  //vif.rst <= 1'b1;
      vif.paddr <= tr.paddr;
      vif.pwrite <= 1'b1;
      vif.pwdata <= tr.pwdata;
@@ -91,7 +65,6 @@ class driver extends uvm_driver#(seq_item);
      vif.penable <=1'b0;
      tr.prdata = vif.prdata;
   end
- // end
   endtask
   
 endclass

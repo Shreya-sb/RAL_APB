@@ -26,11 +26,11 @@ module tb;
 
   always #10 clk = ~clk;
   
- // initial begin
-  // rst=0;
-  // #10 rst=1;
+  initial begin
+   rst=0;
+   #10 rst=1;
   // #10 rst=0;
- // end
+  end
   initial begin
   uvm_config_db#(virtual top_if)::set(null, "*", "vif", vif);
   $dumpfile("dump.vcd");
