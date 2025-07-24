@@ -1,7 +1,3 @@
-//`include "uvm_macros.svh"
-//import pkg::*;
-
-
 class monitor extends uvm_monitor;
   `uvm_component_utils(monitor)
   uvm_analysis_port #(seq_item) mon_ap;
@@ -39,8 +35,6 @@ class monitor extends uvm_monitor;
           mon_ap.write(tr);
           end
        end
-      //$display("pwdata:%0h,prdata:%0h",tr.pwdata,tr.prdata);
       $display("-----MONITOR END------");
-    //end
   endtask
 endclass
