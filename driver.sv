@@ -16,13 +16,6 @@ class driver extends uvm_driver#(seq_item);
   
   ///////////////main task of driver
   virtual task run_phase(uvm_phase phase);
-  /*      bit [31:0] data;
-        vif.rst <= 1'b1;
-        vif.psel <= 0;
-        vif.penable <= 0;
-        vif.pwrite <= 0;
-        vif.paddr <= 0;
-        vif.pwdata <= 0;*/
   tr = seq_item::type_id::create("tr");
   forever begin
   seq_item_port.get_next_item(tr);
@@ -66,5 +59,4 @@ class driver extends uvm_driver#(seq_item);
      tr.prdata = vif.prdata;
   end
   endtask
-  
 endclass
