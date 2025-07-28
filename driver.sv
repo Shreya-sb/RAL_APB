@@ -32,7 +32,7 @@ class driver extends uvm_driver#(seq_item);
  if(tr.pwrite == 1'b1)
   begin 
   @(posedge vif.clk);
-  //vif.rst <= 1'b1;
+  vif.rst <= 1'b1;
      vif.paddr <= tr.paddr;
      vif.pwrite <= 1'b1;
      vif.pwdata <= tr.pwdata;

@@ -22,30 +22,28 @@ class test extends uvm_test;
     phase.phase_done.set_drain_time(this, 20);
   endtask
 endclass
-/*
-class reg_sequence_test extends test;
-  `uvm_component_utils(reg_sequence_test)
-  function new(string name = "reg_sequence_test",uvm_component parent = null);
+
+class reset_test extends uvm_test;
+  `uvm_component_utils(reset_test)
+  function new(string name = "reset_test",uvm_component parent = null);
     super.new(name,parent);
   endfunction
 
- //connect phase 
- virtual function void connect_phase(uvm_phase phase);
-   super.connect_phase(phase);
- endfunction
+   environment env;
+  reset_seq rseq;
 
- //end_of_elaboration phase
-  virtual function void end_of_elaboration();
-    print();
+  virtual function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+    env = environment::type_id::create("env",this);
+    rseq = reset_seq::type_id::create("rseq");
   endfunction
- 
- //run phase 
+
+//run phase 
   virtual task run_phase(uvm_phase phase);
-    reg_seq rseq;
     phase.raise_objection(this);
-    rseq = reg_seq::type_id::create("rseq");
-    rseq.start(env.agent.seqr);
+    rseq.regmodel = env.regmodel;
+    rseq.start(env.agent_inst.seqr);
     phase.drop_objection(this);
-    phase.phase_done.set_drain_time(this,100); 
+    phase.phase_done.set_drain_time(this,20); 
   endtask 
-endclass*/
+endclass
