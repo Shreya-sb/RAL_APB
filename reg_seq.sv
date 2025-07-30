@@ -155,6 +155,24 @@ class reset_seq extends uvm_sequence;
     uvm_status_e status;
     bit [31:0] rdata, rdata_m, dout, reset_reg;
    bit reset_status;
+  
+  `uvm_info("SEQ", "====== REG1 RESET ======", UVM_NONE);
+    //////Check if register has reset value
+    reset_status = regmodel.reg1_inst.has_reset();
+    `uvm_info("SEQ", $sformatf("Reset Value is present: %0h ", reset_status), UVM_NONE);
+    reset_reg   = regmodel.reg1_inst.get_reset();
+    `uvm_info("SEQ", $sformatf(" RESET for REG1 -> reset value:%0h", reset_reg), UVM_NONE);
+
+   // regmodel.reg2_inst.get();
+    rdata   = regmodel.reg1_inst.get();
+    rdata_m = regmodel.reg1_inst.get_mirrored_value();
+    `uvm_info("SEQ", $sformatf("before reset REG1 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+    $display("------applying reset to reg1------------"); 
+    regmodel.reg1_inst.reset();
+    rdata   = regmodel.reg1_inst.get();
+    rdata_m = regmodel.reg1_inst.get_mirrored_value();
+    `uvm_info("SEQ", $sformatf("After reset REG1 -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m,dout), UVM_NONE);
+
    `uvm_info("SEQ", "====== REG2 RESET ======", UVM_NONE);
     //////Check if register has reset value
     reset_status = regmodel.reg2_inst.has_reset();
@@ -172,7 +190,41 @@ class reset_seq extends uvm_sequence;
     rdata_m = regmodel.reg2_inst.get_mirrored_value();
     `uvm_info("SEQ", $sformatf("After reset REG2 -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m,dout), UVM_NONE);
 
+   `uvm_info("SEQ", "====== REG3 RESET ======", UVM_NONE);
+    //////Check if register has reset value
+    reset_status = regmodel.reg3_inst.has_reset();
+    `uvm_info("SEQ", $sformatf("Reset Value is present: %0h ", reset_status), UVM_NONE);
+    reset_reg   = regmodel.reg3_inst.get_reset();
+    `uvm_info("SEQ", $sformatf(" RESET for REG3 -> reset value:%0h", reset_reg), UVM_NONE);
+
+   // regmodel.reg2_inst.get();
+    rdata   = regmodel.reg3_inst.get();
+    rdata_m = regmodel.reg3_inst.get_mirrored_value();
+    `uvm_info("SEQ", $sformatf("before reset REG3 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+    $display("------applying reset to reg3------------"); 
+    regmodel.reg3_inst.reset();
+    rdata   = regmodel.reg3_inst.get();
+    rdata_m = regmodel.reg3_inst.get_mirrored_value();
+    `uvm_info("SEQ", $sformatf("After reset REG3 -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m,dout), UVM_NONE);
  
+
+   `uvm_info("SEQ", "====== REG4 RESET ======", UVM_NONE);
+    //////Check if register has reset value
+    reset_status = regmodel.reg4_inst.has_reset();
+    `uvm_info("SEQ", $sformatf("Reset Value is present: %0h ", reset_status), UVM_NONE);
+    reset_reg   = regmodel.reg4_inst.get_reset();
+    `uvm_info("SEQ", $sformatf(" RESET for REG4 -> reset value:%0h", reset_reg), UVM_NONE);
+
+   // regmodel.reg2_inst.get();
+    rdata   = regmodel.reg4_inst.get();
+    rdata_m = regmodel.reg4_inst.get_mirrored_value();
+    `uvm_info("SEQ", $sformatf("before reset REG4 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+    $display("------applying reset to reg4------------"); 
+    regmodel.reg4_inst.reset();
+    rdata   = regmodel.reg4_inst.get();
+    rdata_m = regmodel.reg4_inst.get_mirrored_value();
+    `uvm_info("SEQ", $sformatf("After reset REG4 -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m,dout), UVM_NONE);
+
   endtask
 endclass
 

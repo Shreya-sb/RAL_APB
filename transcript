@@ -1,6 +1,6 @@
 # vsim -c -do "run -all;exit;" tb 
-# Start time: 16:07:03 on Jul 28,2025
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 09:53:40 on Jul 30,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
 # //
@@ -144,5 +144,5 @@
 # [TEST_DONE]     1
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 970 ns  Iteration: 53  Instance: /tb
-# End time: 16:07:08 on Jul 28,2025, Elapsed time: 0:00:05
+# End time: 09:53:43 on Jul 30,2025, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0
