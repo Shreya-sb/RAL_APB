@@ -86,18 +86,20 @@ class reg_block extends uvm_reg_block;
   endfunction
   
   function void build;
-    cntrl_inst = cntrl_field::type_id::create("cntrl_inst");
+   cntrl_inst = cntrl_field::type_id::create("cntrl_inst");
     cntrl_inst.build();
     cntrl_inst.configure(this);
     
     reg1_inst = reg1_field::type_id::create("reg1_inst");
     reg1_inst.build();
     reg1_inst.configure(this);
-    
+   
     reg2_inst = reg2_field::type_id::create("reg2_inst");
     reg2_inst.build();
     reg2_inst.configure(this);
-    
+    reg2_inst.add_hdl_path_slice("reg2",0,32); //reg name in rtl,starting position,no.of bits wide 
+    //reg2_inst.set_backdoor(null);            // << must be added
+
     reg3_inst = reg3_field::type_id::create("reg3_inst");
     reg3_inst.build();
     reg3_inst.configure(this);
@@ -105,11 +107,14 @@ class reg_block extends uvm_reg_block;
     reg4_inst = reg4_field::type_id::create("reg4_inst");
     reg4_inst.build();
     reg4_inst.configure(this);
-    
+   
     default_map = create_map("default_map",0,4,UVM_LITTLE_ENDIAN);
     default_map.add_reg(cntrl_inst,'h0,"RW");  
     default_map.add_reg(reg1_inst,'h04,"RW");
     default_map.add_reg(reg2_inst,'h08,"RW");
+    //add_hdl_path("DUT","RTL");
+    //set_hdl_path_root("DUT"); // Make sure this matches RTL hierarchy
+
     default_map.add_reg(reg3_inst,'h0c,"RW");
     default_map.add_reg(reg4_inst,'h10,"RW");
     lock_model();
