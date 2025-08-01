@@ -23,9 +23,9 @@ module top
         if( !presetn ) 
         begin
            cntrl    <= 4'h0;
-           reg1     <= 32'h5A5A_5555;
+           reg1     <= 32'h5A5A_0000;
            reg2     <= 32'h1234_9876;
-           reg3     <= 32'hA5A5_0000;;
+           reg3     <= 32'hA5A5_0000;
            reg4     <= 32'h0000_FFFF;
           rdata_tmp <= 32'h00000000;
         end

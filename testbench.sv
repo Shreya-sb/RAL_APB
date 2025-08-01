@@ -19,7 +19,7 @@ module tb;
   
   initial begin
   uvm_config_db#(virtual top_if)::set(null, "*", "vif", vif);
-  run_test("test");  
+  run_test("reset_test");  
   end
   
   initial begin
