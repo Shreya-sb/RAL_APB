@@ -32,11 +32,32 @@ class reg2_field extends uvm_reg;
   `uvm_object_utils(reg2_field)
 
   rand uvm_reg_field reg2;
-
+  covergroup temp_cov;
+option.per_instance = 1;
+coverpoint reg2.value[7:0] 
+{
+bins lower = {[0:63]};
+bins mid = {[64:127]};
+bins high = {[128:255]};
+}
+endgroup
+  
   function new (string name = "reg2");
-    super.new(name,32,UVM_NO_COVERAGE);
+    super.new(name,32,,UVM_CVR_FIELD_VALS);
+    if(has_coverage(UVM_CVR_FIELD_VALS))
+      temp_cov = new();
   endfunction
 
+  ////////////////////////////// implementation of sample and sample_Values
+virtual function void sample(uvm_reg_data_t data,uvm_reg_data_t byte_en,bit is_read,uvm_reg_map map);
+  temp_cov.sample();
+endfunction
+  
+virtual function void sample_values();
+  super.sample_values();
+  temp_cov.sample();
+endfunction
+  
   function void build;
     reg2 = uvm_reg_field :: type_id :: create("reg2");
     reg2.configure(this, 32, 0, "RW", 0,32'h1234_9876, 1, 1, 1);
@@ -86,6 +107,7 @@ class reg_block extends uvm_reg_block;
   endfunction
   
   function void build;
+    
    cntrl_inst = cntrl_field::type_id::create("cntrl_inst");
     cntrl_inst.build();
     cntrl_inst.configure(this);
@@ -94,10 +116,12 @@ class reg_block extends uvm_reg_block;
     reg1_inst.build();
     reg1_inst.configure(this);
    
+    uvm_reg::include_coverage("*", UVM_CVR_ALL);
     reg2_inst = reg2_field::type_id::create("reg2_inst");
     reg2_inst.build();
     reg2_inst.configure(this);
-    reg2_inst.add_hdl_path_slice("reg2",0,32); //reg name in rtl,starting position,no.of bits wide 
+    reg2_inst.set_coverage(UVM_CVR_FIELD_VALS); //////enabling coverage for specific reg instance
+    //reg2_inst.add_hdl_path_slice("reg2",0,32); //reg name in rtl,starting position,no.of bits wide 
     //reg2_inst.set_backdoor(null);            // << must be added
 
     reg3_inst = reg3_field::type_id::create("reg3_inst");
