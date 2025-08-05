@@ -136,8 +136,7 @@ class reg_block extends uvm_reg_block;
     default_map.add_reg(cntrl_inst,'h0,"RW");  
     default_map.add_reg(reg1_inst,'h04,"RW");
     default_map.add_reg(reg2_inst,'h08,"RW");
-    //add_hdl_path("DUT","RTL");
-    //set_hdl_path_root("DUT"); // Make sure this matches RTL hierarchy
+    add_hdl_path("tb.DUT","RTL");
 
     default_map.add_reg(reg3_inst,'h0c,"RW");
     default_map.add_reg(reg4_inst,'h10,"RW");

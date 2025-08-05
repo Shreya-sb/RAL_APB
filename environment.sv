@@ -27,6 +27,6 @@ class environment extends uvm_env;
     agent_inst.mon.mon_ap.connect(scb.received_value); 
   regmodel.default_map.set_sequencer( .sequencer(agent_inst.seqr), .adapter(adapter_inst) );
   regmodel.default_map.set_base_addr(0);
-  regmodel.default_map.set_auto_predict(1);    
+ regmodel.default_map.set_auto_predict(0);    
   endfunction
 endclass
