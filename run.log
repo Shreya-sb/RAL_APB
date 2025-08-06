@@ -1,6 +1,6 @@
 # vsim -vopt work.tb -voptargs="+acc=npr" -assertdebug -l run.log -coverage -c -do "coverage save -onexit -assert -directive -cvg -codeAll coverage.ucdb; coverage report -detail;run -all; exit" 
-# Start time: 22:13:54 on Aug 05,2025
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 12:12:29 on Aug 06,2025
+# ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
 # //
@@ -686,7 +686,7 @@
 # Statement Coverage:
 #     Enabled Coverage            Active      Hits    Misses % Covered
 #     ----------------            ------      ----    ------ ---------
-#     Stmts                           38         0        38       0.0
+#     Stmts                           43         0        43       0.0
 # 
 # ================================Statement Details================================
 # 
@@ -713,51 +713,57 @@
 #     17                                                 ///////////////main task of driver
 #     18                                                 virtual task run_phase(uvm_phase phase);
 #     19              1                    ***0***       tr = seq_item::type_id::create("tr");
-#     20              1                    ***0***       forever begin
-#     21              1                    ***0***       seq_item_port.get_next_item(tr);
-#     22              1                    ***0***       drive(tr);
-#     23              1                    ***0***       seq_item_port.item_done();
-#     24              1                    ***0***       $display("-----------DRIVER----------"); 
-#     25                                                 end
-#     26                                                 endtask
-#     27                                                 
-#     28                                                 
-#     29                                                 //////////////drive DUT
-#     30                                                 task drive(seq_item tr);
-#     31                                                // if(vif.rst == 1'b1)begin
-#     32                                                if(tr.pwrite == 1'b1)
-#     33                                                 begin 
-#     34              1                    ***0***       @(posedge vif.clk);
-#     35              1                    ***0***       vif.rst <= 1'b1;
-#     36              1                    ***0***          vif.paddr <= tr.paddr;
-#     37              1                    ***0***          vif.pwrite <= 1'b1;
-#     38              1                    ***0***          vif.pwdata <= tr.pwdata;
-#     39              1                    ***0***          vif.psel <= 1'b1;
-#     40              1                    ***0***          repeat(2)@(posedge vif.clk);
-#     40              2                    ***0***     
-#     41              1                    ***0***          vif.penable <= 1'b1; 
-#     42              1                    ***0***          `uvm_info("DRV", $sformatf("Data Write -> Wdata : %0h",vif.pwdata),UVM_NONE);
-#     43              1                    ***0***          @(posedge vif.clk);
-#     44              1                    ***0***          vif.psel <= 1'b0;
-#     45              1                    ***0***          vif.penable <=1'b0;
-#     46                                                  end
-#     47                                                else
-#     48                                                 begin
+#     20              1                    ***0***       vif.psel    <= 1'b0;
+#     21              1                    ***0***         vif.penable <= 1'b0;
+#     22              1                    ***0***         vif.pwrite  <= 1'b0;
+#     23              1                    ***0***         vif.paddr   <= 32'h0;
+#     24              1                    ***0***         vif.pwdata  <= 32'h0;
+#     25                                               
+#     26              1                    ***0***       forever begin
+#     27              1                    ***0***       seq_item_port.get_next_item(tr);
+#     28              1                    ***0***       drive();
+#     29              1                    ***0***       seq_item_port.item_done();
+#     30              1                    ***0***       $display("-----------DRIVER----------"); 
+#     31                                                 end
+#     32                                                 endtask
+#     33                                                 
+#     34                                                 
+#     35                                                 //////////////drive DUT
+#     36                                                 task drive();
+#     37                                                // if(vif.rst == 1'b1)begin
+#     38                                                if(tr.pwrite == 1'b1)
+#     39                                                 begin 
+#     40              1                    ***0***       @(posedge vif.clk);
+#     41              1                    ***0***       vif.rst <= 1'b1;
+#     42              1                    ***0***          vif.paddr <= tr.paddr;
+#     43              1                    ***0***          vif.pwrite <= 1'b1;
+#     44              1                    ***0***          vif.pwdata <= tr.pwdata;
+#     45              1                    ***0***          vif.psel <= 1'b1;
+#     46              1                    ***0***          repeat(2)@(posedge vif.clk);
+#     46              2                    ***0***     
+#     47              1                    ***0***          vif.penable <= 1'b1; 
+#     48              1                    ***0***          `uvm_info("DRV", $sformatf("Data Write -> Wdata : %0h",vif.pwdata),UVM_NONE);
 #     49              1                    ***0***          @(posedge vif.clk);
-#     50              1                    ***0***          vif.pwrite <= 1'b0;
-#     51              1                    ***0***          vif.paddr <= tr.paddr;
-#     52              1                    ***0***          vif.psel <= 1'b1;
-#     53              1                    ***0***          repeat(2)@(posedge vif.clk);
-#     53              2                    ***0***     
-#     54              1                    ***0***          vif.penable <= 1'b1; 
-#     55              1                    ***0***          `uvm_info("DRV", $sformatf("Data READ -> read data : %0h",vif.prdata),UVM_NONE);
-#     56              1                    ***0***          @(posedge vif.clk);
-#     57              1                    ***0***          vif.psel <= 1'b0;
-#     58              1                    ***0***          vif.penable <=1'b0;
-#     59              1                    ***0***          tr.prdata = vif.prdata;
-#     60                                                 end
-#     61                                                 endtask
-#     62                                               endclass
+#     50              1                    ***0***          vif.psel <= 1'b0;
+#     51              1                    ***0***          vif.penable <=1'b0;
+#     52                                                  end
+#     53                                                else
+#     54                                                 begin
+#     55              1                    ***0***          @(posedge vif.clk);
+#     56              1                    ***0***          vif.pwrite <= 1'b0;
+#     57              1                    ***0***          vif.paddr <= tr.paddr;
+#     58              1                    ***0***          vif.psel <= 1'b1;
+#     59              1                    ***0***          repeat(2)@(posedge vif.clk);
+#     59              2                    ***0***     
+#     60              1                    ***0***          vif.penable <= 1'b1; 
+#     61              1                    ***0***          `uvm_info("DRV", $sformatf("Data READ -> read data : %0h",vif.prdata),UVM_NONE);
+#     62              1                    ***0***          @(posedge vif.clk);
+#     63              1                    ***0***          vif.psel <= 1'b0;
+#     64              1                    ***0***          vif.penable <=1'b0;
+#     65              1                    ***0***          tr.prdata = vif.prdata;
+#     66                                                 end
+#     67                                                 endtask
+#     68                                               endclass
 # 
 # Branch Coverage:
 #     Enabled Coverage            Active      Hits    Misses % Covered
@@ -781,20 +787,20 @@
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
-#     32                                   ***0***     Count coming in to IF
-#     32              1                    ***0***      if(tr.pwrite == 1'b1)
-#     47              1                    ***0***      else
+#     38                                   ***0***     Count coming in to IF
+#     38              1                    ***0***      if(tr.pwrite == 1'b1)
+#     53              1                    ***0***      else
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
-#     42                                   ***0***     Count coming in to IF
-#     42              1                    ***0***          `uvm_info("DRV", $sformatf("Data Write -> Wdata : %0h",vif.pwdata),UVM_NONE);
+#     48                                   ***0***     Count coming in to IF
+#     48              1                    ***0***          `uvm_info("DRV", $sformatf("Data Write -> Wdata : %0h",vif.pwdata),UVM_NONE);
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
-#     55                                   ***0***     Count coming in to IF
-#     55              1                    ***0***          `uvm_info("DRV", $sformatf("Data READ -> read data : %0h",vif.prdata),UVM_NONE);
+#     61                                   ***0***     Count coming in to IF
+#     61              1                    ***0***          `uvm_info("DRV", $sformatf("Data READ -> read data : %0h",vif.prdata),UVM_NONE);
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
@@ -1064,7 +1070,7 @@
 # Statement Coverage:
 #     Enabled Coverage            Active      Hits    Misses % Covered
 #     ----------------            ------      ----    ------ ---------
-#     Stmts                           22         0        22       0.0
+#     Stmts                           18         0        18       0.0
 # 
 # ================================Statement Details================================
 # 
@@ -1088,36 +1094,54 @@
 #     14              1                    ***0***         if(! uvm_config_db#(virtual top_if)::get (this, "", "vif", vif))`uvm_error("MON", "Error getting Interface Handle");
 #     15                                                 endfunction
 #     16                                                
-#     17                                                 virtual task run_phase(uvm_phase phase);
-#     18              1                    ***0***         forever begin
-#     19              1                    ***0***           repeat(3)@(posedge vif.clk);
-#     19              2                    ***0***     
-#     20              1                    ***0***           $display("-----MONITOR BEGIN-----");
+#     17                                                 /*virtual task run_phase(uvm_phase phase);
+#     18                                                   forever begin
+#     19                                                     repeat(3)@(posedge vif.clk);
+#     20                                                     $display("-----MONITOR BEGIN-----");
 #     21                                               	  if(vif.psel && vif.penable && vif.rst)begin
-#     22              1                    ***0***             tr = seq_item::type_id::create("seq_item");
-#     23              1                    ***0***             tr.paddr  =  vif.paddr;
-#     24              1                    ***0***             tr.pwrite =  vif.pwrite;
+#     22                                                       tr = seq_item::type_id::create("seq_item");
+#     23                                                       tr.paddr  =  vif.paddr;
+#     24                                                       tr.pwrite =  vif.pwrite;
 #     25                                                        if(vif.pwrite)begin
-#     26              1                    ***0***      	      tr.pwdata = vif.pwdata;
-#     27              1                    ***0***               @(posedge vif.clk);
-#     28              1                    ***0***               `uvm_info("MON", $sformatf("Mode : Write WDATA : %0d ADDR : %0d", vif.pwdata, vif.paddr), UVM_NONE);
+#     26                                                	      tr.pwdata = vif.pwdata;
+#     27                                                         @(posedge vif.clk);
+#     28                                                         `uvm_info("MON", $sformatf("Mode : Write WDATA : %0d ADDR : %0d", vif.pwdata, vif.paddr), UVM_NONE);
 #     29                                                          end
 #     30                                                      else begin 
-#     31              1                    ***0***               @(posedge vif.clk);
-#     32              1                    ***0***               tr.prdata = vif.prdata;
-#     33              1                    ***0***               `uvm_info("MON", $sformatf("Mode : Write RDATA : %0d ADDR : %0d", vif.prdata, vif.paddr), UVM_NONE);
+#     31                                                         @(posedge vif.clk);
+#     32                                                         tr.prdata = vif.prdata;
+#     33                                                         `uvm_info("MON", $sformatf("Mode : Write RDATA : %0d ADDR : %0d", vif.prdata, vif.paddr), UVM_NONE);
 #     34                                                         end
-#     35              1                    ***0***               mon_ap.write(tr);
+#     35                                                         mon_ap.write(tr);
 #     36                                                         end
 #     37                                                      end
-#     38              1                    ***0***           $display("-----MONITOR END------");
-#     39                                                 endtask
-#     40                                               endclass
+#     38                                                     $display("-----MONITOR END------");
+#     39                                                 endtask*/
+#     40                                               
+#     41                                               virtual task run_phase(uvm_phase phase);
+#     42              1                    ***0***         tr = seq_item::type_id::create("tr");
+#     43              1                    ***0***         forever begin
+#     44                                                     //  repeat(3) @(vif.cb_mon);
+#     45              1                    ***0***           @(posedge vif.clk);
+#     46              1                    ***0***           $display("-------------monitor begin----------");
+#     47              1                    ***0***           tr.paddr    =   vif.paddr;
+#     48              1                    ***0***           tr.pwrite   =   vif.pwrite;
+#     49              1                    ***0***           tr.psel     =   vif.psel;
+#     50              1                    ***0***           tr.penable  =   vif.penable;
+#     51              1                    ***0***           tr.pwdata   =   vif.pwdata;
+#     52              1                    ***0***           tr.prdata   =   vif.prdata;
+#     53                                               
+#     54              1                    ***0***           mon_ap.write(tr);
+#     55                                               
+#     56                                                   end
+#     57                                                 endtask
+#     58                                               
+#     59                                               endclass
 # 
 # Branch Coverage:
 #     Enabled Coverage            Active      Hits    Misses % Covered
 #     ----------------            ------      ----    ------ ---------
-#     Branches                        12         0        12       0.0
+#     Branches                         4         0         4       0.0
 # 
 # ================================Branch Details================================
 # 
@@ -1135,60 +1159,11 @@
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
-# ------------------------------------IF Branch------------------------------------
-#     21                                   ***0***     Count coming in to IF
-#     21              1                    ***0***     	  if(vif.psel && vif.penable && vif.rst)begin
-#                                          ***0***     All False Count
-# Branch totals: 0 hits of 2 branches = 0.0%
-# 
-# ------------------------------------IF Branch------------------------------------
-#     25                                   ***0***     Count coming in to IF
-#     25              1                    ***0***              if(vif.pwrite)begin
-#     30              1                    ***0***            else begin 
-# Branch totals: 0 hits of 2 branches = 0.0%
-# 
-# ------------------------------------IF Branch------------------------------------
-#     28                                   ***0***     Count coming in to IF
-#     28              1                    ***0***               `uvm_info("MON", $sformatf("Mode : Write WDATA : %0d ADDR : %0d", vif.pwdata, vif.paddr), UVM_NONE);
-#                                          ***0***     All False Count
-# Branch totals: 0 hits of 2 branches = 0.0%
-# 
-# ------------------------------------IF Branch------------------------------------
-#     33                                   ***0***     Count coming in to IF
-#     33              1                    ***0***               `uvm_info("MON", $sformatf("Mode : Write RDATA : %0d ADDR : %0d", vif.prdata, vif.paddr), UVM_NONE);
-#                                          ***0***     All False Count
-# Branch totals: 0 hits of 2 branches = 0.0%
-# 
 # 
 # Condition Coverage:
 #     Enabled Coverage            Active   Covered    Misses % Covered
 #     ----------------            ------      ----    ------ ---------
-#     FEC Condition Terms              3         0         3       0.0
-# 
-# ================================Condition Details================================
-# 
-# Condition Coverage for file monitor.sv --
-# 
-# ----------------Focused Condition View-------------------
-# Line       21 Item    1  (vif.psel && vif.penable && vif.rst)
-# Condition totals: 0 of 3 input terms covered = 0.0%
-# 
-#    Input Term   Covered  Reason for no coverage   Hint
-#   -----------  --------  -----------------------  --------------
-#      vif.psel         N  No hits                  Hit '_0' and '_1'
-#   vif.penable         N  No hits                  Hit '_0' and '_1'
-#       vif.rst         N  No hits                  Hit '_0' and '_1'
-# 
-#      Rows:       Hits  FEC Target            Non-masking condition(s)      
-#  ---------  ---------  --------------------  -------------------------     
-#   Row   1:    ***0***  vif.psel_0            -                             
-#   Row   2:    ***0***  vif.psel_1            (vif.penable && vif.rst)      
-#   Row   3:    ***0***  vif.penable_0         vif.psel                      
-#   Row   4:    ***0***  vif.penable_1         (vif.psel && vif.rst)         
-#   Row   5:    ***0***  vif.rst_0             (vif.psel && vif.penable)     
-#   Row   6:    ***0***  vif.rst_1             (vif.psel && vif.penable)     
-# 
-# 
+#     FEC Condition Terms              0         0         0     100.0
 # Expression Coverage:
 #     Enabled Coverage            Active   Covered    Misses % Covered
 #     ----------------            ------      ----    ------ ---------
@@ -1765,7 +1740,7 @@
 # Statement Coverage:
 #     Enabled Coverage            Active      Hits    Misses % Covered
 #     ----------------            ------      ----    ------ ---------
-#     Stmts                          161         0       161       0.0
+#     Stmts                          211         0       211       0.0
 # 
 # ================================Statement Details================================
 # 
@@ -1828,7 +1803,7 @@
 #     46              1                    ***0***         rdata_m = regmodel.reg1_inst.get_mirrored_value();
 #     47              1                    ***0***         `uvm_info("SEQ", $sformatf("Initial REG1 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
 #     48                                               
-#     49              1                    ***0***         regmodel.reg1_inst.set(8'h01);
+#     49              1                    ***0***         regmodel.reg1_inst.set(32'h01);
 #     50              1                    ***0***         rdata   = regmodel.reg1_inst.get();
 #     51              1                    ***0***         rdata_m = regmodel.reg1_inst.get_mirrored_value();
 #     52              1                    ***0***         `uvm_info("SEQ", $sformatf("After set REG1 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
@@ -1840,7 +1815,7 @@
 #     58                                               
 #     59                                               
 #     60                                               
-#     61              1                    ***0***         regmodel.reg1_inst.write(status,8'h01);
+#     61              1                    ***0***         regmodel.reg1_inst.write(status,32'h01);
 #     62              1                    ***0***         rdata   = regmodel.reg1_inst.get();
 #     63              1                    ***0***         rdata_m = regmodel.reg1_inst.get_mirrored_value();
 #     64              1                    ***0***         `uvm_info("SEQ", $sformatf("After write REG1 -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m,dout), UVM_NONE);
@@ -1857,7 +1832,7 @@
 #     75              1                    ***0***         rdata_m = regmodel.reg2_inst.get_mirrored_value();
 #     76              1                    ***0***         `uvm_info("SEQ", $sformatf("Initial REG2 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
 #     77                                               
-#     78              1                    ***0***         regmodel.reg2_inst.set(8'h11);
+#     78              1                    ***0***         regmodel.reg2_inst.set(32'h11);
 #     79              1                    ***0***         rdata   = regmodel.reg2_inst.get();
 #     80              1                    ***0***         rdata_m = regmodel.reg2_inst.get_mirrored_value();
 #     81              1                    ***0***         `uvm_info("SEQ", $sformatf("After set REG2 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
@@ -1869,7 +1844,7 @@
 #     87                                               
 #     88                                               
 #     89                                               
-#     90              1                    ***0***         regmodel.reg2_inst.write(status,8'h11);
+#     90              1                    ***0***         regmodel.reg2_inst.write(status,32'h11);
 #     91              1                    ***0***         rdata   = regmodel.reg2_inst.get();
 #     92              1                    ***0***         rdata_m = regmodel.reg2_inst.get_mirrored_value();
 #     93              1                    ***0***         `uvm_info("SEQ", $sformatf("After write REG2 -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m,dout), UVM_NONE);
@@ -1885,7 +1860,7 @@
 #     103             1                    ***0***         rdata_m = regmodel.reg3_inst.get_mirrored_value();
 #     104             1                    ***0***         `uvm_info("SEQ", $sformatf("Initial REG3 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
 #     105                                              
-#     106             1                    ***0***         regmodel.reg3_inst.set(8'h22);
+#     106             1                    ***0***         regmodel.reg3_inst.set(32'h22);
 #     107             1                    ***0***         rdata   = regmodel.reg3_inst.get();
 #     108             1                    ***0***         rdata_m = regmodel.reg3_inst.get_mirrored_value();
 #     109             1                    ***0***         `uvm_info("SEQ", $sformatf("After set REG3 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
@@ -1895,7 +1870,7 @@
 #     113             1                    ***0***         rdata_m = regmodel.reg3_inst.get_mirrored_value();
 #     114             1                    ***0***         `uvm_info("SEQ", $sformatf("After update REG3 -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m, dout), UVM_NONE);
 #     115                                                  
-#     116             1                    ***0***         regmodel.reg3_inst.write(status,8'h12);
+#     116             1                    ***0***         regmodel.reg3_inst.write(status,32'h12);
 #     117             1                    ***0***         rdata   = regmodel.reg3_inst.get();
 #     118             1                    ***0***         rdata_m = regmodel.reg3_inst.get_mirrored_value();
 #     119             1                    ***0***         `uvm_info("SEQ", $sformatf("After write REG3 -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m,dout), UVM_NONE);
@@ -1913,7 +1888,7 @@
 #     131             1                    ***0***         rdata_m = regmodel.reg4_inst.get_mirrored_value();
 #     132             1                    ***0***         `uvm_info("SEQ", $sformatf("Initial REG4 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
 #     133                                              
-#     134             1                    ***0***         regmodel.reg4_inst.set(8'h33);
+#     134             1                    ***0***         regmodel.reg4_inst.set(32'h33);
 #     135             1                    ***0***         rdata   = regmodel.reg4_inst.get();
 #     136             1                    ***0***         rdata_m = regmodel.reg4_inst.get_mirrored_value();
 #     137             1                    ***0***         `uvm_info("SEQ", $sformatf("After set REG4 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
@@ -1923,7 +1898,7 @@
 #     141             1                    ***0***         rdata_m = regmodel.reg4_inst.get_mirrored_value();
 #     142             1                    ***0***         `uvm_info("SEQ", $sformatf("After update REG4 -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m, dout), UVM_NONE);
 #     143                                                   
-#     144             1                    ***0***         regmodel.reg4_inst.write(status,8'h23);
+#     144             1                    ***0***         regmodel.reg4_inst.write(status,32'h23);
 #     145             1                    ***0***         rdata   = regmodel.reg4_inst.get();
 #     146             1                    ***0***         rdata_m = regmodel.reg4_inst.get_mirrored_value();
 #     147             1                    ***0***         `uvm_info("SEQ", $sformatf("After write REG4 -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m,dout), UVM_NONE);
@@ -1961,68 +1936,186 @@
 #     170                                                 bit reset_status;
 #     171                                                 if (!uvm_config_db#(virtual top_if)::get(null,"","vif",vif))
 #     172             1                    ***0***           `uvm_fatal("VIF", "vif not set")
-#     173             1                    ***0***        vif.rst <= 0;
-#     174             1                    ***0***         repeat (5) @(posedge vif.clk);
-#     174             2                    ***0***     
-#     175             1                    ***0***         vif.rst <= 1;
-#     176             1                    ***0***        repeat(5) @(posedge vif.clk); 
-#     176             2                    ***0***     
-#     177                                               
-#     178             1                    ***0***      `uvm_info("SEQ", "====== REG3 RESET ======", UVM_NONE);
-#     179             1                    ***0***         reset_status = regmodel.reg3_inst.has_reset();
-#     180             1                    ***0***         `uvm_info("SEQ", $sformatf("Reset Value is present: %0h ", reset_status), UVM_NONE);
-#     181                                                 
-#     182             1                    ***0***         regmodel.reg3_inst.reset();
-#     183             1                    ***0***          rdata   = regmodel.reg3_inst.get();                  // Desired
-#     184             1                    ***0***          rdata_m = regmodel.reg3_inst.get_mirrored_value();
-#     185             1                    ***0***         `uvm_info("SEQ", $sformatf("before mirror REG3 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
-#     186                                              
-#     187             1                    ***0***        $display("------ Applying mirror (frontdoor) to read RTL reset value for REG3 ------");
-#     188             1                    ***0***       regmodel.reg3_inst.mirror(status, UVM_CHECK);      // Read DUT and update mirrored
-#     189                                              
-#     190             1                    ***0***       rdata   = regmodel.reg3_inst.get();                    // Desired (same as before)
-#     191             1                    ***0***       rdata_m = regmodel.reg3_inst.get_mirrored_value();     // Now updated from DUT
-#     192             1                    ***0***       `uvm_info("SEQ", $sformatf("After mirror -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
-#     193                                                
-#     194                                                endtask
-#     195                                              endclass
-#     196                                              
-#     197                                              class backdoor_seq extends uvm_sequence;
-#     198             1                    ***0***       `uvm_object_utils(backdoor_seq)
-#     198             2                    ***0***     
-#     198             3                    ***0***     
-#     198             4                    ***0***     
-#     198             5                    ***0***     
-#     198             6                    ***0***     
-#     198             7                    ***0***     
-#     198             8                    ***0***     
-#     198             9                    ***0***     
-#     198            10                    ***0***     
-#     199                                                reg_block regmodel;
-#     200                                                function new (string name = "backdoor_seq"); 
-#     201             1                    ***0***         super.new(name); 
-#     202                                                endfunction
-#     203                                                task body; 
-#     204                                                  uvm_status_e status;
-#     205                                                   bit [31:0] rdata, rdata_m, dout;
-#     206                                               
-#     207             1                    ***0***         regmodel.reg2_inst.poke(status, 4'hf);
-#     208             1                    ***0***         rdata = regmodel.reg2_inst.get();
-#     209             1                    ***0***         rdata_m = regmodel.reg2_inst.get_mirrored_value();
-#     210             1                    ***0***         `uvm_info("SEQ", $sformatf("POKE:Write -> Desired: %0h Mirrored: %0h",rdata, rdata_m), UVM_NONE);
-#     211             1                    ***0***         $display("-----------------------------------------------");
-#     212             1                    ***0***         regmodel.reg2_inst.peek(status, rdata);
-#     213                                              //    `uvm_info(get_type_name(),$sformatf("PEEK:READ : %0h",dout),UVM_LOW);
-#     214             1                    ***0***         rdata = regmodel.reg2_inst.get();
-#     215             1                    ***0***         rdata_m = regmodel.reg2_inst.get_mirrored_value();
-#     216             1                    ***0***         `uvm_info("SEQ", $sformatf("AFTER PEEK--->Desired: %0h Mirrored: %0h", rdata, rdata_m), UVM_NONE);
-#     217                                                endtask
-#     218                                              endclass
+#     173                                               
+#     174             1                    ***0***      `uvm_info("SEQ", "====== REG1 RESET ======", UVM_NONE);
+#     175             1                    ***0***         reset_status = regmodel.reg1_inst.has_reset();
+#     176             1                    ***0***         `uvm_info("SEQ", $sformatf("Reset Value is present: %0b ", reset_status), UVM_NONE);
+#     177                                                 
+#     178             1                    ***0***         reset_reg=regmodel.reg1_inst.get_reset();
+#     179             1                    ***0***         `uvm_info("SEQ", $sformatf(" REG1:reset value present in RAL model: 0x%08h",reset_reg), UVM_LOW);
+#     180             1                    ***0***          rdata   = regmodel.reg1_inst.get();         
+#     181             1                    ***0***          rdata_m = regmodel.reg1_inst.get_mirrored_value();
+#     182             1                    ***0***       `uvm_info("SEQ", $sformatf("before reset -> Desired: 0x%08h, Mirrored:0x%08h",rdata,rdata_m), UVM_LOW);
+#     183             1                    ***0***       $display("------ Applying reset value for REG1 ------");
+#     184             1                    ***0***       regmodel.reg1_inst.reset();
+#     185             1                    ***0***       regmodel.reg1_inst.mirror(status, UVM_CHECK);      // Read DUT and update mirrored
+#     186             1                    ***0***       rdata   = regmodel.reg1_inst.get();                    // Desired (same as before)
+#     187             1                    ***0***       rdata_m = regmodel.reg1_inst.get_mirrored_value();     // Now updated from DUT
+#     188             1                    ***0***       dout = rdata_m;
+#     189             1                    ***0***       `uvm_info("SEQ", $sformatf("After reset -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     190                                               if(dout !== reset_reg)begin
+#     191             1                    ***0***           `uvm_error("SEQ", $sformatf("Reset mismatch: DUT read = 0x%08h, Expected (RAL) = 0x%08h", dout, reset_reg));
+#     192                                                  end else begin
+#     193             1                    ***0***           `uvm_info("SEQ", "Reset verification for REG1 passed!", UVM_LOW);
+#     194                                                  end
+#     195                                              
+#     196             1                    ***0***     `uvm_info("SEQ", "====== REG2 RESET ======", UVM_NONE);
+#     197             1                    ***0***     reset_status = regmodel.reg2_inst.has_reset();
+#     198             1                    ***0***     `uvm_info("SEQ", $sformatf("Reset Value is present: %0b ", reset_status), UVM_NONE);
+#     199                                              
+#     200             1                    ***0***     reset_reg=regmodel.reg2_inst.get_reset();
+#     201             1                    ***0***     `uvm_info("SEQ", $sformatf(" REG2:reset value present in RAL model: 0x%08h",reset_reg), UVM_LOW);
+#     202             1                    ***0***     rdata   = regmodel.reg2_inst.get();
+#     203             1                    ***0***     rdata_m = regmodel.reg2_inst.get_mirrored_value();
+#     204             1                    ***0***     `uvm_info("SEQ", $sformatf("before reset -> Desired: 0x%08h, Mirrored:0x%08h",rdata,rdata_m), UVM_LOW);
+#     205             1                    ***0***     $display("------ Applying reset value for REG2 ------");
+#     206             1                    ***0***     regmodel.reg2_inst.reset();
+#     207             1                    ***0***     regmodel.reg2_inst.mirror(status, UVM_CHECK);      // Read DUT and update mirrored
+#     208             1                    ***0***     rdata   = regmodel.reg2_inst.get();                    // Desired (same as before)
+#     209             1                    ***0***     rdata_m = regmodel.reg2_inst.get_mirrored_value();     // Now updated from DUT
+#     210             1                    ***0***     dout = rdata_m;
+#     211             1                    ***0***     `uvm_info("SEQ", $sformatf("After reset -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     212                                              if(dout !== reset_reg)begin
+#     213             1                    ***0***       `uvm_error("SEQ", $sformatf("Reset mismatch: DUT read = 0x%08h, Expected (RAL) = 0x%08h", dout, reset_reg));
+#     214                                              end else begin
+#     215             1                    ***0***       `uvm_info("SEQ", "Reset verification for REG2 passed!", UVM_LOW);
+#     216                                              end
+#     217                                              
+#     218             1                    ***0***     `uvm_info("SEQ", "====== REG3 RESET ======", UVM_NONE);
+#     219             1                    ***0***     reset_status = regmodel.reg3_inst.has_reset();
+#     220             1                    ***0***     `uvm_info("SEQ", $sformatf("Reset Value is present: %0b ", reset_status), UVM_NONE);
+#     221                                              
+#     222             1                    ***0***     reset_reg=regmodel.reg3_inst.get_reset();
+#     223             1                    ***0***     `uvm_info("SEQ", $sformatf(" REG3:reset value present in RAL model: 0x%08h",reset_reg), UVM_LOW);
+#     224             1                    ***0***     rdata   = regmodel.reg3_inst.get();
+#     225             1                    ***0***     rdata_m = regmodel.reg3_inst.get_mirrored_value();
+#     226             1                    ***0***     `uvm_info("SEQ", $sformatf("before reset -> Desired: 0x%08h, Mirrored:0x%08h",rdata,rdata_m), UVM_LOW);
+#     227             1                    ***0***     $display("------ Applying reset value for REG3 ------");
+#     228             1                    ***0***     regmodel.reg3_inst.reset();
+#     229             1                    ***0***     regmodel.reg3_inst.mirror(status, UVM_CHECK);      // Read DUT and update mirrored
+#     230             1                    ***0***     rdata   = regmodel.reg3_inst.get();                    // Desired (same as before)
+#     231             1                    ***0***     rdata_m = regmodel.reg3_inst.get_mirrored_value();     // Now updated from DUT
+#     232             1                    ***0***     dout = rdata_m;
+#     233             1                    ***0***     `uvm_info("SEQ", $sformatf("After reset -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     234                                              if(dout !== reset_reg)begin
+#     235             1                    ***0***       `uvm_error("SEQ", $sformatf("Reset mismatch: DUT read = 0x%08h, Expected (RAL) = 0x%08h", dout, reset_reg));
+#     236                                              end else begin
+#     237             1                    ***0***       `uvm_info("SEQ", "Reset verification for REG3 passed!", UVM_LOW);
+#     238                                              end
+#     239                                              
+#     240                                              
+#     241             1                    ***0***     `uvm_info("SEQ", "====== REG4 RESET ======", UVM_NONE);
+#     242             1                    ***0***     reset_status = regmodel.reg4_inst.has_reset();
+#     243             1                    ***0***     `uvm_info("SEQ", $sformatf("Reset Value is present: %0b ", reset_status), UVM_NONE);
+#     244                                              
+#     245             1                    ***0***     reset_reg=regmodel.reg4_inst.get_reset();
+#     246             1                    ***0***     `uvm_info("SEQ", $sformatf(" REG4:reset value present in RAL model: 0x%08h",reset_reg), UVM_LOW);
+#     247             1                    ***0***     rdata   = regmodel.reg4_inst.get();
+#     248             1                    ***0***     rdata_m = regmodel.reg4_inst.get_mirrored_value();
+#     249             1                    ***0***     `uvm_info("SEQ", $sformatf("before reset -> Desired: 0x%08h, Mirrored:0x%08h",rdata,rdata_m), UVM_LOW);
+#     250             1                    ***0***     $display("------ Applying reset value for REG4 ------");
+#     251             1                    ***0***     regmodel.reg4_inst.reset();
+#     252             1                    ***0***     regmodel.reg4_inst.mirror(status, UVM_CHECK);      // Read DUT and update mirrored
+#     253             1                    ***0***     rdata   = regmodel.reg4_inst.get();                    // Desired (same as before)
+#     254             1                    ***0***     rdata_m = regmodel.reg4_inst.get_mirrored_value();     // Now updated from DUT
+#     255             1                    ***0***     dout = rdata_m;
+#     256             1                    ***0***     `uvm_info("SEQ", $sformatf("After reset -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     257                                              if(dout !== reset_reg)begin
+#     258             1                    ***0***       `uvm_error("SEQ", $sformatf("Reset mismatch: DUT read = 0x%08h, Expected (RAL) = 0x%08h", dout, reset_reg));
+#     259                                              end else begin
+#     260             1                    ***0***       `uvm_info("SEQ", "Reset verification for REG4 passed!", UVM_LOW);
+#     261                                              end
+#     262                                              
+#     263                                              /*
+#     264                                               `uvm_info("SEQ", "====== REG2 RESET ======", UVM_NONE);
+#     265                                                  reset_status = regmodel.reg2_inst.has_reset();
+#     266                                                  `uvm_info("SEQ", $sformatf("Reset Value is present: %0h ", reset_status), UVM_NONE);
+#     267                                                 
+#     268                                                  regmodel.reg2_inst.reset();
+#     269                                                   rdata   = regmodel.reg2_inst.get();                  // Desired
+#     270                                                   rdata_m = regmodel.reg2_inst.get_mirrored_value();
+#     271                                                  `uvm_info("SEQ", $sformatf("before mirror REG2 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     272                                              
+#     273                                                 $display("------ Applying mirror (frontdoor) to read RTL reset value for REG2 ------");
+#     274                                                regmodel.reg2_inst.mirror(status, UVM_CHECK);      // Read DUT and update mirrored
+#     275                                              
+#     276                                                rdata   = regmodel.reg2_inst.get();                    // Desired (same as before)
+#     277                                                rdata_m = regmodel.reg2_inst.get_mirrored_value();     // Now updated from DUT
+#     278                                                `uvm_info("SEQ", $sformatf("After mirror -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     279                                                
+#     280                                              
+#     281                                                `uvm_info("SEQ", "====== REG3 RESET ======", UVM_NONE);
+#     282                                                  reset_status = regmodel.reg3_inst.has_reset();
+#     283                                                  `uvm_info("SEQ", $sformatf("Reset Value is present: %0h ", reset_status), UVM_NONE);
+#     284                                                 
+#     285                                                  regmodel.reg3_inst.reset();
+#     286                                                   rdata   = regmodel.reg3_inst.get();                  // Desired
+#     287                                                   rdata_m = regmodel.reg3_inst.get_mirrored_value();
+#     288                                                  `uvm_info("SEQ", $sformatf("before mirror REG3 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     289                                              
+#     290                                                 $display("------ Applying mirror (frontdoor) to read RTL reset value for REG3 ------");
+#     291                                                regmodel.reg3_inst.mirror(status, UVM_CHECK);      // Read DUT and update mirrored
+#     292                                              
+#     293                                                rdata   = regmodel.reg3_inst.get();                    // Desired (same as before)
+#     294                                                rdata_m = regmodel.reg3_inst.get_mirrored_value();     // Now updated from DUT
+#     295                                                `uvm_info("SEQ", $sformatf("After mirror -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     296                                                
+#     297                                                
+#     298                                                `uvm_info("SEQ", "====== REG4 RESET ======", UVM_NONE);
+#     299                                                  reset_status = regmodel.reg4_inst.has_reset();
+#     300                                                  `uvm_info("SEQ", $sformatf("Reset Value is present: %0h ", reset_status), UVM_NONE);
+#     301                                                 
+#     302                                                  regmodel.reg4_inst.reset();
+#     303                                                   rdata   = regmodel.reg4_inst.get();                  // Desired
+#     304                                                   rdata_m = regmodel.reg4_inst.get_mirrored_value();
+#     305                                                  `uvm_info("SEQ", $sformatf("before mirror REG4 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     306                                              
+#     307                                                 $display("------ Applying mirror (frontdoor) to read RTL reset value for REG3 ------");
+#     308                                                regmodel.reg4_inst.mirror(status, UVM_CHECK);      // Read DUT and update mirrored
+#     309                                              
+#     310                                                rdata   = regmodel.reg4_inst.get();                    // Desired (same as before)
+#     311                                                rdata_m = regmodel.reg4_inst.get_mirrored_value();     // Now updated from DUT
+#     312                                                `uvm_info("SEQ", $sformatf("After mirror -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     313                                              */
+#     314                                                endtask
+#     315                                              endclass
+#     316                                              
+#     317                                              class backdoor_seq extends uvm_sequence;
+#     318             1                    ***0***       `uvm_object_utils(backdoor_seq)
+#     318             2                    ***0***     
+#     318             3                    ***0***     
+#     318             4                    ***0***     
+#     318             5                    ***0***     
+#     318             6                    ***0***     
+#     318             7                    ***0***     
+#     318             8                    ***0***     
+#     318             9                    ***0***     
+#     318            10                    ***0***     
+#     319                                                reg_block regmodel;
+#     320                                                function new (string name = "backdoor_seq"); 
+#     321             1                    ***0***         super.new(name); 
+#     322                                                endfunction
+#     323                                                task body; 
+#     324                                                  uvm_status_e status;
+#     325                                                   bit [31:0] rdata, rdata_m, dout;
+#     326                                               
+#     327             1                    ***0***         regmodel.reg2_inst.poke(status, 4'hf);
+#     328             1                    ***0***         rdata = regmodel.reg2_inst.get();
+#     329             1                    ***0***         rdata_m = regmodel.reg2_inst.get_mirrored_value();
+#     330             1                    ***0***         `uvm_info("SEQ", $sformatf("POKE:Write -> Desired: %0h Mirrored: %0h",rdata, rdata_m), UVM_NONE);
+#     331             1                    ***0***         $display("-----------------------------------------------");
+#     332             1                    ***0***         regmodel.reg2_inst.peek(status, rdata);
+#     333                                              //    `uvm_info(get_type_name(),$sformatf("PEEK:READ : %0h",dout),UVM_LOW);
+#     334             1                    ***0***         rdata = regmodel.reg2_inst.get();
+#     335             1                    ***0***         rdata_m = regmodel.reg2_inst.get_mirrored_value();
+#     336             1                    ***0***         `uvm_info("SEQ", $sformatf("AFTER PEEK--->Desired: %0h Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     337                                                endtask
+#     338                                              endclass
 # 
 # Branch Coverage:
 #     Enabled Coverage            Active      Hits    Misses % Covered
 #     ----------------            ------      ----    ------ ---------
-#     Branches                       106         0       106       0.0
+#     Branches                       162         0       162       0.0
 # 
 # ================================Branch Details================================
 # 
@@ -2281,68 +2374,236 @@
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
-#     178                                  ***0***     Count coming in to IF
-#     178             1                    ***0***      `uvm_info("SEQ", "====== REG3 RESET ======", UVM_NONE);
+#     174                                  ***0***     Count coming in to IF
+#     174             1                    ***0***      `uvm_info("SEQ", "====== REG1 RESET ======", UVM_NONE);
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
-#     180                                  ***0***     Count coming in to IF
-#     180             1                    ***0***         `uvm_info("SEQ", $sformatf("Reset Value is present: %0h ", reset_status), UVM_NONE);
+#     176                                  ***0***     Count coming in to IF
+#     176             1                    ***0***         `uvm_info("SEQ", $sformatf("Reset Value is present: %0b ", reset_status), UVM_NONE);
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
-#     185                                  ***0***     Count coming in to IF
-#     185             1                    ***0***         `uvm_info("SEQ", $sformatf("before mirror REG3 -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     179                                  ***0***     Count coming in to IF
+#     179             1                    ***0***         `uvm_info("SEQ", $sformatf(" REG1:reset value present in RAL model: 0x%08h",reset_reg), UVM_LOW);
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
-#     192                                  ***0***     Count coming in to IF
-#     192             1                    ***0***       `uvm_info("SEQ", $sformatf("After mirror -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     182                                  ***0***     Count coming in to IF
+#     182             1                    ***0***       `uvm_info("SEQ", $sformatf("before reset -> Desired: 0x%08h, Mirrored:0x%08h",rdata,rdata_m), UVM_LOW);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     189                                  ***0***     Count coming in to IF
+#     189             1                    ***0***       `uvm_info("SEQ", $sformatf("After reset -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     190                                  ***0***     Count coming in to IF
+#     190             1                    ***0***      if(dout !== reset_reg)begin
+#     192             1                    ***0***         end else begin
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     191                                  ***0***     Count coming in to IF
+#     191             1                    ***0***           `uvm_error("SEQ", $sformatf("Reset mismatch: DUT read = 0x%08h, Expected (RAL) = 0x%08h", dout, reset_reg));
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     193                                  ***0***     Count coming in to IF
+#     193             1                    ***0***           `uvm_info("SEQ", "Reset verification for REG1 passed!", UVM_LOW);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     196                                  ***0***     Count coming in to IF
+#     196             1                    ***0***     `uvm_info("SEQ", "====== REG2 RESET ======", UVM_NONE);
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
 #     198                                  ***0***     Count coming in to IF
-#     198             1                    ***0***       `uvm_object_utils(backdoor_seq)
+#     198             1                    ***0***     `uvm_info("SEQ", $sformatf("Reset Value is present: %0b ", reset_status), UVM_NONE);
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
-#     198                                  ***0***     Count coming in to IF
-#     198             2                    ***0***       `uvm_object_utils(backdoor_seq)
+#     201                                  ***0***     Count coming in to IF
+#     201             1                    ***0***     `uvm_info("SEQ", $sformatf(" REG2:reset value present in RAL model: 0x%08h",reset_reg), UVM_LOW);
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
-#     198                                  ***0***     Count coming in to IF
-#     198             3                    ***0***       `uvm_object_utils(backdoor_seq)
-#     198             4                    ***0***       `uvm_object_utils(backdoor_seq)
-# Branch totals: 0 hits of 2 branches = 0.0%
-# 
-# ------------------------------------IF Branch------------------------------------
-#     198                                  ***0***     Count coming in to IF
-#     198             5                    ***0***       `uvm_object_utils(backdoor_seq)
+#     204                                  ***0***     Count coming in to IF
+#     204             1                    ***0***     `uvm_info("SEQ", $sformatf("before reset -> Desired: 0x%08h, Mirrored:0x%08h",rdata,rdata_m), UVM_LOW);
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
-#     198                                  ***0***     Count coming in to IF
-#     198             6                    ***0***       `uvm_object_utils(backdoor_seq)
+#     211                                  ***0***     Count coming in to IF
+#     211             1                    ***0***     `uvm_info("SEQ", $sformatf("After reset -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
-#     210                                  ***0***     Count coming in to IF
-#     210             1                    ***0***         `uvm_info("SEQ", $sformatf("POKE:Write -> Desired: %0h Mirrored: %0h",rdata, rdata_m), UVM_NONE);
+#     212                                  ***0***     Count coming in to IF
+#     212             1                    ***0***     if(dout !== reset_reg)begin
+#     214             1                    ***0***     end else begin
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     213                                  ***0***     Count coming in to IF
+#     213             1                    ***0***       `uvm_error("SEQ", $sformatf("Reset mismatch: DUT read = 0x%08h, Expected (RAL) = 0x%08h", dout, reset_reg));
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
 # ------------------------------------IF Branch------------------------------------
-#     216                                  ***0***     Count coming in to IF
-#     216             1                    ***0***         `uvm_info("SEQ", $sformatf("AFTER PEEK--->Desired: %0h Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#     215                                  ***0***     Count coming in to IF
+#     215             1                    ***0***       `uvm_info("SEQ", "Reset verification for REG2 passed!", UVM_LOW);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     218                                  ***0***     Count coming in to IF
+#     218             1                    ***0***     `uvm_info("SEQ", "====== REG3 RESET ======", UVM_NONE);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     220                                  ***0***     Count coming in to IF
+#     220             1                    ***0***     `uvm_info("SEQ", $sformatf("Reset Value is present: %0b ", reset_status), UVM_NONE);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     223                                  ***0***     Count coming in to IF
+#     223             1                    ***0***     `uvm_info("SEQ", $sformatf(" REG3:reset value present in RAL model: 0x%08h",reset_reg), UVM_LOW);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     226                                  ***0***     Count coming in to IF
+#     226             1                    ***0***     `uvm_info("SEQ", $sformatf("before reset -> Desired: 0x%08h, Mirrored:0x%08h",rdata,rdata_m), UVM_LOW);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     233                                  ***0***     Count coming in to IF
+#     233             1                    ***0***     `uvm_info("SEQ", $sformatf("After reset -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     234                                  ***0***     Count coming in to IF
+#     234             1                    ***0***     if(dout !== reset_reg)begin
+#     236             1                    ***0***     end else begin
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     235                                  ***0***     Count coming in to IF
+#     235             1                    ***0***       `uvm_error("SEQ", $sformatf("Reset mismatch: DUT read = 0x%08h, Expected (RAL) = 0x%08h", dout, reset_reg));
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     237                                  ***0***     Count coming in to IF
+#     237             1                    ***0***       `uvm_info("SEQ", "Reset verification for REG3 passed!", UVM_LOW);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     241                                  ***0***     Count coming in to IF
+#     241             1                    ***0***     `uvm_info("SEQ", "====== REG4 RESET ======", UVM_NONE);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     243                                  ***0***     Count coming in to IF
+#     243             1                    ***0***     `uvm_info("SEQ", $sformatf("Reset Value is present: %0b ", reset_status), UVM_NONE);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     246                                  ***0***     Count coming in to IF
+#     246             1                    ***0***     `uvm_info("SEQ", $sformatf(" REG4:reset value present in RAL model: 0x%08h",reset_reg), UVM_LOW);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     249                                  ***0***     Count coming in to IF
+#     249             1                    ***0***     `uvm_info("SEQ", $sformatf("before reset -> Desired: 0x%08h, Mirrored:0x%08h",rdata,rdata_m), UVM_LOW);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     256                                  ***0***     Count coming in to IF
+#     256             1                    ***0***     `uvm_info("SEQ", $sformatf("After reset -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     257                                  ***0***     Count coming in to IF
+#     257             1                    ***0***     if(dout !== reset_reg)begin
+#     259             1                    ***0***     end else begin
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     258                                  ***0***     Count coming in to IF
+#     258             1                    ***0***       `uvm_error("SEQ", $sformatf("Reset mismatch: DUT read = 0x%08h, Expected (RAL) = 0x%08h", dout, reset_reg));
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     260                                  ***0***     Count coming in to IF
+#     260             1                    ***0***       `uvm_info("SEQ", "Reset verification for REG4 passed!", UVM_LOW);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     318                                  ***0***     Count coming in to IF
+#     318             1                    ***0***       `uvm_object_utils(backdoor_seq)
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     318                                  ***0***     Count coming in to IF
+#     318             2                    ***0***       `uvm_object_utils(backdoor_seq)
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     318                                  ***0***     Count coming in to IF
+#     318             3                    ***0***       `uvm_object_utils(backdoor_seq)
+#     318             4                    ***0***       `uvm_object_utils(backdoor_seq)
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     318                                  ***0***     Count coming in to IF
+#     318             5                    ***0***       `uvm_object_utils(backdoor_seq)
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     318                                  ***0***     Count coming in to IF
+#     318             6                    ***0***       `uvm_object_utils(backdoor_seq)
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     330                                  ***0***     Count coming in to IF
+#     330             1                    ***0***         `uvm_info("SEQ", $sformatf("POKE:Write -> Desired: %0h Mirrored: %0h",rdata, rdata_m), UVM_NONE);
+#                                          ***0***     All False Count
+# Branch totals: 0 hits of 2 branches = 0.0%
+# 
+# ------------------------------------IF Branch------------------------------------
+#     336                                  ***0***     Count coming in to IF
+#     336             1                    ***0***         `uvm_info("SEQ", $sformatf("AFTER PEEK--->Desired: %0h Mirrored: %0h", rdata, rdata_m), UVM_NONE);
 #                                          ***0***     All False Count
 # Branch totals: 0 hits of 2 branches = 0.0%
 # 
@@ -2986,36 +3247,37 @@
 #     78              1                    ***0***       `uvm_component_utils(reg_test)
 #     78              2                    ***0***     
 #     78              3                    ***0***     
-#     79                                                 reg_seq seq1;
-#     80                                                 reset_seq seq2;
-#     81                                               
-#     82                                                 environment env;
-#     83                                               
-#     84                                                 function new(string name = "reg_test",uvm_component parent = null);
-#     85              1                    ***0***         super.new(name,parent);
-#     86                                                 endfunction
-#     87                                               
-#     88                                                 virtual function void build_phase(uvm_phase phase);
-#     89              1                    ***0***         super.build_phase(phase);
-#     90              1                    ***0***         env = environment::type_id::create("env",this);
-#     91              1                    ***0***         seq1 = reg_seq::type_id::create("seq1", this);
-#     92              1                    ***0***         seq2 = reset_seq::type_id::create("seq2", this);
-#     93                                                 endfunction
-#     94                                                 virtual task run_phase(uvm_phase phase);
-#     95                                                    
-#     96              1                    ***0***         phase.raise_objection(this);
-#     97              1                    ***0***         seq1.regmodel = env.regmodel;
-#     98              1                    ***0***         seq1.start(env.agent_inst.seqr);
-#     99              1                    ***0***         phase.drop_objection(this);
-#     100             1                    ***0***         phase.phase_done.set_drain_time(this, 20);
-#     101                                              
-#     102             1                    ***0***         phase.raise_objection(this);
-#     103             1                    ***0***         seq2.regmodel = env.regmodel;
-#     104             1                    ***0***         seq2.start(env.agent_inst.seqr);
-#     105             1                    ***0***         phase.drop_objection(this);
-#     106             1                    ***0***         phase.phase_done.set_drain_time(this, 20);
-#     107                                                endtask
-#     108                                              endclass
+#     79                                                 
+#     80                                                 reset_seq seq1;
+#     81                                                 reg_seq seq2;
+#     82                                               
+#     83                                                 environment env;
+#     84                                               
+#     85                                                 function new(string name = "reg_test",uvm_component parent = null);
+#     86              1                    ***0***         super.new(name,parent);
+#     87                                                 endfunction
+#     88                                               
+#     89                                                 virtual function void build_phase(uvm_phase phase);
+#     90              1                    ***0***         super.build_phase(phase);
+#     91              1                    ***0***         env = environment::type_id::create("env",this);
+#     92              1                    ***0***         seq1 = reset_seq::type_id::create("seq1", this);
+#     93              1                    ***0***         seq2 = reg_seq::type_id::create("seq2", this);
+#     94                                                 endfunction
+#     95                                                 virtual task run_phase(uvm_phase phase);
+#     96                                                    
+#     97              1                    ***0***         phase.raise_objection(this);
+#     98              1                    ***0***         seq1.regmodel = env.regmodel;
+#     99              1                    ***0***         seq1.start(env.agent_inst.seqr);
+#     100             1                    ***0***         phase.drop_objection(this);
+#     101             1                    ***0***         phase.phase_done.set_drain_time(this, 20);
+#     102                                              
+#     103             1                    ***0***         phase.raise_objection(this);
+#     104             1                    ***0***         seq2.regmodel = env.regmodel;
+#     105             1                    ***0***         seq2.start(env.agent_inst.seqr);
+#     106             1                    ***0***         phase.drop_objection(this);
+#     107             1                    ***0***         phase.phase_done.set_drain_time(this, 20);
+#     108                                                endtask
+#     109                                              endclass
 # 
 # Branch Coverage:
 #     Enabled Coverage            Active      Hits    Misses % Covered
@@ -3164,131 +3426,237 @@
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test reg_test...
-# UVM_INFO reg_seq.sv(14) @ 0: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== CNTRL ======
-# UVM_INFO reg_seq.sv(18) @ 0: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Initial CNTRL -> Desired: 0, Mirrored: 0
-# UVM_INFO reg_seq.sv(23) @ 0: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After set CNTRL -> Desired: 1, Mirrored: 0
-# UVM_INFO driver.sv(42) @ 50: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
-# -----MONITOR BEGIN-----
+# UVM_INFO reg_seq.sv(174) @ 0: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== REG1 RESET ======
+# UVM_INFO reg_seq.sv(176) @ 0: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset Value is present: 1 
+# UVM_INFO reg_seq.sv(179) @ 0: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ]  REG1:reset value present in RAL model: 0xa5a50000
+# UVM_INFO reg_seq.sv(182) @ 0: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] before reset -> Desired: 0x00000000, Mirrored:0x00000000
+# ------ Applying reset value for REG1 ------
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 50: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(28) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After update CNTRL -> Desired: 1, Mirrored: 1, Read: 0
-# -----MONITOR BEGIN-----
-# UVM_INFO driver.sv(42) @ 130: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
+# UVM_INFO scoreboard.sv(163) @ 70: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=4, DUT Data=0, Expected=0
+# UVM_INFO scoreboard.sv(191) @ 70: uvm_test_top.env.scb [SCOREBOARD] MATCH at Addr=4: Expected=0, Got=0
+# UVM_ERROR verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2890) @ 70: reporter [RegModel] Register "regmodel.reg1_inst" value read from DUT (0x0000000000000000) does not match mirrored value (0x00000000a5a50000)
+# UVM_INFO verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2909) @ 70: reporter [RegModel] Field reg1 (regmodel.reg1_inst[31:0]) mismatch read=32'h0 mirrored=32'ha5a50000 
+# UVM_INFO reg_seq.sv(189) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After reset -> Desired: 0, Mirrored: 0
+# UVM_ERROR reg_seq.sv(191) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset mismatch: DUT read = 0x00000000, Expected (RAL) = 0xa5a50000
+# UVM_INFO reg_seq.sv(196) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== REG2 RESET ======
+# UVM_INFO reg_seq.sv(198) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset Value is present: 1 
+# UVM_INFO reg_seq.sv(201) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ]  REG2:reset value present in RAL model: 0x12349876
+# UVM_INFO reg_seq.sv(204) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] before reset -> Desired: 0x00000000, Mirrored:0x00000000
+# ------ Applying reset value for REG2 ------
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 130: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(35) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After write CNTRL -> Desired: 1, Mirrored: 1, Read: 0
-# -----MONITOR BEGIN-----
-# UVM_INFO driver.sv(55) @ 210: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(163) @ 150: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=8, DUT Data=0, Expected=0
+# UVM_INFO scoreboard.sv(191) @ 150: uvm_test_top.env.scb [SCOREBOARD] MATCH at Addr=8: Expected=0, Got=0
+# UVM_ERROR verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2890) @ 150: reporter [RegModel] Register "regmodel.reg2_inst" value read from DUT (0x0000000000000000) does not match mirrored value (0x0000000012349876)
+# UVM_INFO verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2909) @ 150: reporter [RegModel] Field reg2 (regmodel.reg2_inst[31:0]) mismatch read=32'h0 mirrored=32'h12349876 
+# UVM_INFO reg_seq.sv(211) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After reset -> Desired: 0, Mirrored: 0
+# UVM_ERROR reg_seq.sv(213) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset mismatch: DUT read = 0x00000000, Expected (RAL) = 0x12349876
+# UVM_INFO reg_seq.sv(218) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== REG3 RESET ======
+# UVM_INFO reg_seq.sv(220) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset Value is present: 1 
+# UVM_INFO reg_seq.sv(223) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ]  REG3:reset value present in RAL model: 0x5a5a5555
+# UVM_INFO reg_seq.sv(226) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] before reset -> Desired: 0x00000000, Mirrored:0x00000000
+# ------ Applying reset value for REG3 ------
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 210: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(39) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After read CNTRL -> Desired: 0, Mirrored: 0, Read: 0
-# UVM_INFO reg_seq.sv(43) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== REG1 ======
-# UVM_INFO reg_seq.sv(47) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Initial REG1 -> Desired: 0, Mirrored: 0
-# UVM_INFO reg_seq.sv(52) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After set REG1 -> Desired: 1, Mirrored: 0
-# UVM_INFO monitor.sv(33) @ 250: uvm_test_top.env.agent_inst.mon [MON] Mode : Write RDATA : 1 ADDR : 0
-# UVM_INFO driver.sv(42) @ 290: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(163) @ 230: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=c, DUT Data=0, Expected=0
+# UVM_INFO scoreboard.sv(191) @ 230: uvm_test_top.env.scb [SCOREBOARD] MATCH at Addr=c: Expected=0, Got=0
+# UVM_ERROR verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2890) @ 230: reporter [RegModel] Register "regmodel.reg3_inst" value read from DUT (0x0000000000000000) does not match mirrored value (0x000000005a5a5555)
+# UVM_INFO verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2909) @ 230: reporter [RegModel] Field reg3 (regmodel.reg3_inst[31:0]) mismatch read=32'h0 mirrored=32'h5a5a5555 
+# UVM_INFO reg_seq.sv(233) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After reset -> Desired: 0, Mirrored: 0
+# UVM_ERROR reg_seq.sv(235) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset mismatch: DUT read = 0x00000000, Expected (RAL) = 0x5a5a5555
+# UVM_INFO reg_seq.sv(241) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== REG4 RESET ======
+# UVM_INFO reg_seq.sv(243) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset Value is present: 1 
+# UVM_INFO reg_seq.sv(246) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ]  REG4:reset value present in RAL model: 0x0000ffff
+# UVM_INFO reg_seq.sv(249) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] before reset -> Desired: 0x00000000, Mirrored:0x00000000
+# ------ Applying reset value for REG4 ------
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 290: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(57) @ 310: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After update  REG1 -> Desired: 1, Mirrored: 1, Read: 0
-# UVM_INFO monitor.sv(28) @ 330: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 1 ADDR : 4
-# UVM_INFO driver.sv(42) @ 370: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(163) @ 310: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=10, DUT Data=0, Expected=0
+# UVM_INFO scoreboard.sv(191) @ 310: uvm_test_top.env.scb [SCOREBOARD] MATCH at Addr=10: Expected=0, Got=0
+# UVM_ERROR verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2890) @ 310: reporter [RegModel] Register "regmodel.reg4_inst" value read from DUT (0x0000000000000000) does not match mirrored value (0x000000000000ffff)
+# UVM_INFO verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2909) @ 310: reporter [RegModel] Field reg4 (regmodel.reg4_inst[31:0]) mismatch read=32'h0 mirrored=32'hffff 
+# UVM_INFO reg_seq.sv(256) @ 310: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After reset -> Desired: 0, Mirrored: 0
+# UVM_ERROR reg_seq.sv(258) @ 310: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset mismatch: DUT read = 0x00000000, Expected (RAL) = 0x0000ffff
+# UVM_INFO reg_seq.sv(14) @ 310: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] ====== CNTRL ======
+# UVM_INFO reg_seq.sv(18) @ 310: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] Initial CNTRL -> Desired: 0, Mirrored: 0
+# UVM_INFO reg_seq.sv(23) @ 310: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After set CNTRL -> Desired: 1, Mirrored: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 370: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(64) @ 390: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After write REG1 -> Desired: 1, Mirrored: 1, Read: 0
-# UVM_INFO monitor.sv(28) @ 410: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 1 ADDR : 4
-# UVM_INFO driver.sv(55) @ 450: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 1
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 390: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=0, Data Stored=1
+# UVM_INFO reg_seq.sv(28) @ 390: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After update CNTRL -> Desired: 1, Mirrored: 1, Read: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 450: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(68) @ 470: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After read REG1 -> Desired: 1, Mirrored: 1, Read: 1
-# UVM_INFO reg_seq.sv(72) @ 470: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== REG2 ======
-# UVM_INFO reg_seq.sv(76) @ 470: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Initial REG2 -> Desired: 0, Mirrored: 0
-# UVM_INFO reg_seq.sv(81) @ 470: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After set REG2 -> Desired: 11, Mirrored: 0
-# UVM_INFO monitor.sv(33) @ 490: uvm_test_top.env.agent_inst.mon [MON] Mode : Write RDATA : 0 ADDR : 4
-# UVM_INFO driver.sv(42) @ 530: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 11
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 470: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=0, Data Stored=1
+# UVM_INFO reg_seq.sv(35) @ 470: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After write CNTRL -> Desired: 1, Mirrored: 1, Read: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 530: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(86) @ 550: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After update  REG2 -> Desired: 11, Mirrored: 11, Read: 1
-# UVM_INFO monitor.sv(28) @ 570: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 17 ADDR : 8
-# UVM_INFO driver.sv(42) @ 610: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 11
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(163) @ 550: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=0, DUT Data=0, Expected=1
+# UVM_ERROR scoreboard.sv(194) @ 550: uvm_test_top.env.scb [SCOREBOARD] MISMATCH at Addr=0: Expected=1, Got=0
+# UVM_INFO reg_seq.sv(39) @ 550: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After read CNTRL -> Desired: 0, Mirrored: 0, Read: 0
+# UVM_INFO reg_seq.sv(43) @ 550: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] ====== REG1 ======
+# UVM_INFO reg_seq.sv(47) @ 550: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] Initial REG1 -> Desired: 0, Mirrored: 0
+# UVM_INFO reg_seq.sv(52) @ 550: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After set REG1 -> Desired: 1, Mirrored: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 610: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(93) @ 630: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After write REG2 -> Desired: 11, Mirrored: 11, Read: 1
-# UVM_INFO monitor.sv(28) @ 650: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 17 ADDR : 8
-# UVM_INFO driver.sv(55) @ 690: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 630: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=4, Data Stored=1
+# UVM_INFO reg_seq.sv(57) @ 630: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After update  REG1 -> Desired: 1, Mirrored: 1, Read: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 690: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(97) @ 710: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After read REG2 -> Desired: 0, Mirrored: 0, Read: 0
-# UVM_INFO reg_seq.sv(100) @ 710: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== REG3 ======
-# UVM_INFO reg_seq.sv(104) @ 710: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Initial REG3 -> Desired: 0, Mirrored: 0
-# UVM_INFO reg_seq.sv(109) @ 710: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After set REG3 -> Desired: 22, Mirrored: 0
-# UVM_INFO monitor.sv(33) @ 730: uvm_test_top.env.agent_inst.mon [MON] Mode : Write RDATA : 17 ADDR : 8
-# UVM_INFO driver.sv(42) @ 770: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 22
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 710: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=4, Data Stored=1
+# UVM_INFO reg_seq.sv(64) @ 710: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After write REG1 -> Desired: 1, Mirrored: 1, Read: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 770: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 1
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(114) @ 790: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After update REG3 -> Desired: 22, Mirrored: 22, Read: 0
-# UVM_INFO monitor.sv(28) @ 810: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 34 ADDR : 12
-# UVM_INFO driver.sv(42) @ 850: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 12
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(163) @ 790: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=4, DUT Data=1, Expected=1
+# UVM_INFO scoreboard.sv(191) @ 790: uvm_test_top.env.scb [SCOREBOARD] MATCH at Addr=4: Expected=1, Got=1
+# UVM_INFO reg_seq.sv(68) @ 790: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After read REG1 -> Desired: 1, Mirrored: 1, Read: 1
+# UVM_INFO reg_seq.sv(72) @ 790: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] ====== REG2 ======
+# UVM_INFO reg_seq.sv(76) @ 790: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] Initial REG2 -> Desired: 0, Mirrored: 0
+# UVM_INFO reg_seq.sv(81) @ 790: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After set REG2 -> Desired: 11, Mirrored: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 850: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 11
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(119) @ 870: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After write REG3 -> Desired: 12, Mirrored: 12, Read: 0
-# UVM_INFO monitor.sv(28) @ 890: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 18 ADDR : 12
-# UVM_INFO driver.sv(55) @ 930: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 11
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 870: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=8, Data Stored=11
+# UVM_INFO reg_seq.sv(86) @ 870: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After update  REG2 -> Desired: 11, Mirrored: 11, Read: 1
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 930: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 11
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(123) @ 950: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After read REG3 -> Desired: 11, Mirrored: 11, Read: 11
-# UVM_INFO reg_seq.sv(128) @ 950: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== REG4 ======
-# UVM_INFO reg_seq.sv(132) @ 950: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Initial REG4 -> Desired: 0, Mirrored: 0
-# UVM_INFO reg_seq.sv(137) @ 950: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After set REG4 -> Desired: 33, Mirrored: 0
-# UVM_INFO monitor.sv(33) @ 970: uvm_test_top.env.agent_inst.mon [MON] Mode : Write RDATA : 18 ADDR : 12
-# UVM_INFO driver.sv(42) @ 1010: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 33
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 950: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=8, Data Stored=11
+# UVM_INFO reg_seq.sv(93) @ 950: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After write REG2 -> Desired: 11, Mirrored: 11, Read: 1
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 1010: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(142) @ 1030: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After update REG4 -> Desired: 33, Mirrored: 33, Read: 11
-# UVM_INFO monitor.sv(28) @ 1050: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 51 ADDR : 16
-# UVM_INFO driver.sv(42) @ 1090: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 23
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(163) @ 1030: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=8, DUT Data=0, Expected=11
+# UVM_ERROR scoreboard.sv(194) @ 1030: uvm_test_top.env.scb [SCOREBOARD] MISMATCH at Addr=8: Expected=11, Got=0
+# UVM_INFO reg_seq.sv(97) @ 1030: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After read REG2 -> Desired: 0, Mirrored: 0, Read: 0
+# UVM_INFO reg_seq.sv(100) @ 1030: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] ====== REG3 ======
+# UVM_INFO reg_seq.sv(104) @ 1030: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] Initial REG3 -> Desired: 0, Mirrored: 0
+# UVM_INFO reg_seq.sv(109) @ 1030: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After set REG3 -> Desired: 22, Mirrored: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 1090: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 22
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(147) @ 1110: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After write REG4 -> Desired: 23, Mirrored: 23, Read: 11
-# UVM_INFO monitor.sv(28) @ 1130: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 35 ADDR : 16
-# UVM_INFO driver.sv(55) @ 1170: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 12
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 1110: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=c, Data Stored=22
+# UVM_INFO reg_seq.sv(114) @ 1110: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After update REG3 -> Desired: 22, Mirrored: 22, Read: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 1170: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 12
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(151) @ 1190: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After read REG4 -> Desired: 12, Mirrored: 12, Read: 12
-# UVM_INFO monitor.sv(33) @ 1210: uvm_test_top.env.agent_inst.mon [MON] Mode : Write RDATA : 35 ADDR : 16
-# -----MONITOR BEGIN-----
-# -----MONITOR BEGIN-----
-# -----MONITOR BEGIN-----
-# UVM_INFO reg_seq.sv(178) @ 1390: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] ====== REG3 RESET ======
-# UVM_INFO reg_seq.sv(180) @ 1390: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] Reset Value is present: 1 
-# UVM_INFO reg_seq.sv(185) @ 1390: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] before mirror REG3 -> Desired: 5a5a5555, Mirrored: 5a5a5555
-# ------ Applying mirror (frontdoor) to read RTL reset value for REG3 ------
-# UVM_INFO driver.sv(55) @ 1450: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 1190: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=c, Data Stored=12
+# UVM_INFO reg_seq.sv(119) @ 1190: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After write REG3 -> Desired: 12, Mirrored: 12, Read: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 1250: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 11
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_ERROR verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2890) @ 1470: reporter [RegModel] Register "regmodel.reg3_inst" value read from DUT (0x0000000000000000) does not match mirrored value (0x000000005a5a5555)
-# UVM_INFO verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2909) @ 1470: reporter [RegModel] Field reg3 (regmodel.reg3_inst[31:0]) mismatch read=32'h0 mirrored=32'h5a5a5555 
-# UVM_INFO reg_seq.sv(192) @ 1470: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After mirror -> Desired: 0, Mirrored: 0
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 1490: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# UVM_INFO scoreboard.sv(200) @ 1490: uvm_test_top.env.scb [SCOREBOARD] ------------------ FINAL SCOREBOARD REPORT ------------------
-# UVM_INFO scoreboard.sv(201) @ 1490: uvm_test_top.env.scb [SCOREBOARD] Total Matches   : 0
-# UVM_INFO scoreboard.sv(202) @ 1490: uvm_test_top.env.scb [SCOREBOARD] Total Mismatches: 0
+# UVM_INFO scoreboard.sv(163) @ 1270: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=c, DUT Data=11, Expected=12
+# UVM_ERROR scoreboard.sv(194) @ 1270: uvm_test_top.env.scb [SCOREBOARD] MISMATCH at Addr=c: Expected=12, Got=11
+# UVM_INFO reg_seq.sv(123) @ 1270: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After read REG3 -> Desired: 11, Mirrored: 11, Read: 11
+# UVM_INFO reg_seq.sv(128) @ 1270: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] ====== REG4 ======
+# UVM_INFO reg_seq.sv(132) @ 1270: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] Initial REG4 -> Desired: 0, Mirrored: 0
+# UVM_INFO reg_seq.sv(137) @ 1270: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After set REG4 -> Desired: 33, Mirrored: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 1330: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 33
+# -------------monitor begin----------
+# -------------monitor begin----------
+# -----------DRIVER----------
+# UVM_INFO scoreboard.sv(160) @ 1350: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=10, Data Stored=33
+# UVM_INFO reg_seq.sv(142) @ 1350: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After update REG4 -> Desired: 33, Mirrored: 33, Read: 11
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 1410: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 23
+# -------------monitor begin----------
+# -------------monitor begin----------
+# -----------DRIVER----------
+# UVM_INFO scoreboard.sv(160) @ 1430: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=10, Data Stored=23
+# UVM_INFO reg_seq.sv(147) @ 1430: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After write REG4 -> Desired: 23, Mirrored: 23, Read: 11
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 1490: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 12
+# -------------monitor begin----------
+# -------------monitor begin----------
+# -----------DRIVER----------
+# UVM_INFO scoreboard.sv(163) @ 1510: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=10, DUT Data=12, Expected=0
+# UVM_ERROR scoreboard.sv(194) @ 1510: uvm_test_top.env.scb [SCOREBOARD] MISMATCH at Addr=10: Expected=0, Got=12
+# UVM_INFO reg_seq.sv(151) @ 1510: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After read REG4 -> Desired: 12, Mirrored: 12, Read: 12
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 1530: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# -------------monitor begin----------
+# UVM_INFO scoreboard.sv(200) @ 1530: uvm_test_top.env.scb [SCOREBOARD] ------------------ FINAL SCOREBOARD REPORT ------------------
+# UVM_INFO scoreboard.sv(201) @ 1530: uvm_test_top.env.scb [SCOREBOARD] Total Matches   : 5
+# UVM_INFO scoreboard.sv(202) @ 1530: uvm_test_top.env.scb [SCOREBOARD] Total Mismatches: 4
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   71
+# UVM_INFO :  104
 # UVM_WARNING :    0
-# UVM_ERROR :    1
+# UVM_ERROR :   12
 # UVM_FATAL :    0
 # ** Report counts by id
-# [DRV]    16
-# [MON]    13
+# [DRV]    19
 # [Questa UVM]     2
 # [RNTST]     1
-# [RegModel]     2
-# [SCOREBOARD]     3
-# [SEQ]    34
+# [RegModel]     8
+# [SCOREBOARD]    31
+# [SEQ]    54
 # [TEST_DONE]     1
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 1490 ns  Iteration: 53  Instance: /tb
+#    Time: 1530 ns  Iteration: 53  Instance: /tb
 # Saving coverage database on exit...
-# End time: 22:13:58 on Aug 05,2025, Elapsed time: 0:00:04
+# End time: 12:12:36 on Aug 06,2025, Elapsed time: 0:00:07
 # Errors: 0, Warnings: 0

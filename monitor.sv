@@ -14,7 +14,7 @@ class monitor extends uvm_monitor;
     if(! uvm_config_db#(virtual top_if)::get (this, "", "vif", vif))`uvm_error("MON", "Error getting Interface Handle");
   endfunction
  
-  virtual task run_phase(uvm_phase phase);
+  /*virtual task run_phase(uvm_phase phase);
     forever begin
       repeat(3)@(posedge vif.clk);
       $display("-----MONITOR BEGIN-----");
@@ -36,5 +36,24 @@ class monitor extends uvm_monitor;
           end
        end
       $display("-----MONITOR END------");
+  endtask*/
+
+virtual task run_phase(uvm_phase phase);
+    tr = seq_item::type_id::create("tr");
+    forever begin
+      //  repeat(3) @(vif.cb_mon);
+      @(posedge vif.clk);
+      $display("-------------monitor begin----------");
+      tr.paddr    =   vif.paddr;
+      tr.pwrite   =   vif.pwrite;
+      tr.psel     =   vif.psel;
+      tr.penable  =   vif.penable;
+      tr.pwdata   =   vif.pwdata;
+      tr.prdata   =   vif.prdata;
+
+      mon_ap.write(tr);
+
+    end
   endtask
+
 endclass

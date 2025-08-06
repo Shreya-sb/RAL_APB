@@ -1,6 +1,6 @@
 # vsim -c -do "run -all;exit;" tb 
-# Start time: 12:57:15 on Aug 05,2025
-# ** Note: (vsim-3812) Design is being optimized...
+# Start time: 12:27:34 on Aug 06,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
 # //
@@ -45,99 +45,237 @@
 # 
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
-# UVM_INFO @ 0: reporter [RNTST] Running test test...
-# UVM_INFO reg_seq.sv(15) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== REG1 ======
-# UVM_INFO reg_seq.sv(19) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] Initial REG1 -> Desired: 0, Mirrored: 0
-# UVM_INFO reg_seq.sv(24) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After set REG1 -> Desired: 1, Mirrored: 0
-# UVM_INFO driver.sv(42) @ 50: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
-# -----MONITOR BEGIN-----
+# UVM_INFO @ 0: reporter [RNTST] Running test reg_test...
+# UVM_INFO reg_seq.sv(174) @ 0: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== REG1 RESET ======
+# UVM_INFO reg_seq.sv(176) @ 0: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset Value is present: 1 
+# UVM_INFO reg_seq.sv(179) @ 0: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ]  REG1:reset value present in RAL model: 0xa5a50000
+# UVM_INFO reg_seq.sv(182) @ 0: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] before reset -> Desired: 0x00000000, Mirrored:0x00000000
+# ------ Applying reset value for REG1 ------
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 50: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(29) @ 70: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After update  REG1 -> Desired: 1, Mirrored: 1, Read: 0
-# -----MONITOR BEGIN-----
-# UVM_INFO driver.sv(42) @ 130: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
+# UVM_INFO scoreboard.sv(163) @ 70: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=4, DUT Data=0, Expected=0
+# UVM_INFO scoreboard.sv(191) @ 70: uvm_test_top.env.scb [SCOREBOARD] MATCH at Addr=4: Expected=0, Got=0
+# UVM_ERROR verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2890) @ 70: reporter [RegModel] Register "regmodel.reg1_inst" value read from DUT (0x0000000000000000) does not match mirrored value (0x00000000a5a50000)
+# UVM_INFO verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2909) @ 70: reporter [RegModel] Field reg1 (regmodel.reg1_inst[31:0]) mismatch read=32'h0 mirrored=32'ha5a50000 
+# UVM_INFO reg_seq.sv(189) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After reset -> Desired: 0, Mirrored: 0
+# UVM_ERROR reg_seq.sv(191) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset mismatch: DUT read = 0x00000000, Expected (RAL) = 0xa5a50000
+# UVM_INFO reg_seq.sv(196) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== REG2 RESET ======
+# UVM_INFO reg_seq.sv(198) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset Value is present: 1 
+# UVM_INFO reg_seq.sv(201) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ]  REG2:reset value present in RAL model: 0x12349876
+# UVM_INFO reg_seq.sv(204) @ 70: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] before reset -> Desired: 0x00000000, Mirrored:0x00000000
+# ------ Applying reset value for REG2 ------
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 130: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(36) @ 150: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After write REG1 -> Desired: 1, Mirrored: 1, Read: 0
-# -----MONITOR BEGIN-----
-# UVM_INFO driver.sv(55) @ 210: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(163) @ 150: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=8, DUT Data=0, Expected=0
+# UVM_INFO scoreboard.sv(191) @ 150: uvm_test_top.env.scb [SCOREBOARD] MATCH at Addr=8: Expected=0, Got=0
+# UVM_ERROR verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2890) @ 150: reporter [RegModel] Register "regmodel.reg2_inst" value read from DUT (0x0000000000000000) does not match mirrored value (0x0000000012349876)
+# UVM_INFO verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2909) @ 150: reporter [RegModel] Field reg2 (regmodel.reg2_inst[31:0]) mismatch read=32'h0 mirrored=32'h12349876 
+# UVM_INFO reg_seq.sv(211) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After reset -> Desired: 0, Mirrored: 0
+# UVM_ERROR reg_seq.sv(213) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset mismatch: DUT read = 0x00000000, Expected (RAL) = 0x12349876
+# UVM_INFO reg_seq.sv(218) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== REG3 RESET ======
+# UVM_INFO reg_seq.sv(220) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset Value is present: 1 
+# UVM_INFO reg_seq.sv(223) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ]  REG3:reset value present in RAL model: 0x5a5a5555
+# UVM_INFO reg_seq.sv(226) @ 150: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] before reset -> Desired: 0x00000000, Mirrored:0x00000000
+# ------ Applying reset value for REG3 ------
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 210: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(40) @ 230: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After read REG1 -> Desired: 0, Mirrored: 0, Read: 0
-# UVM_INFO reg_seq.sv(44) @ 230: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== REG2 ======
-# UVM_INFO reg_seq.sv(48) @ 230: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] Initial REG2 -> Desired: 0, Mirrored: 0
-# UVM_INFO reg_seq.sv(53) @ 230: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After set REG2 -> Desired: 11, Mirrored: 0
-# UVM_INFO monitor.sv(33) @ 250: uvm_test_top.env.agent_inst.mon [MON] Mode : Write RDATA : 0 ADDR : 4
-# UVM_INFO driver.sv(42) @ 290: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 11
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(163) @ 230: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=c, DUT Data=0, Expected=0
+# UVM_INFO scoreboard.sv(191) @ 230: uvm_test_top.env.scb [SCOREBOARD] MATCH at Addr=c: Expected=0, Got=0
+# UVM_ERROR verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2890) @ 230: reporter [RegModel] Register "regmodel.reg3_inst" value read from DUT (0x0000000000000000) does not match mirrored value (0x000000005a5a5555)
+# UVM_INFO verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2909) @ 230: reporter [RegModel] Field reg3 (regmodel.reg3_inst[31:0]) mismatch read=32'h0 mirrored=32'h5a5a5555 
+# UVM_INFO reg_seq.sv(233) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After reset -> Desired: 0, Mirrored: 0
+# UVM_ERROR reg_seq.sv(235) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset mismatch: DUT read = 0x00000000, Expected (RAL) = 0x5a5a5555
+# UVM_INFO reg_seq.sv(241) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] ====== REG4 RESET ======
+# UVM_INFO reg_seq.sv(243) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset Value is present: 1 
+# UVM_INFO reg_seq.sv(246) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ]  REG4:reset value present in RAL model: 0x0000ffff
+# UVM_INFO reg_seq.sv(249) @ 230: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] before reset -> Desired: 0x00000000, Mirrored:0x00000000
+# ------ Applying reset value for REG4 ------
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 290: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(58) @ 310: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After update  REG2 -> Desired: 11, Mirrored: 11, Read: 0
-# UVM_INFO monitor.sv(28) @ 330: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 17 ADDR : 8
-# UVM_INFO driver.sv(42) @ 370: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 11
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(163) @ 310: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=10, DUT Data=0, Expected=0
+# UVM_INFO scoreboard.sv(191) @ 310: uvm_test_top.env.scb [SCOREBOARD] MATCH at Addr=10: Expected=0, Got=0
+# UVM_ERROR verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2890) @ 310: reporter [RegModel] Register "regmodel.reg4_inst" value read from DUT (0x0000000000000000) does not match mirrored value (0x000000000000ffff)
+# UVM_INFO verilog_src/uvm-1.1d/src/reg/uvm_reg.svh(2909) @ 310: reporter [RegModel] Field reg4 (regmodel.reg4_inst[31:0]) mismatch read=32'h0 mirrored=32'hffff 
+# UVM_INFO reg_seq.sv(256) @ 310: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] After reset -> Desired: 0, Mirrored: 0
+# UVM_ERROR reg_seq.sv(258) @ 310: uvm_test_top.env.agent_inst.seqr@@seq1 [SEQ] Reset mismatch: DUT read = 0x00000000, Expected (RAL) = 0x0000ffff
+# UVM_INFO reg_seq.sv(14) @ 310: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] ====== CNTRL ======
+# UVM_INFO reg_seq.sv(18) @ 310: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] Initial CNTRL -> Desired: 0, Mirrored: 0
+# UVM_INFO reg_seq.sv(23) @ 310: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After set CNTRL -> Desired: 1, Mirrored: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 370: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(65) @ 390: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After write REG2 -> Desired: 11, Mirrored: 11, Read: 0
-# UVM_INFO monitor.sv(28) @ 410: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 17 ADDR : 8
-# UVM_INFO driver.sv(55) @ 450: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 390: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=0, Data Stored=1
+# UVM_INFO reg_seq.sv(28) @ 390: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After update CNTRL -> Desired: 1, Mirrored: 1, Read: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 450: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(69) @ 470: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After read REG2 -> Desired: 0, Mirrored: 0, Read: 0
-# UVM_INFO reg_seq.sv(72) @ 470: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== REG3 ======
-# UVM_INFO reg_seq.sv(76) @ 470: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] Initial REG3 -> Desired: 0, Mirrored: 0
-# UVM_INFO reg_seq.sv(81) @ 470: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After set REG3 -> Desired: 22, Mirrored: 0
-# UVM_INFO monitor.sv(33) @ 490: uvm_test_top.env.agent_inst.mon [MON] Mode : Write RDATA : 17 ADDR : 8
-# UVM_INFO driver.sv(42) @ 530: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 22
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 470: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=0, Data Stored=1
+# UVM_INFO reg_seq.sv(35) @ 470: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After write CNTRL -> Desired: 1, Mirrored: 1, Read: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 530: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 0
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(86) @ 550: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After update REG3 -> Desired: 22, Mirrored: 22, Read: 0
-# UVM_INFO monitor.sv(28) @ 570: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 34 ADDR : 12
-# UVM_INFO driver.sv(42) @ 610: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 12
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(163) @ 550: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=0, DUT Data=0, Expected=1
+# UVM_ERROR scoreboard.sv(194) @ 550: uvm_test_top.env.scb [SCOREBOARD] MISMATCH at Addr=0: Expected=1, Got=0
+# UVM_INFO reg_seq.sv(39) @ 550: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After read CNTRL -> Desired: 0, Mirrored: 0, Read: 0
+# UVM_INFO reg_seq.sv(43) @ 550: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] ====== REG1 ======
+# UVM_INFO reg_seq.sv(47) @ 550: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] Initial REG1 -> Desired: 0, Mirrored: 0
+# UVM_INFO reg_seq.sv(52) @ 550: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After set REG1 -> Desired: 1, Mirrored: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 610: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(91) @ 630: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After write REG3 -> Desired: 12, Mirrored: 12, Read: 0
-# UVM_INFO monitor.sv(28) @ 650: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 18 ADDR : 12
-# UVM_INFO driver.sv(55) @ 690: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 11
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 630: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=4, Data Stored=1
+# UVM_INFO reg_seq.sv(57) @ 630: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After update  REG1 -> Desired: 1, Mirrored: 1, Read: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 690: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 1
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(95) @ 710: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After read REG3 -> Desired: 11, Mirrored: 11, Read: 11
-# UVM_INFO reg_seq.sv(100) @ 710: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== REG4 ======
-# UVM_INFO reg_seq.sv(104) @ 710: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] Initial REG4 -> Desired: 0, Mirrored: 0
-# UVM_INFO reg_seq.sv(109) @ 710: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After set REG4 -> Desired: 33, Mirrored: 0
-# UVM_INFO monitor.sv(33) @ 730: uvm_test_top.env.agent_inst.mon [MON] Mode : Write RDATA : 18 ADDR : 12
-# UVM_INFO driver.sv(42) @ 770: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 33
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 710: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=4, Data Stored=1
+# UVM_INFO reg_seq.sv(64) @ 710: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After write REG1 -> Desired: 1, Mirrored: 1, Read: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 770: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 1
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(114) @ 790: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After update REG4 -> Desired: 33, Mirrored: 33, Read: 11
-# UVM_INFO monitor.sv(28) @ 810: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 51 ADDR : 16
-# UVM_INFO driver.sv(42) @ 850: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 23
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(163) @ 790: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=4, DUT Data=1, Expected=1
+# UVM_INFO scoreboard.sv(191) @ 790: uvm_test_top.env.scb [SCOREBOARD] MATCH at Addr=4: Expected=1, Got=1
+# UVM_INFO reg_seq.sv(68) @ 790: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After read REG1 -> Desired: 1, Mirrored: 1, Read: 1
+# UVM_INFO reg_seq.sv(72) @ 790: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] ====== REG2 ======
+# UVM_INFO reg_seq.sv(76) @ 790: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] Initial REG2 -> Desired: 0, Mirrored: 0
+# UVM_INFO reg_seq.sv(81) @ 790: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After set REG2 -> Desired: 11, Mirrored: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 850: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 11
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(119) @ 870: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After write REG4 -> Desired: 23, Mirrored: 23, Read: 11
-# UVM_INFO monitor.sv(28) @ 890: uvm_test_top.env.agent_inst.mon [MON] Mode : Write WDATA : 35 ADDR : 16
-# UVM_INFO driver.sv(55) @ 930: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 12
-# -----MONITOR BEGIN-----
+# UVM_INFO scoreboard.sv(160) @ 870: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=8, Data Stored=11
+# UVM_INFO reg_seq.sv(86) @ 870: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After update  REG2 -> Desired: 11, Mirrored: 11, Read: 1
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 930: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 11
+# -------------monitor begin----------
+# -------------monitor begin----------
 # -----------DRIVER----------
-# UVM_INFO reg_seq.sv(123) @ 950: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] After read REG4 -> Desired: 12, Mirrored: 12, Read: 12
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 970: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# UVM_INFO monitor.sv(33) @ 970: uvm_test_top.env.agent_inst.mon [MON] Mode : Write RDATA : 35 ADDR : 16
-# UVM_INFO scoreboard.sv(200) @ 970: uvm_test_top.env.scb [SCOREBOARD] ------------------ FINAL SCOREBOARD REPORT ------------------
-# UVM_INFO scoreboard.sv(201) @ 970: uvm_test_top.env.scb [SCOREBOARD] Total Matches   : 0
-# UVM_INFO scoreboard.sv(202) @ 970: uvm_test_top.env.scb [SCOREBOARD] Total Mismatches: 0
+# UVM_INFO scoreboard.sv(160) @ 950: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=8, Data Stored=11
+# UVM_INFO reg_seq.sv(93) @ 950: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After write REG2 -> Desired: 11, Mirrored: 11, Read: 1
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 1010: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 5a5a5555
+# -------------monitor begin----------
+# -------------monitor begin----------
+# -----------DRIVER----------
+# UVM_INFO scoreboard.sv(163) @ 1030: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=8, DUT Data=5a5a5555, Expected=11
+# UVM_ERROR scoreboard.sv(194) @ 1030: uvm_test_top.env.scb [SCOREBOARD] MISMATCH at Addr=8: Expected=11, Got=5a5a5555
+# UVM_INFO reg_seq.sv(97) @ 1030: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After read REG2 -> Desired: 5a5a5555, Mirrored: 5a5a5555, Read: 5a5a5555
+# UVM_INFO reg_seq.sv(100) @ 1030: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] ====== REG3 ======
+# UVM_INFO reg_seq.sv(104) @ 1030: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] Initial REG3 -> Desired: 0, Mirrored: 0
+# UVM_INFO reg_seq.sv(109) @ 1030: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After set REG3 -> Desired: 22, Mirrored: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 1090: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 22
+# -------------monitor begin----------
+# -------------monitor begin----------
+# -----------DRIVER----------
+# UVM_INFO scoreboard.sv(160) @ 1110: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=c, Data Stored=22
+# UVM_INFO reg_seq.sv(114) @ 1110: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After update REG3 -> Desired: 22, Mirrored: 22, Read: 5a5a5555
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 1170: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 12
+# -------------monitor begin----------
+# -------------monitor begin----------
+# -----------DRIVER----------
+# UVM_INFO scoreboard.sv(160) @ 1190: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=c, Data Stored=12
+# UVM_INFO reg_seq.sv(119) @ 1190: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After write REG3 -> Desired: 12, Mirrored: 12, Read: 5a5a5555
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 1250: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 11
+# -------------monitor begin----------
+# -------------monitor begin----------
+# -----------DRIVER----------
+# UVM_INFO scoreboard.sv(163) @ 1270: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=c, DUT Data=11, Expected=12
+# UVM_ERROR scoreboard.sv(194) @ 1270: uvm_test_top.env.scb [SCOREBOARD] MISMATCH at Addr=c: Expected=12, Got=11
+# UVM_INFO reg_seq.sv(123) @ 1270: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After read REG3 -> Desired: 11, Mirrored: 11, Read: 11
+# UVM_INFO reg_seq.sv(128) @ 1270: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] ====== REG4 ======
+# UVM_INFO reg_seq.sv(132) @ 1270: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] Initial REG4 -> Desired: 0, Mirrored: 0
+# UVM_INFO reg_seq.sv(137) @ 1270: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After set REG4 -> Desired: 33, Mirrored: 0
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 1330: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 33
+# -------------monitor begin----------
+# -------------monitor begin----------
+# -----------DRIVER----------
+# UVM_INFO scoreboard.sv(160) @ 1350: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=10, Data Stored=33
+# UVM_INFO reg_seq.sv(142) @ 1350: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After update REG4 -> Desired: 33, Mirrored: 33, Read: 11
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(48) @ 1410: uvm_test_top.env.agent_inst.drv [DRV] Data Write -> Wdata : 23
+# -------------monitor begin----------
+# -------------monitor begin----------
+# -----------DRIVER----------
+# UVM_INFO scoreboard.sv(160) @ 1430: uvm_test_top.env.scb [SCOREBOARD] WRITE: Addr=10, Data Stored=23
+# UVM_INFO reg_seq.sv(147) @ 1430: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After write REG4 -> Desired: 23, Mirrored: 23, Read: 11
+# -------------monitor begin----------
+# -------------monitor begin----------
+# UVM_INFO driver.sv(61) @ 1490: uvm_test_top.env.agent_inst.drv [DRV] Data READ -> read data : 12
+# -------------monitor begin----------
+# -------------monitor begin----------
+# -----------DRIVER----------
+# UVM_INFO scoreboard.sv(163) @ 1510: uvm_test_top.env.scb [SCOREBOARD] READ: Addr=10, DUT Data=12, Expected=0
+# UVM_ERROR scoreboard.sv(194) @ 1510: uvm_test_top.env.scb [SCOREBOARD] MISMATCH at Addr=10: Expected=0, Got=12
+# UVM_INFO reg_seq.sv(151) @ 1510: uvm_test_top.env.agent_inst.seqr@@seq2 [SEQ] After read REG4 -> Desired: 12, Mirrored: 12, Read: 12
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 1530: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# -------------monitor begin----------
+# UVM_INFO scoreboard.sv(200) @ 1530: uvm_test_top.env.scb [SCOREBOARD] ------------------ FINAL SCOREBOARD REPORT ------------------
+# UVM_INFO scoreboard.sv(201) @ 1530: uvm_test_top.env.scb [SCOREBOARD] Total Matches   : 5
+# UVM_INFO scoreboard.sv(202) @ 1530: uvm_test_top.env.scb [SCOREBOARD] Total Mismatches: 4
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   53
+# UVM_INFO :  104
 # UVM_WARNING :    0
-# UVM_ERROR :    0
+# UVM_ERROR :   12
 # UVM_FATAL :    0
 # ** Report counts by id
-# [DRV]    12
-# [MON]    10
+# [DRV]    19
 # [Questa UVM]     2
 # [RNTST]     1
-# [SCOREBOARD]     3
-# [SEQ]    24
+# [RegModel]     8
+# [SCOREBOARD]    31
+# [SEQ]    54
 # [TEST_DONE]     1
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 970 ns  Iteration: 53  Instance: /tb
-# End time: 12:57:21 on Aug 05,2025, Elapsed time: 0:00:06
+#    Time: 1530 ns  Iteration: 53  Instance: /tb
+# End time: 12:27:37 on Aug 06,2025, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0

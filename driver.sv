@@ -17,9 +17,15 @@ class driver extends uvm_driver#(seq_item);
   ///////////////main task of driver
   virtual task run_phase(uvm_phase phase);
   tr = seq_item::type_id::create("tr");
+  vif.psel    <= 1'b0;
+    vif.penable <= 1'b0;
+    vif.pwrite  <= 1'b0;
+    vif.paddr   <= 32'h0;
+    vif.pwdata  <= 32'h0;
+
   forever begin
   seq_item_port.get_next_item(tr);
-  drive(tr);
+  drive();
   seq_item_port.item_done();
   $display("-----------DRIVER----------"); 
   end
@@ -27,7 +33,7 @@ class driver extends uvm_driver#(seq_item);
   
   
   //////////////drive DUT
-  task drive(seq_item tr);
+  task drive();
  // if(vif.rst == 1'b1)begin
  if(tr.pwrite == 1'b1)
   begin 

@@ -11,8 +11,8 @@ module tb;
 
  initial begin
  clk = 0;
- rst = 0;
-#10 rst =1;
+// rst = 0;
+//#10 rst =1;
  end
 
   always #10 clk = ~clk;

@@ -76,8 +76,9 @@ endclass
 
 class reg_test extends uvm_test;
   `uvm_component_utils(reg_test)
-  reg_seq seq1;
-  reset_seq seq2;
+  
+  reset_seq seq1;
+  reg_seq seq2;
 
   environment env;
 
@@ -88,8 +89,8 @@ class reg_test extends uvm_test;
   virtual function void build_phase(uvm_phase phase);
     super.build_phase(phase);
     env = environment::type_id::create("env",this);
-    seq1 = reg_seq::type_id::create("seq1", this);
-    seq2 = reset_seq::type_id::create("seq2", this);
+    seq1 = reset_seq::type_id::create("seq1", this);
+    seq2 = reg_seq::type_id::create("seq2", this);
   endfunction
   virtual task run_phase(uvm_phase phase);
      
