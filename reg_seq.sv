@@ -10,6 +10,34 @@ class reg_seq extends uvm_sequence;
   virtual task body;
     uvm_status_e status;
     bit [31:0] rdata, rdata_m, dout,reset_reg;
+    ///////////////// CNTRL /////////////////////
+    `uvm_info("SEQ", "====== CNTRL ======", UVM_NONE);
+
+    rdata   = regmodel.cntrl_inst.get();
+    rdata_m = regmodel.cntrl_inst.get_mirrored_value();
+    `uvm_info("SEQ", $sformatf("Initial CNTRL -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+
+    regmodel.cntrl_inst.set(4'h1);
+    rdata   = regmodel.cntrl_inst.get();
+    rdata_m = regmodel.cntrl_inst.get_mirrored_value();
+    `uvm_info("SEQ", $sformatf("After set CNTRL -> Desired: %0h, Mirrored: %0h", rdata, rdata_m), UVM_NONE);
+
+    regmodel.cntrl_inst.update(status);
+    rdata   = regmodel.cntrl_inst.get();
+    rdata_m = regmodel.cntrl_inst.get_mirrored_value();
+    `uvm_info("SEQ", $sformatf("After update CNTRL -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m, dout), UVM_NONE);
+
+
+
+    regmodel.cntrl_inst.write(status,4'h1);
+    rdata   = regmodel.cntrl_inst.get();
+    rdata_m = regmodel.cntrl_inst.get_mirrored_value();
+    `uvm_info("SEQ", $sformatf("After write CNTRL -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m,dout), UVM_NONE);
+    regmodel.cntrl_inst.read(status,dout);
+    rdata   = regmodel.cntrl_inst.get();
+    rdata_m = regmodel.cntrl_inst.get_mirrored_value();
+    `uvm_info("SEQ", $sformatf("After read CNTRL -> Desired: %0h, Mirrored: %0h, Read: %0h", rdata, rdata_m,dout), UVM_NONE);
+
 
     ///////////////// REG1/////////////////////
     `uvm_info("SEQ", "====== REG1 ======", UVM_NONE);

@@ -6,7 +6,7 @@ class cntrl_field extends uvm_reg;
   covergroup cntrl_cov;
     option.per_instance = 1;
     coverpoint cntrl.value[3:0] {
-     bins val = {[0:15]};}
+     bins val = {[0:1]};}
   endgroup
   
   function new (string name = "cntrl");
@@ -37,10 +37,9 @@ class reg1_field extends uvm_reg;
   rand uvm_reg_field reg1;
   covergroup reg1_cov;
     option.per_instance = 1;
-    coverpoint reg1.value[31:0] {
+  
+  coverpoint reg1.value[31:0] {
      bins val = {[0:32'h1FFF_FFFF]};
-    // bins mid = {[32'H2000_0000:32'H7FFF_FFFF]};
-    // bins high = {[32'H8000_0000:32'HFFFF_FFFF]};
     }
   endgroup
   
@@ -72,12 +71,10 @@ class reg2_field extends uvm_reg;
   rand uvm_reg_field reg2;
   covergroup reg2_cov;
     option.per_instance = 1;
-    
     coverpoint reg2.value[31:0] {
-      bins val  = {[0:32'h1FFF_FFFF]};
-      //bins mid  = {[32'h2000_0000:32'h7FFF_FFFF]};
-      //bins high = {[32'h8000_0000:32'hFFFF_FFFF]}; }
-  }endgroup
+     bins val  = {[0:32'h1FFF_FFFF]};
+  }
+  endgroup
   
   function new (string name = "reg2");
     super.new(name,32,UVM_CVR_FIELD_VALS);
@@ -107,10 +104,9 @@ class reg3_field extends uvm_reg;
   rand uvm_reg_field reg3;
   covergroup reg3_cov;
     option.per_instance = 1;
+
     coverpoint reg3.value[31:0] {
       bins val  = {[0:32'h1FFF_FFFF]};
-      //bins mid  = {[32'h2000_0000:32'h7FFF_FFFF]};
-     // bins high = {[32'h8000_0000:32'hFFFF_FFFF]};
   }  endgroup
   
   function new (string name = "reg3");
@@ -144,8 +140,6 @@ class reg4_field extends uvm_reg;
     option.per_instance = 1;
     coverpoint reg4.value[31:0]{
       bins val  = {[0:32'h1FFF_FFFF]};
-      //bins mid  = {[32'h2000_0000:32'h7FFF_FFFF]};
-      //bins high = {[32'h8000_0000:32'hFFFF_FFFF]};
     }
   endgroup
    
@@ -193,28 +187,23 @@ class reg_block extends uvm_reg_block;
     cntrl_inst.configure(this);
    void'(cntrl_inst.set_coverage(UVM_CVR_FIELD_VALS)); //////enabling coverage for specific reg instance
    
-  //  uvm_reg::include_coverage("*", UVM_CVR_ALL);
     reg1_inst = reg1_field::type_id::create("reg1_inst");
     reg1_inst.build();
     reg1_inst.configure(this);
    void'( reg1_inst.set_coverage(UVM_CVR_FIELD_VALS)); //////enabling coverage for specific reg instance
     
-    //uvm_reg::include_coverage("*", UVM_CVR_ALL);
     reg2_inst = reg2_field::type_id::create("reg2_inst");
     reg2_inst.build();
     reg2_inst.configure(this);
    void'(reg2_inst.set_coverage(UVM_CVR_FIELD_VALS)); //////enabling coverage for specific reg instance
     //reg2_inst.add_hdl_path_slice("reg2",0,32); //reg name in rtl,starting position,no.of bits wide 
-    //reg2_inst.set_backdoor(null);            // << must be added
 
    
-   // uvm_reg::include_coverage("*", UVM_CVR_ALL);
     reg3_inst = reg3_field::type_id::create("reg3_inst");
     reg3_inst.build();
     reg3_inst.configure(this);
     void'(reg3_inst.set_coverage(UVM_CVR_FIELD_VALS)); //////enabling coverage for specific reg instance
    
-   // uvm_reg::include_coverage("*", UVM_CVR_ALL);
     reg4_inst = reg4_field::type_id::create("reg4_inst");
     reg4_inst.build();
     reg4_inst.configure(this);
