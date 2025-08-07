@@ -1,17 +1,17 @@
 class monitor extends uvm_monitor;
   `uvm_component_utils(monitor)
   uvm_analysis_port #(seq_item) mon_ap;
-  virtual top_if vif;
+  virtual top_if.mp_mon vif;
   seq_item tr;
   
   function new(string name = "monitor", uvm_component parent);
     super.new(name,parent);
   endfunction
   
-  virtual function void build_phase(uvm_phase phase);
+  function void build_phase(uvm_phase phase);
     super.build_phase(phase);
     mon_ap = new("mon_ap",this);
-    if(! uvm_config_db#(virtual top_if)::get (this, "", "vif", vif))`uvm_error("MON", "Error getting Interface Handle");
+    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, "", "vif", vif))`uvm_error("MON", "Error getting Interface Handle");
   endfunction
  
   /*virtual task run_phase(uvm_phase phase);
@@ -42,14 +42,14 @@ virtual task run_phase(uvm_phase phase);
     tr = seq_item::type_id::create("tr");
     forever begin
       //  repeat(3) @(vif.cb_mon);
-      @(posedge vif.clk);
+      @(vif.cb_mon);
       $display("-------------monitor begin----------");
-      tr.paddr    =   vif.paddr;
-      tr.pwrite   =   vif.pwrite;
-      tr.psel     =   vif.psel;
-      tr.penable  =   vif.penable;
-      tr.pwdata   =   vif.pwdata;
-      tr.prdata   =   vif.prdata;
+      tr.paddr    =   vif.cb_mon.paddr;
+      tr.pwrite   =   vif.cb_mon.pwrite;
+      tr.psel     =   vif.cb_mon.psel;
+      tr.penable  =   vif.cb_mon.penable;
+      tr.pwdata   =   vif.cb_mon.pwdata;
+      tr.prdata   =   vif.cb_mon.prdata;
 
       mon_ap.write(tr);
 

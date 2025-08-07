@@ -77,8 +77,9 @@ endclass
 class reg_test extends uvm_test;
   `uvm_component_utils(reg_test)
   
-  reset_seq seq1;
-  reg_seq seq2;
+  reg1_seq seq1;
+  reset_seq seq2;
+  reg_seq seq3;
 
   environment env;
 
@@ -89,8 +90,9 @@ class reg_test extends uvm_test;
   virtual function void build_phase(uvm_phase phase);
     super.build_phase(phase);
     env = environment::type_id::create("env",this);
-    seq1 = reset_seq::type_id::create("seq1", this);
-    seq2 = reg_seq::type_id::create("seq2", this);
+    seq1 = reg1_seq::type_id::create("seq1", this);
+    seq2 = reset_seq::type_id::create("seq2", this);
+    seq3 = reg_seq::type_id::create("seq3", this);
   endfunction
   virtual task run_phase(uvm_phase phase);
      
@@ -105,5 +107,11 @@ class reg_test extends uvm_test;
     seq2.start(env.agent_inst.seqr);
     phase.drop_objection(this);
     phase.phase_done.set_drain_time(this, 20);
-  endtask
+  
+    phase.raise_objection(this);
+    seq3.regmodel = env.regmodel;
+    seq3.start(env.agent_inst.seqr);
+    phase.drop_objection(this);
+    phase.phase_done.set_drain_time(this, 20);
+ endtask
 endclass

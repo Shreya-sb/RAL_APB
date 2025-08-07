@@ -11,20 +11,22 @@ module tb;
 
  initial begin
  clk = 0;
-// rst = 0;
+ rst = 0;
 //#10 rst =1;
  end
 
   always #10 clk = ~clk;
   
+  
   initial begin
-  uvm_config_db#(virtual top_if)::set(null, "*", "vif", vif);
+  uvm_config_db#(virtual top_if.mp_drv)::set(null, "*", "vif", vif.mp_drv);
+  uvm_config_db#(virtual top_if.mp_mon)::set(null, "*", "vif", vif.mp_mon);
+  // $dumpfile("dump.vcd");
+  //$dumpvars;
+  end
+  
+  initial begin
   run_test("reg_test");  
   end
-  
-  initial begin
-   $dumpfile("dump.vcd");
-  $dumpvars;
-  end
-  
+
 endmodule
