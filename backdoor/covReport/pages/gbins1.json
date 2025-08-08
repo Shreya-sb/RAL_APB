@@ -1,0 +1,24 @@
+var g_data = {
+c1113:[4,'#coverpoint__0#',[],,'1112',1,1,'cntrl_cov','1099','/testbench_sv_unit/cntrl_field',[[],[0,'1','0',1,'val']],[]],
+c1115:[4,'#coverpoint__0#',[],,'1114',2,1,'\\/testbench_sv_unit::cntrl_field::cntrl_cov ','1099','/testbench_sv_unit/cntrl_field',[[],[0,'1','0',1,'val']],[]],
+c1133:[4,'#coverpoint__0#',[],,'1132',1,1,'reg1_cov','1119','/testbench_sv_unit/reg1_field',[[],[0,'1','0',1,'val']],[]],
+c1135:[4,'#coverpoint__0#',[],,'1134',2,1,'\\/testbench_sv_unit::reg1_field::reg1_cov ','1119','/testbench_sv_unit/reg1_field',[[],[0,'1','0',1,'val']],[]],
+c1153:[4,'#coverpoint__0#',[],,'1152',1,1,'reg2_cov','1139','/testbench_sv_unit/reg2_field',[[],[0,'1','0',1,'val']],[]],
+c1155:[4,'#coverpoint__0#',[],,'1154',2,1,'\\/testbench_sv_unit::reg2_field::reg2_cov ','1139','/testbench_sv_unit/reg2_field',[[],[0,'1','0',1,'val']],[]],
+c1173:[4,'#coverpoint__0#',[],,'1172',1,1,'reg3_cov','1159','/testbench_sv_unit/reg3_field',[[],[0,'1','0',1,'val']],[]],
+c1175:[4,'#coverpoint__0#',[],,'1174',2,1,'\\/testbench_sv_unit::reg3_field::reg3_cov ','1159','/testbench_sv_unit/reg3_field',[[],[0,'1','0',1,'val']],[]],
+c1193:[4,'#coverpoint__0#',[],,'1192',1,1,'reg4_cov','1179','/testbench_sv_unit/reg4_field',[[],[0,'1','0',1,'val']],[]],
+c1195:[4,'#coverpoint__0#',[],,'1194',2,1,'\\/testbench_sv_unit::reg4_field::reg4_cov ','1179','/testbench_sv_unit/reg4_field',[[],[0,'1','0',1,'val']],[]],
+c1372:[4,'#coverpoint__0#',[],,'1371',1,1,'cntrl_cov','1358','work.testbench_sv_unit::cntrl_field',[[],[0,'1','0',1,'val']],[]],
+c1374:[4,'#coverpoint__0#',[],,'1373',2,1,'\\/testbench_sv_unit::cntrl_field::cntrl_cov ','1358','work.testbench_sv_unit::cntrl_field',[[],[0,'1','0',1,'val']],[]],
+c1392:[4,'#coverpoint__0#',[],,'1391',1,1,'reg1_cov','1378','work.testbench_sv_unit::reg1_field',[[],[0,'1','0',1,'val']],[]],
+c1394:[4,'#coverpoint__0#',[],,'1393',2,1,'\\/testbench_sv_unit::reg1_field::reg1_cov ','1378','work.testbench_sv_unit::reg1_field',[[],[0,'1','0',1,'val']],[]],
+c1412:[4,'#coverpoint__0#',[],,'1411',1,1,'reg2_cov','1398','work.testbench_sv_unit::reg2_field',[[],[0,'1','0',1,'val']],[]],
+c1414:[4,'#coverpoint__0#',[],,'1413',2,1,'\\/testbench_sv_unit::reg2_field::reg2_cov ','1398','work.testbench_sv_unit::reg2_field',[[],[0,'1','0',1,'val']],[]],
+c1432:[4,'#coverpoint__0#',[],,'1431',1,1,'reg3_cov','1418','work.testbench_sv_unit::reg3_field',[[],[0,'1','0',1,'val']],[]],
+c1434:[4,'#coverpoint__0#',[],,'1433',2,1,'\\/testbench_sv_unit::reg3_field::reg3_cov ','1418','work.testbench_sv_unit::reg3_field',[[],[0,'1','0',1,'val']],[]],
+c1452:[4,'#coverpoint__0#',[],,'1451',1,1,'reg4_cov','1438','work.testbench_sv_unit::reg4_field',[[],[0,'1','0',1,'val']],[]],
+c1454:[4,'#coverpoint__0#',[],,'1453',2,1,'\\/testbench_sv_unit::reg4_field::reg4_cov ','1438','work.testbench_sv_unit::reg4_field',[[],[0,'1','0',1,'val']],[]],
+dummyEnd:0
+};
+processCovergroupsData(g_data);

@@ -1,5 +1,5 @@
 # vsim -c -do "run -all;exit;" tb 
-# Start time: 15:17:54 on Aug 07,2025
+# Start time: 10:17:29 on Aug 08,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
@@ -46,13 +46,46 @@
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test backdoor_test...
+# UVM_INFO reg_seq.sv(11) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== CNTRL ======
+# UVM_ERROR: Unable to deposit value into 'tb.DUT.cntrl'
+#  Either the path is incorrect, or you may not have PLI/ACC visibility to that object.
+# UVM_INFO reg_seq.sv(15) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] POKE-->CNTRL:Write -> Desired: f Mirrored: f
+# -----------------------------------------------
+# UVM_ERROR: Unable to read value from 'tb.DUT.cntrl'
+#  Either the path is incorrect, or you may not have PLI/ACC visibility to that object.
+# UVM_INFO reg_seq.sv(20) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] AFTER PEEK CNTRL--->Desired: 0 Mirrored: 0
+# UVM_INFO reg_seq.sv(22) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== REG1 ======
+# UVM_ERROR: Unable to deposit value into 'tb.DUT.reg1'
+#  Either the path is incorrect, or you may not have PLI/ACC visibility to that object.
+# UVM_INFO reg_seq.sv(26) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] POKE-->REG1:Write -> Desired: f Mirrored: f
+# -----------------------------------------------
+# UVM_ERROR: Unable to read value from 'tb.DUT.reg1'
+#  Either the path is incorrect, or you may not have PLI/ACC visibility to that object.
+# UVM_INFO reg_seq.sv(31) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] AFTER PEEK REG1--->Desired: 0 Mirrored: 0
+# UVM_INFO reg_seq.sv(33) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== REG2 ======
 # UVM_ERROR: Unable to deposit value into 'tb.DUT.reg2'
 #  Either the path is incorrect, or you may not have PLI/ACC visibility to that object.
-# UVM_INFO reg_seq.sv(14) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] POKE:Write -> Desired: f Mirrored: f
+# UVM_INFO reg_seq.sv(37) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] POKE-->REG2:Write -> Desired: f Mirrored: f
 # -----------------------------------------------
 # UVM_ERROR: Unable to read value from 'tb.DUT.reg2'
 #  Either the path is incorrect, or you may not have PLI/ACC visibility to that object.
-# UVM_INFO reg_seq.sv(20) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] AFTER PEEK--->Desired: 0 Mirrored: 0
+# UVM_INFO reg_seq.sv(42) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] AFTER PEEK REG2--->Desired: 0 Mirrored: 0
+# UVM_INFO reg_seq.sv(44) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== REG 3 ======
+# UVM_ERROR: Unable to deposit value into 'tb.DUT.reg3'
+#  Either the path is incorrect, or you may not have PLI/ACC visibility to that object.
+# UVM_INFO reg_seq.sv(48) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] POKE-->REG3:Write -> Desired: f Mirrored: f
+# -----------------------------------------------
+# UVM_ERROR: Unable to read value from 'tb.DUT.reg3'
+#  Either the path is incorrect, or you may not have PLI/ACC visibility to that object.
+# UVM_INFO reg_seq.sv(53) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] AFTER PEEK REG3--->Desired: 0 Mirrored: 0
+# UVM_INFO reg_seq.sv(55) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== REG4 ======
+# UVM_ERROR: Unable to deposit value into 'tb.DUT.reg4'
+#  Either the path is incorrect, or you may not have PLI/ACC visibility to that object.
+# UVM_INFO reg_seq.sv(59) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] POKE-->REG4:Write -> Desired: f Mirrored: f
+# -----------------------------------------------
+# UVM_ERROR: Unable to read value from 'tb.DUT.reg4'
+#  Either the path is incorrect, or you may not have PLI/ACC visibility to that object.
+# UVM_INFO reg_seq.sv(64) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] AFTER PEEK REG4--->Desired: 0 Mirrored: 0
 # -------------monitor begin----------
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 20: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # UVM_INFO scoreboard.sv(200) @ 20: uvm_test_top.env.scb [SCOREBOARD] ------------------ FINAL SCOREBOARD REPORT ------------------
@@ -62,7 +95,7 @@
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :    9
+# UVM_INFO :   22
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
@@ -70,9 +103,9 @@
 # [Questa UVM]     2
 # [RNTST]     1
 # [SCOREBOARD]     3
-# [SEQ]     2
+# [SEQ]    15
 # [TEST_DONE]     1
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 20 ns  Iteration: 53  Instance: /tb
-# End time: 15:17:57 on Aug 07,2025, Elapsed time: 0:00:03
+# End time: 10:17:33 on Aug 08,2025, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 0

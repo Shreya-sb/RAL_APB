@@ -1,0 +1,14 @@
+QuestaSim vlog 10.6c Compiler 2017.07 Jul 25 2017
+Start time: 11:28:07 on Aug 08,2025
+vlog -sv "+acc" "+cover" "+fcover" -l testbench. testbench.sv 
+** Note: (vlog-2286) testbench.sv(1): Using implicit +incdir+/tools/mentor/questasim_10.6c/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+-- Compiling package testbench_sv_unit
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Compiling interface top_if
+-- Compiling module top
+-- Compiling module tb
+
+Top level modules:
+	tb
+End time: 11:28:08 on Aug 08,2025, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0

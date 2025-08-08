@@ -26,7 +26,7 @@ module tb;
   end
   
   initial begin
-  run_test("test");  
+  run_test("reg_test");  
   end
 
 endmodule

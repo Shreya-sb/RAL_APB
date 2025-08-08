@@ -1,6 +1,6 @@
-# vsim tb -voptargs="+acc=npr" -l tb.log -c -do "run -all;quit;" 
-# Start time: 15:26:22 on Aug 07,2025
-# ** Note: (vsim-3812) Design is being optimized...
+# vsim tb -voptargs="+acc=npr" -l tb.log -c -do "run -all;quit" 
+# Start time: 10:26:23 on Aug 08,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Sim
 # //  Version 10.6c linux Jul 25 2017
 # //
@@ -48,9 +48,26 @@
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test backdoor_test...
-# UVM_INFO reg_seq.sv(14) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] POKE:Write -> Desired: f Mirrored: f
+# UVM_INFO reg_seq.sv(11) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== CNTRL ======
+# UVM_INFO reg_seq.sv(15) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] POKE-->CNTRL:Write -> Desired: f Mirrored: f
 # -----------------------------------------------
-# UVM_INFO reg_seq.sv(20) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] AFTER PEEK--->Desired: f Mirrored: f
+# UVM_INFO reg_seq.sv(20) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] AFTER PEEK CNTRL--->Desired: f Mirrored: f
+# UVM_INFO reg_seq.sv(22) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== REG1 ======
+# UVM_INFO reg_seq.sv(26) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] POKE-->REG1:Write -> Desired: 1 Mirrored: 1
+# -----------------------------------------------
+# UVM_INFO reg_seq.sv(31) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] AFTER PEEK REG1--->Desired: 1 Mirrored: 1
+# UVM_INFO reg_seq.sv(33) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== REG2 ======
+# UVM_INFO reg_seq.sv(37) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] POKE-->REG2:Write -> Desired: abcd Mirrored: abcd
+# -----------------------------------------------
+# UVM_INFO reg_seq.sv(42) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] AFTER PEEK REG2--->Desired: abcd Mirrored: abcd
+# UVM_INFO reg_seq.sv(44) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== REG 3 ======
+# UVM_INFO reg_seq.sv(48) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] POKE-->REG3:Write -> Desired: ffffff Mirrored: ffffff
+# -----------------------------------------------
+# UVM_INFO reg_seq.sv(53) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] AFTER PEEK REG3--->Desired: ffffff Mirrored: ffffff
+# UVM_INFO reg_seq.sv(55) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] ====== REG4 ======
+# UVM_INFO reg_seq.sv(59) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] POKE-->REG4:Write -> Desired: 1234 Mirrored: 1234
+# -----------------------------------------------
+# UVM_INFO reg_seq.sv(64) @ 0: uvm_test_top.env.agent_inst.seqr@@rseq [SEQ] AFTER PEEK REG4--->Desired: 1234 Mirrored: 1234
 # -------------monitor begin----------
 # UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 20: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # UVM_INFO scoreboard.sv(200) @ 20: uvm_test_top.env.scb [SCOREBOARD] ------------------ FINAL SCOREBOARD REPORT ------------------
@@ -60,7 +77,7 @@
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :    9
+# UVM_INFO :   22
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
@@ -68,9 +85,9 @@
 # [Questa UVM]     2
 # [RNTST]     1
 # [SCOREBOARD]     3
-# [SEQ]     2
+# [SEQ]    15
 # [TEST_DONE]     1
 # ** Note: $finish    : /tools/mentor/questasim_10.6c/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 20 ns  Iteration: 53  Instance: /tb
-# End time: 15:26:29 on Aug 07,2025, Elapsed time: 0:00:07
+# End time: 10:26:26 on Aug 08,2025, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0

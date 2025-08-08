@@ -1,0 +1,1312 @@
+var g_data = {
+b6:[{dummy:0},
+{anchor:'cvg116',items:[{z:'        if( !presetn ) \r',f:'design.v',l:'23',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if( !presetn ) \r',f:'design.v',l:'23',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'        else if( psel && penable && pwrite )\r',f:'design.v',l:'33',h:'10',c:'g'}
+,{cr:'c',t:'T',z:'        else if (psel && penable && !pwrite )\r',f:'design.v',l:'42',h:'9',c:'g'}
+,{cr:'c',t:'A',z:'        if( !presetn ) \r',f:'design.v',l:'23',h:'38',c:'g'}
+]},
+{anchor:'cvg117',items:[{z:'            case( paddr )\r',f:'design.v',l:'35',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                \'h0     : cntrl <= pwdata;\r',f:'design.v',l:'36',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                \'h8     : reg2  <= pwdata;\r',f:'design.v',l:'37',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                \'hc     : reg3  <= pwdata;\r',f:'design.v',l:'38',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                \'h10    : reg4  <= pwdata;\r',f:'design.v',l:'39',h:'2',c:'g'}
+,{cr:'c',t:'A',z:'            case( paddr )\r',f:'design.v',l:'35',h:'2',c:'g'}
+]},
+{anchor:'cvg118',items:[{z:'           case( paddr )\r',f:'design.v',l:'44',c:'Y',p:'83.33'}
+,{cr:'c',t:'T',z:'                \'h0     : rdata_tmp <= {28\'h0000000,cntrl};\r',f:'design.v',l:'45',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                \'h4     : rdata_tmp <= reg1;\r',f:'design.v',l:'46',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                \'h8     : rdata_tmp <= reg2;\r',f:'design.v',l:'47',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                \'hc     : rdata_tmp <= reg3;\r',f:'design.v',l:'48',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                \'h10    : rdata_tmp <= reg4;\r',f:'design.v',l:'49',h:'2',c:'g'}
+,{cr:'m',t:'T',z:'                default : rdata_tmp <= 32\'h00000000;\r',f:'design.v',l:'50',h:'0',c:'r'}
+]}],
+b115:[{dummy:0},
+{anchor:'cvg116',items:[{z:'        if( !presetn ) \r',f:'design.v',l:'23',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if( !presetn ) \r',f:'design.v',l:'23',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'        else if( psel && penable && pwrite )\r',f:'design.v',l:'33',h:'10',c:'g'}
+,{cr:'c',t:'T',z:'        else if (psel && penable && !pwrite )\r',f:'design.v',l:'42',h:'9',c:'g'}
+,{cr:'c',t:'A',z:'        if( !presetn ) \r',f:'design.v',l:'23',h:'38',c:'g'}
+]},
+{anchor:'cvg117',items:[{z:'            case( paddr )\r',f:'design.v',l:'35',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                \'h0     : cntrl <= pwdata;\r',f:'design.v',l:'36',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                \'h8     : reg2  <= pwdata;\r',f:'design.v',l:'37',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                \'hc     : reg3  <= pwdata;\r',f:'design.v',l:'38',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                \'h10    : reg4  <= pwdata;\r',f:'design.v',l:'39',h:'2',c:'g'}
+,{cr:'c',t:'A',z:'            case( paddr )\r',f:'design.v',l:'35',h:'2',c:'g'}
+]},
+{anchor:'cvg118',items:[{z:'           case( paddr )\r',f:'design.v',l:'44',c:'Y',p:'83.33'}
+,{cr:'c',t:'T',z:'                \'h0     : rdata_tmp <= {28\'h0000000,cntrl};\r',f:'design.v',l:'45',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                \'h4     : rdata_tmp <= reg1;\r',f:'design.v',l:'46',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                \'h8     : rdata_tmp <= reg2;\r',f:'design.v',l:'47',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                \'hc     : rdata_tmp <= reg3;\r',f:'design.v',l:'48',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                \'h10    : rdata_tmp <= reg4;\r',f:'design.v',l:'49',h:'2',c:'g'}
+,{cr:'m',t:'T',z:'                default : rdata_tmp <= 32\'h00000000;\r',f:'design.v',l:'50',h:'0',c:'r'}
+]}],
+b1106:[{dummy:0},
+{anchor:'cvg1107',items:[{z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'14',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'14',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'14',h:'0',c:'r'}
+]}],
+b1110:[{dummy:0},
+{anchor:'cvg1111',items:[{z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+]}],
+b1113:[{dummy:0},
+{anchor:'cvg1114',items:[{z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1115',items:[{z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1116',items:[{z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1117',items:[{z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+]}],
+b1126:[{dummy:0},
+{anchor:'cvg1127',items:[{z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'48',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'48',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'48',h:'0',c:'r'}
+]}],
+b1130:[{dummy:0},
+{anchor:'cvg1131',items:[{z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+]}],
+b1133:[{dummy:0},
+{anchor:'cvg1134',items:[{z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+]},
+{anchor:'cvg1135',items:[{z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+]},
+{anchor:'cvg1136',items:[{z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+]},
+{anchor:'cvg1137',items:[{z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+]}],
+b1146:[{dummy:0},
+{anchor:'cvg1147',items:[{z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'81',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'81',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'81',h:'0',c:'r'}
+]}],
+b1150:[{dummy:0},
+{anchor:'cvg1151',items:[{z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+]}],
+b1153:[{dummy:0},
+{anchor:'cvg1154',items:[{z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+]},
+{anchor:'cvg1155',items:[{z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+]},
+{anchor:'cvg1156',items:[{z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+]},
+{anchor:'cvg1157',items:[{z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+]}],
+b1166:[{dummy:0},
+{anchor:'cvg1167',items:[{z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'114',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'114',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'114',h:'0',c:'r'}
+]}],
+b1170:[{dummy:0},
+{anchor:'cvg1171',items:[{z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+]}],
+b1173:[{dummy:0},
+{anchor:'cvg1174',items:[{z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+]},
+{anchor:'cvg1175',items:[{z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+]},
+{anchor:'cvg1176',items:[{z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+]},
+{anchor:'cvg1177',items:[{z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+]}],
+b1186:[{dummy:0},
+{anchor:'cvg1187',items:[{z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'149',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'149',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'149',h:'0',c:'r'}
+]}],
+b1190:[{dummy:0},
+{anchor:'cvg1191',items:[{z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+]}],
+b1193:[{dummy:0},
+{anchor:'cvg1194',items:[{z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+]},
+{anchor:'cvg1195',items:[{z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+]},
+{anchor:'cvg1196',items:[{z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+]},
+{anchor:'cvg1197',items:[{z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+]}],
+b1209:[{dummy:0},
+{anchor:'cvg1210',items:[{z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+]}],
+b1212:[{dummy:0},
+{anchor:'cvg1213',items:[{z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+]},
+{anchor:'cvg1214',items:[{z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+]},
+{anchor:'cvg1215',items:[{z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+]},
+{anchor:'cvg1216',items:[{z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+]}],
+b1222:[{dummy:0},
+{anchor:'cvg1223',items:[{z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+]}],
+b1225:[{dummy:0},
+{anchor:'cvg1226',items:[{z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+]},
+{anchor:'cvg1227',items:[{z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+]},
+{anchor:'cvg1228',items:[{z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+]},
+{anchor:'cvg1229',items:[{z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+]}],
+b1234:[{dummy:0},
+{anchor:'cvg1235',items:[{z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+]}],
+b1237:[{dummy:0},
+{anchor:'cvg1238',items:[{z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1239',items:[{z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1240',items:[{z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1241',items:[{z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+]}],
+b1243:[{dummy:0},
+{anchor:'cvg1245',items:[{z:'    rw.kind = (apb_item.pwrite == 1\'b1)?UVM_WRITE:UVM_READ;',f:'adapter.sv',l:'20',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    rw.kind = (apb_item.pwrite == 1\'b1)?UVM_WRITE:UVM_READ;',f:'adapter.sv',l:'20',h:'10',c:'g'}
+,{cr:'c',t:'E',z:'    rw.kind = (apb_item.pwrite == 1\'b1)?UVM_WRITE:UVM_READ;',f:'adapter.sv',l:'20',h:'9',c:'g'}
+]},
+{anchor:'cvg1246',items:[{z:'    rw.data = (apb_item.pwrite == 1\'b1)?apb_item.pwdata:apb_item.prdata;',f:'adapter.sv',l:'21',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    rw.data = (apb_item.pwrite == 1\'b1)?apb_item.pwdata:apb_item.prdata;',f:'adapter.sv',l:'21',h:'10',c:'g'}
+,{cr:'c',t:'E',z:'    rw.data = (apb_item.pwrite == 1\'b1)?apb_item.pwdata:apb_item.prdata;',f:'adapter.sv',l:'21',h:'9',c:'g'}
+]}],
+b1251:[{dummy:0},
+{anchor:'cvg1252',items:[{z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+]}],
+b1254:[{dummy:0},
+{anchor:'cvg1255',items:[{z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1256',items:[{z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1257',items:[{z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1258',items:[{z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+]}],
+b1259:[{dummy:0},
+{anchor:'cvg1260',items:[{z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== CNTRL ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'14',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== CNTRL ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'14',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== CNTRL ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'14',h:'0',c:'r'}
+]},
+{anchor:'cvg1261',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial CNTRL -> Desired: %0h, Mirrored: ...',f:'reg_seq.sv',l:'18',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial CNTRL -> Desired: %0h, Mirrored: ...',f:'reg_seq.sv',l:'18',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial CNTRL -> Desired: %0h, Mirrored: ...',f:'reg_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1262',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set CNTRL -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'23',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set CNTRL -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'23',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set CNTRL -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'23',h:'0',c:'r'}
+]},
+{anchor:'cvg1263',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update CNTRL -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'28',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update CNTRL -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'28',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update CNTRL -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'28',h:'0',c:'r'}
+]},
+{anchor:'cvg1264',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write CNTRL -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'35',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write CNTRL -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'35',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write CNTRL -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'35',h:'0',c:'r'}
+]},
+{anchor:'cvg1265',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read CNTRL -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'39',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read CNTRL -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'39',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read CNTRL -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'39',h:'0',c:'r'}
+]}],
+b1270:[{dummy:0},
+{anchor:'cvg1271',items:[{z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+]}],
+b1273:[{dummy:0},
+{anchor:'cvg1274',items:[{z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+]},
+{anchor:'cvg1275',items:[{z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+]},
+{anchor:'cvg1276',items:[{z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+]},
+{anchor:'cvg1277',items:[{z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+]}],
+b1278:[{dummy:0},
+{anchor:'cvg1279',items:[{z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG1 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'86',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG1 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'86',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG1 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'86',h:'0',c:'r'}
+]},
+{anchor:'cvg1280',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG1 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'90',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG1 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'90',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG1 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'90',h:'0',c:'r'}
+]},
+{anchor:'cvg1281',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG1 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'95',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG1 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'95',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG1 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'95',h:'0',c:'r'}
+]},
+{anchor:'cvg1282',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update  REG1 -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'100',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update  REG1 -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'100',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update  REG1 -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'100',h:'0',c:'r'}
+]},
+{anchor:'cvg1283',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG1 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'107',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG1 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'107',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG1 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'107',h:'0',c:'r'}
+]},
+{anchor:'cvg1284',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG1 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'111',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG1 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'111',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG1 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'111',h:'0',c:'r'}
+]},
+{anchor:'cvg1285',items:[{z:'   `uvm_info(&#34;SEQ&#34;, &#34;====== REG2 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'115',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'   `uvm_info(&#34;SEQ&#34;, &#34;====== REG2 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'115',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'   `uvm_info(&#34;SEQ&#34;, &#34;====== REG2 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'115',h:'0',c:'r'}
+]},
+{anchor:'cvg1286',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG2 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'119',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG2 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'119',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG2 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'119',h:'0',c:'r'}
+]},
+{anchor:'cvg1287',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG2 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'124',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG2 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'124',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG2 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'124',h:'0',c:'r'}
+]},
+{anchor:'cvg1288',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update  REG2 -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'129',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update  REG2 -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'129',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update  REG2 -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'129',h:'0',c:'r'}
+]},
+{anchor:'cvg1289',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG2 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'136',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG2 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'136',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG2 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'136',h:'0',c:'r'}
+]},
+{anchor:'cvg1290',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG2 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'140',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG2 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'140',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG2 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'140',h:'0',c:'r'}
+]},
+{anchor:'cvg1291',items:[{z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG3 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'143',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG3 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'143',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG3 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'143',h:'0',c:'r'}
+]},
+{anchor:'cvg1292',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG3 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'147',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG3 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'147',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG3 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'147',h:'0',c:'r'}
+]},
+{anchor:'cvg1293',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG3 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'152',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG3 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'152',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG3 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'152',h:'0',c:'r'}
+]},
+{anchor:'cvg1294',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update REG3 -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'157',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update REG3 -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'157',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update REG3 -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'157',h:'0',c:'r'}
+]},
+{anchor:'cvg1295',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG3 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'162',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG3 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'162',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG3 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'162',h:'0',c:'r'}
+]},
+{anchor:'cvg1296',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG3 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'166',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG3 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'166',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG3 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'166',h:'0',c:'r'}
+]},
+{anchor:'cvg1297',items:[{z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG4 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'171',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG4 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'171',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG4 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'171',h:'0',c:'r'}
+]},
+{anchor:'cvg1298',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG4 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'175',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG4 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'175',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG4 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'175',h:'0',c:'r'}
+]},
+{anchor:'cvg1299',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG4 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'180',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG4 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'180',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG4 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'180',h:'0',c:'r'}
+]},
+{anchor:'cvg1300',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update REG4 -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'185',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update REG4 -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'185',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update REG4 -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'185',h:'0',c:'r'}
+]},
+{anchor:'cvg1301',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG4 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'190',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG4 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'190',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG4 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'190',h:'0',c:'r'}
+]},
+{anchor:'cvg1302',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG4 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'194',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG4 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'194',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG4 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'194',h:'0',c:'r'}
+]}],
+b1307:[{dummy:0},
+{anchor:'cvg1308',items:[{z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+]}],
+b1310:[{dummy:0},
+{anchor:'cvg1311',items:[{z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+]},
+{anchor:'cvg1312',items:[{z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+]},
+{anchor:'cvg1313',items:[{z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+]},
+{anchor:'cvg1314',items:[{z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+]}],
+b1315:[{dummy:0},
+{anchor:'cvg1316',items:[{z:' `uvm_info(&#34;SEQ&#34;, &#34;====== REG1 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'215',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:' `uvm_info(&#34;SEQ&#34;, &#34;====== REG1 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'215',h:'1',c:'g'}
+,{cr:'m',t:'A',z:' `uvm_info(&#34;SEQ&#34;, &#34;====== REG1 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'215',h:'0',c:'r'}
+]},
+{anchor:'cvg1317',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;...',f:'reg_seq.sv',l:'217',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;...',f:'reg_seq.sv',l:'217',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;...',f:'reg_seq.sv',l:'217',h:'0',c:'r'}
+]},
+{anchor:'cvg1318',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG1:reset value present in RAL model: 0...',f:'reg_seq.sv',l:'220',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG1:reset value present in RAL model: 0...',f:'reg_seq.sv',l:'220',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG1:reset value present in RAL model: 0...',f:'reg_seq.sv',l:'220',h:'0',c:'r'}
+]},
+{anchor:'cvg1319',items:[{z:'  `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0...',f:'reg_seq.sv',l:'223',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'  `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0...',f:'reg_seq.sv',l:'223',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'  `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0...',f:'reg_seq.sv',l:'223',h:'0',c:'r'}
+]},
+{anchor:'cvg1320',items:[{z:'  `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'230',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'  `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'230',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'  `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'230',h:'0',c:'r'}
+]},
+{anchor:'cvg1321',items:[{z:' if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'231',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:' if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'231',h:'1',c:'g'}
+,{cr:'m',t:'E',z:'    end else begin',f:'reg_seq.sv',l:'233',h:'0',c:'r'}
+]},
+{anchor:'cvg1322',items:[{z:'      `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Exp...',f:'reg_seq.sv',l:'232',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'      `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Exp...',f:'reg_seq.sv',l:'232',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'      `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Exp...',f:'reg_seq.sv',l:'232',h:'0',c:'r'}
+]},
+{anchor:'cvg1323',items:[{z:'      `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG1 passed!&#34;...',f:'reg_seq.sv',l:'234',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'      `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG1 passed!&#34;...',f:'reg_seq.sv',l:'234',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'      `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG1 passed!&#34;...',f:'reg_seq.sv',l:'234',h:'0',c:'r'}
+]},
+{anchor:'cvg1324',items:[{z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG2 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'237',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG2 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'237',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG2 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'237',h:'0',c:'r'}
+]},
+{anchor:'cvg1325',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'239',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'239',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'239',h:'0',c:'r'}
+]},
+{anchor:'cvg1326',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG2:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'242',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG2:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'242',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG2:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'242',h:'0',c:'r'}
+]},
+{anchor:'cvg1327',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'245',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'245',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'245',h:'0',c:'r'}
+]},
+{anchor:'cvg1328',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'252',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'252',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'252',h:'0',c:'r'}
+]},
+{anchor:'cvg1329',items:[{z:'if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'253',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'253',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'end else begin',f:'reg_seq.sv',l:'255',h:'1',c:'g'}
+]},
+{anchor:'cvg1330',items:[{z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'254',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'254',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'254',h:'0',c:'r'}
+]},
+{anchor:'cvg1331',items:[{z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG2 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'256',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG2 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'256',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG2 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'256',h:'0',c:'r'}
+]},
+{anchor:'cvg1332',items:[{z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG3 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'259',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG3 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'259',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG3 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'259',h:'0',c:'r'}
+]},
+{anchor:'cvg1333',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'261',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'261',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'261',h:'0',c:'r'}
+]},
+{anchor:'cvg1334',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG3:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'264',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG3:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'264',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG3:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'264',h:'0',c:'r'}
+]},
+{anchor:'cvg1335',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'267',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'267',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'267',h:'0',c:'r'}
+]},
+{anchor:'cvg1336',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'274',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'274',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'274',h:'0',c:'r'}
+]},
+{anchor:'cvg1337',items:[{z:'if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'275',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'275',h:'1',c:'g'}
+,{cr:'m',t:'E',z:'end else begin',f:'reg_seq.sv',l:'277',h:'0',c:'r'}
+]},
+{anchor:'cvg1338',items:[{z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'276',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'276',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'276',h:'0',c:'r'}
+]},
+{anchor:'cvg1339',items:[{z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG3 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'278',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG3 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'278',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG3 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'278',h:'0',c:'r'}
+]},
+{anchor:'cvg1340',items:[{z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG4 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'282',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG4 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'282',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG4 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'282',h:'0',c:'r'}
+]},
+{anchor:'cvg1341',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'284',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'284',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'284',h:'0',c:'r'}
+]},
+{anchor:'cvg1342',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG4:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'287',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG4:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'287',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG4:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'287',h:'0',c:'r'}
+]},
+{anchor:'cvg1343',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'290',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'290',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'290',h:'0',c:'r'}
+]},
+{anchor:'cvg1344',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'297',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'297',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'297',h:'0',c:'r'}
+]},
+{anchor:'cvg1345',items:[{z:'if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'298',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'298',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'end else begin',f:'reg_seq.sv',l:'300',h:'1',c:'g'}
+]},
+{anchor:'cvg1346',items:[{z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'299',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'299',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'299',h:'0',c:'r'}
+]},
+{anchor:'cvg1347',items:[{z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG4 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'301',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG4 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'301',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG4 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'301',h:'0',c:'r'}
+]}],
+b1352:[{dummy:0},
+{anchor:'cvg1353',items:[{z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+]}],
+b1355:[{dummy:0},
+{anchor:'cvg1356',items:[{z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+]},
+{anchor:'cvg1357',items:[{z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+]},
+{anchor:'cvg1358',items:[{z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+]},
+{anchor:'cvg1359',items:[{z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+]}],
+b1360:[{dummy:0},
+{anchor:'cvg1361',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;POKE:Write -> Desired: %0h Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'371',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;POKE:Write -> Desired: %0h Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'371',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;POKE:Write -> Desired: %0h Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'371',h:'0',c:'r'}
+]},
+{anchor:'cvg1362',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;AFTER PEEK--->Desired: %0h Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'377',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;AFTER PEEK--->Desired: %0h Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'377',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;AFTER PEEK--->Desired: %0h Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'377',h:'0',c:'r'}
+]}],
+b1373:[{dummy:0},
+{anchor:'cvg1374',items:[{z:'    if(!uvm_config_db#(virtual top_if.mp_drv)::get(this,&#34;&#34;,&#34;vif&#34;...',f:'driver.sv',l:'13',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'    if(!uvm_config_db#(virtual top_if.mp_drv)::get(this,&#34;&#34;,&#34;vif&#34;...',f:'driver.sv',l:'13',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'    if(!uvm_config_db#(virtual top_if.mp_drv)::get(this,&#34;&#34;,&#34;vif&#34;...',f:'driver.sv',l:'13',h:'1',c:'g'}
+]},
+{anchor:'cvg1375',items:[{z:'      `uvm_error(&#34;drv&#34;,&#34;Unable to access Interface&#34;);',f:'driver.sv',l:'14',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'      `uvm_error(&#34;drv&#34;,&#34;Unable to access Interface&#34;);',f:'driver.sv',l:'14',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'      `uvm_error(&#34;drv&#34;,&#34;Unable to access Interface&#34;);',f:'driver.sv',l:'14',h:'0',c:'r'}
+]}],
+b1377:[{dummy:0},
+{anchor:'cvg1378',items:[{z:' if(tr.pwrite == 1\'b1)',f:'driver.sv',l:'39',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:' if(tr.pwrite == 1\'b1)',f:'driver.sv',l:'39',h:'10',c:'g'}
+,{cr:'c',t:'E',z:' else',f:'driver.sv',l:'54',h:'9',c:'g'}
+]},
+{anchor:'cvg1379',items:[{z:'     `uvm_info(&#34;DRV&#34;, $sformatf(&#34;Data Write -> Wdata : %0h&#34;...',f:'driver.sv',l:'49',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'     `uvm_info(&#34;DRV&#34;, $sformatf(&#34;Data Write -> Wdata : %0h&#34;...',f:'driver.sv',l:'49',h:'10',c:'g'}
+,{cr:'m',t:'A',z:'     `uvm_info(&#34;DRV&#34;, $sformatf(&#34;Data Write -> Wdata : %0h&#34;...',f:'driver.sv',l:'49',h:'0',c:'r'}
+]},
+{anchor:'cvg1380',items:[{z:'     `uvm_info(&#34;DRV&#34;, $sformatf(&#34;Data READ -> read data : %0h&#34;...',f:'driver.sv',l:'62',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'     `uvm_info(&#34;DRV&#34;, $sformatf(&#34;Data READ -> read data : %0h&#34;...',f:'driver.sv',l:'62',h:'9',c:'g'}
+,{cr:'m',t:'A',z:'     `uvm_info(&#34;DRV&#34;, $sformatf(&#34;Data READ -> read data : %0h&#34;...',f:'driver.sv',l:'62',h:'0',c:'r'}
+]}],
+b1386:[{dummy:0},
+{anchor:'cvg1387',items:[{z:'    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, &#34;&#34;, &#34;...',f:'monitor.sv',l:'14',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, &#34;&#34;, &#34;...',f:'monitor.sv',l:'14',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, &#34;&#34;, &#34;...',f:'monitor.sv',l:'14',h:'1',c:'g'}
+]},
+{anchor:'cvg1388',items:[{z:'    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, &#34;&#34;, &#34;...',f:'monitor.sv',l:'14',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, &#34;&#34;, &#34;...',f:'monitor.sv',l:'14',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, &#34;&#34;, &#34;...',f:'monitor.sv',l:'14',h:'0',c:'r'}
+]}],
+b1404:[{dummy:0},
+{anchor:'cvg1405',items:[{z:'      if (tr.psel == 1 && tr.penable == 1) begin',f:'scoreboard.sv',l:'156',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'      if (tr.psel == 1 && tr.penable == 1) begin',f:'scoreboard.sv',l:'156',h:'19',c:'g'}
+,{cr:'c',t:'A',z:'      if (tr.psel == 1 && tr.penable == 1) begin',f:'scoreboard.sv',l:'156',h:'57',c:'g'}
+]},
+{anchor:'cvg1406',items:[{z:'        if (tr.pwrite == 1\'b1) begin  // WRITE',f:'scoreboard.sv',l:'158',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (tr.pwrite == 1\'b1) begin  // WRITE',f:'scoreboard.sv',l:'158',h:'10',c:'g'}
+,{cr:'c',t:'E',z:'        end else begin  // READ',f:'scoreboard.sv',l:'162',h:'9',c:'g'}
+]},
+{anchor:'cvg1407',items:[{z:'          `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;WRITE: Addr=%0h, Data Stored...',f:'scoreboard.sv',l:'160',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'          `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;WRITE: Addr=%0h, Data Stored...',f:'scoreboard.sv',l:'160',h:'10',c:'g'}
+,{cr:'m',t:'A',z:'          `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;WRITE: Addr=%0h, Data Stored...',f:'scoreboard.sv',l:'160',h:'0',c:'r'}
+]},
+{anchor:'cvg1408',items:[{z:'          `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;READ: Addr=%0h, DUT Data=%0h...',f:'scoreboard.sv',l:'163',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'          `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;READ: Addr=%0h, DUT Data=%0h...',f:'scoreboard.sv',l:'163',h:'9',c:'g'}
+,{cr:'m',t:'A',z:'          `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;READ: Addr=%0h, DUT Data=%0h...',f:'scoreboard.sv',l:'163',h:'0',c:'r'}
+]}],
+b1411:[{dummy:0},
+{anchor:'cvg1412',items:[{z:'  if (temp_data[tr.paddr] == tr.prdata) begin',f:'scoreboard.sv',l:'189',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'  if (temp_data[tr.paddr] == tr.prdata) begin',f:'scoreboard.sv',l:'189',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'  end else begin',f:'scoreboard.sv',l:'192',h:'6',c:'g'}
+]},
+{anchor:'cvg1413',items:[{z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;MATCH at Addr=%0h: Expected=%0h, G...',f:'scoreboard.sv',l:'191',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;MATCH at Addr=%0h: Expected=%0h, G...',f:'scoreboard.sv',l:'191',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;MATCH at Addr=%0h: Expected=%0h, G...',f:'scoreboard.sv',l:'191',h:'0',c:'r'}
+]},
+{anchor:'cvg1414',items:[{z:'    `uvm_error(&#34;SCOREBOARD&#34;, $sformatf(&#34;MISMATCH at Addr=%0h: Expected=%0...',f:'scoreboard.sv',l:'194',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_error(&#34;SCOREBOARD&#34;, $sformatf(&#34;MISMATCH at Addr=%0h: Expected=%0...',f:'scoreboard.sv',l:'194',h:'6',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_error(&#34;SCOREBOARD&#34;, $sformatf(&#34;MISMATCH at Addr=%0h: Expected=%0...',f:'scoreboard.sv',l:'194',h:'0',c:'r'}
+]}],
+b1415:[{dummy:0},
+{anchor:'cvg1416',items:[{z:'    `uvm_info(&#34;SCOREBOARD&#34;, &#34;------------------ FINAL SCOREBOARD REPORT -...',f:'scoreboard.sv',l:'200',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SCOREBOARD&#34;, &#34;------------------ FINAL SCOREBOARD REPORT -...',f:'scoreboard.sv',l:'200',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SCOREBOARD&#34;, &#34;------------------ FINAL SCOREBOARD REPORT -...',f:'scoreboard.sv',l:'200',h:'0',c:'r'}
+]},
+{anchor:'cvg1417',items:[{z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;Total Matches   : %0d&#34;...',f:'scoreboard.sv',l:'201',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;Total Matches   : %0d&#34;...',f:'scoreboard.sv',l:'201',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;Total Matches   : %0d&#34;...',f:'scoreboard.sv',l:'201',h:'0',c:'r'}
+]},
+{anchor:'cvg1418',items:[{z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;Total Mismatches: %0d&#34;...',f:'scoreboard.sv',l:'202',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;Total Mismatches: %0d&#34;...',f:'scoreboard.sv',l:'202',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;Total Mismatches: %0d&#34;...',f:'scoreboard.sv',l:'202',h:'0',c:'r'}
+]}],
+b1474:[{dummy:0},
+{anchor:'cvg1475',items:[{z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'14',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'14',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'14',h:'0',c:'r'}
+]}],
+b1478:[{dummy:0},
+{anchor:'cvg1479',items:[{z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+]}],
+b1481:[{dummy:0},
+{anchor:'cvg1482',items:[{z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1483',items:[{z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1484',items:[{z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1485',items:[{z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(cntrl_field)',f:'reg_block.sv',l:'2',h:'0',c:'r'}
+]}],
+b1494:[{dummy:0},
+{anchor:'cvg1495',items:[{z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'48',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'48',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'48',h:'0',c:'r'}
+]}],
+b1498:[{dummy:0},
+{anchor:'cvg1499',items:[{z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+]}],
+b1501:[{dummy:0},
+{anchor:'cvg1502',items:[{z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+]},
+{anchor:'cvg1503',items:[{z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+]},
+{anchor:'cvg1504',items:[{z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+]},
+{anchor:'cvg1505',items:[{z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_field)',f:'reg_block.sv',l:'35',h:'0',c:'r'}
+]}],
+b1514:[{dummy:0},
+{anchor:'cvg1515',items:[{z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'81',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'81',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'81',h:'0',c:'r'}
+]}],
+b1518:[{dummy:0},
+{anchor:'cvg1519',items:[{z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+]}],
+b1521:[{dummy:0},
+{anchor:'cvg1522',items:[{z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+]},
+{anchor:'cvg1523',items:[{z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+]},
+{anchor:'cvg1524',items:[{z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+]},
+{anchor:'cvg1525',items:[{z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg2_field)',f:'reg_block.sv',l:'69',h:'0',c:'r'}
+]}],
+b1534:[{dummy:0},
+{anchor:'cvg1535',items:[{z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'114',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'114',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'114',h:'0',c:'r'}
+]}],
+b1538:[{dummy:0},
+{anchor:'cvg1539',items:[{z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+]}],
+b1541:[{dummy:0},
+{anchor:'cvg1542',items:[{z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+]},
+{anchor:'cvg1543',items:[{z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+]},
+{anchor:'cvg1544',items:[{z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+]},
+{anchor:'cvg1545',items:[{z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg3_field)',f:'reg_block.sv',l:'102',h:'0',c:'r'}
+]}],
+b1554:[{dummy:0},
+{anchor:'cvg1555',items:[{z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'149',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'149',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    if(has_coverage(UVM_CVR_FIELD_VALS))',f:'reg_block.sv',l:'149',h:'0',c:'r'}
+]}],
+b1558:[{dummy:0},
+{anchor:'cvg1559',items:[{z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+]}],
+b1561:[{dummy:0},
+{anchor:'cvg1562',items:[{z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+]},
+{anchor:'cvg1563',items:[{z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+]},
+{anchor:'cvg1564',items:[{z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+]},
+{anchor:'cvg1565',items:[{z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg4_field)',f:'reg_block.sv',l:'136',h:'0',c:'r'}
+]}],
+b1577:[{dummy:0},
+{anchor:'cvg1578',items:[{z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+]}],
+b1580:[{dummy:0},
+{anchor:'cvg1581',items:[{z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+]},
+{anchor:'cvg1582',items:[{z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+]},
+{anchor:'cvg1583',items:[{z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+]},
+{anchor:'cvg1584',items:[{z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_block)',f:'reg_block.sv',l:'170',h:'0',c:'r'}
+]}],
+b1590:[{dummy:0},
+{anchor:'cvg1591',items:[{z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+]}],
+b1593:[{dummy:0},
+{anchor:'cvg1594',items:[{z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+]},
+{anchor:'cvg1595',items:[{z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+]},
+{anchor:'cvg1596',items:[{z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+]},
+{anchor:'cvg1597',items:[{z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(seq_item)',f:'seq_item.sv',l:'9',h:'0',c:'r'}
+]}],
+b1602:[{dummy:0},
+{anchor:'cvg1603',items:[{z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+]}],
+b1605:[{dummy:0},
+{anchor:'cvg1606',items:[{z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1607',items:[{z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1608',items:[{z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1609',items:[{z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(top_adapter)',f:'adapter.sv',l:'2',h:'0',c:'r'}
+]}],
+b1611:[{dummy:0},
+{anchor:'cvg1612',items:[{z:'    rw.kind = (apb_item.pwrite == 1\'b1)?UVM_WRITE:UVM_READ;',f:'adapter.sv',l:'20',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    rw.kind = (apb_item.pwrite == 1\'b1)?UVM_WRITE:UVM_READ;',f:'adapter.sv',l:'20',h:'10',c:'g'}
+,{cr:'c',t:'E',z:'    rw.kind = (apb_item.pwrite == 1\'b1)?UVM_WRITE:UVM_READ;',f:'adapter.sv',l:'20',h:'9',c:'g'}
+]},
+{anchor:'cvg1613',items:[{z:'    rw.data = (apb_item.pwrite == 1\'b1)?apb_item.pwdata:apb_item.prdata;',f:'adapter.sv',l:'21',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    rw.data = (apb_item.pwrite == 1\'b1)?apb_item.pwdata:apb_item.prdata;',f:'adapter.sv',l:'21',h:'10',c:'g'}
+,{cr:'c',t:'E',z:'    rw.data = (apb_item.pwrite == 1\'b1)?apb_item.pwdata:apb_item.prdata;',f:'adapter.sv',l:'21',h:'9',c:'g'}
+]}],
+b1619:[{dummy:0},
+{anchor:'cvg1620',items:[{z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+]}],
+b1622:[{dummy:0},
+{anchor:'cvg1623',items:[{z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1624',items:[{z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1625',items:[{z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+]},
+{anchor:'cvg1626',items:[{z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg1_seq)',f:'reg_seq.sv',l:'2',h:'0',c:'r'}
+]}],
+b1627:[{dummy:0},
+{anchor:'cvg1628',items:[{z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== CNTRL ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'14',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== CNTRL ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'14',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== CNTRL ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'14',h:'0',c:'r'}
+]},
+{anchor:'cvg1629',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial CNTRL -> Desired: %0h, Mirrored: ...',f:'reg_seq.sv',l:'18',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial CNTRL -> Desired: %0h, Mirrored: ...',f:'reg_seq.sv',l:'18',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial CNTRL -> Desired: %0h, Mirrored: ...',f:'reg_seq.sv',l:'18',h:'0',c:'r'}
+]},
+{anchor:'cvg1630',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set CNTRL -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'23',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set CNTRL -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'23',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set CNTRL -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'23',h:'0',c:'r'}
+]},
+{anchor:'cvg1631',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update CNTRL -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'28',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update CNTRL -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'28',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update CNTRL -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'28',h:'0',c:'r'}
+]},
+{anchor:'cvg1632',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write CNTRL -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'35',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write CNTRL -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'35',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write CNTRL -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'35',h:'0',c:'r'}
+]},
+{anchor:'cvg1633',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read CNTRL -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'39',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read CNTRL -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'39',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read CNTRL -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'39',h:'0',c:'r'}
+]}],
+b1638:[{dummy:0},
+{anchor:'cvg1639',items:[{z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+]}],
+b1641:[{dummy:0},
+{anchor:'cvg1642',items:[{z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+]},
+{anchor:'cvg1643',items:[{z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+]},
+{anchor:'cvg1644',items:[{z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+]},
+{anchor:'cvg1645',items:[{z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reg_seq)',f:'reg_seq.sv',l:'45',h:'0',c:'r'}
+]}],
+b1646:[{dummy:0},
+{anchor:'cvg1647',items:[{z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG1 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'86',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG1 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'86',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG1 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'86',h:'0',c:'r'}
+]},
+{anchor:'cvg1648',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG1 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'90',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG1 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'90',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG1 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'90',h:'0',c:'r'}
+]},
+{anchor:'cvg1649',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG1 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'95',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG1 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'95',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG1 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'95',h:'0',c:'r'}
+]},
+{anchor:'cvg1650',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update  REG1 -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'100',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update  REG1 -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'100',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update  REG1 -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'100',h:'0',c:'r'}
+]},
+{anchor:'cvg1651',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG1 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'107',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG1 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'107',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG1 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'107',h:'0',c:'r'}
+]},
+{anchor:'cvg1652',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG1 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'111',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG1 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'111',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG1 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'111',h:'0',c:'r'}
+]},
+{anchor:'cvg1653',items:[{z:'   `uvm_info(&#34;SEQ&#34;, &#34;====== REG2 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'115',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'   `uvm_info(&#34;SEQ&#34;, &#34;====== REG2 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'115',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'   `uvm_info(&#34;SEQ&#34;, &#34;====== REG2 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'115',h:'0',c:'r'}
+]},
+{anchor:'cvg1654',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG2 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'119',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG2 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'119',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG2 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'119',h:'0',c:'r'}
+]},
+{anchor:'cvg1655',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG2 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'124',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG2 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'124',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG2 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'124',h:'0',c:'r'}
+]},
+{anchor:'cvg1656',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update  REG2 -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'129',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update  REG2 -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'129',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update  REG2 -> Desired: %0h, Mirro...',f:'reg_seq.sv',l:'129',h:'0',c:'r'}
+]},
+{anchor:'cvg1657',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG2 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'136',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG2 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'136',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG2 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'136',h:'0',c:'r'}
+]},
+{anchor:'cvg1658',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG2 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'140',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG2 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'140',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG2 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'140',h:'0',c:'r'}
+]},
+{anchor:'cvg1659',items:[{z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG3 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'143',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG3 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'143',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG3 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'143',h:'0',c:'r'}
+]},
+{anchor:'cvg1660',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG3 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'147',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG3 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'147',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG3 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'147',h:'0',c:'r'}
+]},
+{anchor:'cvg1661',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG3 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'152',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG3 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'152',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG3 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'152',h:'0',c:'r'}
+]},
+{anchor:'cvg1662',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update REG3 -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'157',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update REG3 -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'157',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update REG3 -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'157',h:'0',c:'r'}
+]},
+{anchor:'cvg1663',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG3 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'162',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG3 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'162',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG3 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'162',h:'0',c:'r'}
+]},
+{anchor:'cvg1664',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG3 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'166',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG3 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'166',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG3 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'166',h:'0',c:'r'}
+]},
+{anchor:'cvg1665',items:[{z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG4 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'171',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG4 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'171',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, &#34;====== REG4 ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'171',h:'0',c:'r'}
+]},
+{anchor:'cvg1666',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG4 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'175',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG4 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'175',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Initial REG4 -> Desired: %0h, Mirrored: %...',f:'reg_seq.sv',l:'175',h:'0',c:'r'}
+]},
+{anchor:'cvg1667',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG4 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'180',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG4 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'180',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After set REG4 -> Desired: %0h, Mirrored:...',f:'reg_seq.sv',l:'180',h:'0',c:'r'}
+]},
+{anchor:'cvg1668',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update REG4 -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'185',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update REG4 -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'185',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After update REG4 -> Desired: %0h, Mirror...',f:'reg_seq.sv',l:'185',h:'0',c:'r'}
+]},
+{anchor:'cvg1669',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG4 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'190',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG4 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'190',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After write REG4 -> Desired: %0h, Mirrore...',f:'reg_seq.sv',l:'190',h:'0',c:'r'}
+]},
+{anchor:'cvg1670',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG4 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'194',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG4 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'194',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After read REG4 -> Desired: %0h, Mirrored...',f:'reg_seq.sv',l:'194',h:'0',c:'r'}
+]}],
+b1675:[{dummy:0},
+{anchor:'cvg1676',items:[{z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+]}],
+b1678:[{dummy:0},
+{anchor:'cvg1679',items:[{z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+]},
+{anchor:'cvg1680',items:[{z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+]},
+{anchor:'cvg1681',items:[{z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+]},
+{anchor:'cvg1682',items:[{z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(reset_seq)',f:'reg_seq.sv',l:'201',h:'0',c:'r'}
+]}],
+b1683:[{dummy:0},
+{anchor:'cvg1684',items:[{z:' `uvm_info(&#34;SEQ&#34;, &#34;====== REG1 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'215',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:' `uvm_info(&#34;SEQ&#34;, &#34;====== REG1 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'215',h:'1',c:'g'}
+,{cr:'m',t:'A',z:' `uvm_info(&#34;SEQ&#34;, &#34;====== REG1 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'215',h:'0',c:'r'}
+]},
+{anchor:'cvg1685',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;...',f:'reg_seq.sv',l:'217',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;...',f:'reg_seq.sv',l:'217',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;...',f:'reg_seq.sv',l:'217',h:'0',c:'r'}
+]},
+{anchor:'cvg1686',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG1:reset value present in RAL model: 0...',f:'reg_seq.sv',l:'220',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG1:reset value present in RAL model: 0...',f:'reg_seq.sv',l:'220',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG1:reset value present in RAL model: 0...',f:'reg_seq.sv',l:'220',h:'0',c:'r'}
+]},
+{anchor:'cvg1687',items:[{z:'  `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0...',f:'reg_seq.sv',l:'223',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'  `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0...',f:'reg_seq.sv',l:'223',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'  `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0...',f:'reg_seq.sv',l:'223',h:'0',c:'r'}
+]},
+{anchor:'cvg1688',items:[{z:'  `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'230',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'  `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'230',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'  `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'230',h:'0',c:'r'}
+]},
+{anchor:'cvg1689',items:[{z:' if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'231',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:' if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'231',h:'1',c:'g'}
+,{cr:'m',t:'E',z:'    end else begin',f:'reg_seq.sv',l:'233',h:'0',c:'r'}
+]},
+{anchor:'cvg1690',items:[{z:'      `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Exp...',f:'reg_seq.sv',l:'232',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'      `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Exp...',f:'reg_seq.sv',l:'232',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'      `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Exp...',f:'reg_seq.sv',l:'232',h:'0',c:'r'}
+]},
+{anchor:'cvg1691',items:[{z:'      `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG1 passed!&#34;...',f:'reg_seq.sv',l:'234',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'      `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG1 passed!&#34;...',f:'reg_seq.sv',l:'234',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'      `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG1 passed!&#34;...',f:'reg_seq.sv',l:'234',h:'0',c:'r'}
+]},
+{anchor:'cvg1692',items:[{z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG2 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'237',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG2 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'237',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG2 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'237',h:'0',c:'r'}
+]},
+{anchor:'cvg1693',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'239',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'239',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'239',h:'0',c:'r'}
+]},
+{anchor:'cvg1694',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG2:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'242',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG2:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'242',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG2:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'242',h:'0',c:'r'}
+]},
+{anchor:'cvg1695',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'245',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'245',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'245',h:'0',c:'r'}
+]},
+{anchor:'cvg1696',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'252',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'252',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'252',h:'0',c:'r'}
+]},
+{anchor:'cvg1697',items:[{z:'if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'253',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'253',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'end else begin',f:'reg_seq.sv',l:'255',h:'1',c:'g'}
+]},
+{anchor:'cvg1698',items:[{z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'254',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'254',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'254',h:'0',c:'r'}
+]},
+{anchor:'cvg1699',items:[{z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG2 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'256',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG2 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'256',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG2 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'256',h:'0',c:'r'}
+]},
+{anchor:'cvg1700',items:[{z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG3 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'259',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG3 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'259',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG3 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'259',h:'0',c:'r'}
+]},
+{anchor:'cvg1701',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'261',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'261',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'261',h:'0',c:'r'}
+]},
+{anchor:'cvg1702',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG3:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'264',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG3:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'264',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG3:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'264',h:'0',c:'r'}
+]},
+{anchor:'cvg1703',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'267',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'267',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'267',h:'0',c:'r'}
+]},
+{anchor:'cvg1704',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'274',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'274',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'274',h:'0',c:'r'}
+]},
+{anchor:'cvg1705',items:[{z:'if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'275',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'275',h:'1',c:'g'}
+,{cr:'m',t:'E',z:'end else begin',f:'reg_seq.sv',l:'277',h:'0',c:'r'}
+]},
+{anchor:'cvg1706',items:[{z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'276',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'276',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'276',h:'0',c:'r'}
+]},
+{anchor:'cvg1707',items:[{z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG3 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'278',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG3 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'278',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG3 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'278',h:'0',c:'r'}
+]},
+{anchor:'cvg1708',items:[{z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG4 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'282',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG4 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'282',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, &#34;====== REG4 RESET ======&#34;, UVM_NONE);',f:'reg_seq.sv',l:'282',h:'0',c:'r'}
+]},
+{anchor:'cvg1709',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'284',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'284',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;Reset Value is present: %0b &#34;, reset_status),...',f:'reg_seq.sv',l:'284',h:'0',c:'r'}
+]},
+{anchor:'cvg1710',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG4:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'287',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG4:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'287',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34; REG4:reset value present in RAL model: 0x%08...',f:'reg_seq.sv',l:'287',h:'0',c:'r'}
+]},
+{anchor:'cvg1711',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'290',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'290',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;before reset -> Desired: 0x%08h, Mirrored:0x%...',f:'reg_seq.sv',l:'290',h:'0',c:'r'}
+]},
+{anchor:'cvg1712',items:[{z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'297',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'297',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'`uvm_info(&#34;SEQ&#34;, $sformatf(&#34;After reset -> Desired: %0h, Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'297',h:'0',c:'r'}
+]},
+{anchor:'cvg1713',items:[{z:'if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'298',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'if(dout !== reset_reg)begin',f:'reg_seq.sv',l:'298',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'end else begin',f:'reg_seq.sv',l:'300',h:'1',c:'g'}
+]},
+{anchor:'cvg1714',items:[{z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'299',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'299',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_error(&#34;SEQ&#34;, $sformatf(&#34;Reset mismatch: DUT read = 0x%08h, Expecte...',f:'reg_seq.sv',l:'299',h:'0',c:'r'}
+]},
+{anchor:'cvg1715',items:[{z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG4 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'301',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG4 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'301',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'  `uvm_info(&#34;SEQ&#34;, &#34;Reset verification for REG4 passed!&#34;, UVM_LOW);',f:'reg_seq.sv',l:'301',h:'0',c:'r'}
+]}],
+b1720:[{dummy:0},
+{anchor:'cvg1721',items:[{z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+]}],
+b1723:[{dummy:0},
+{anchor:'cvg1724',items:[{z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+]},
+{anchor:'cvg1725',items:[{z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+,{cr:'m',t:'E',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+]},
+{anchor:'cvg1726',items:[{z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+]},
+{anchor:'cvg1727',items:[{z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'  `uvm_object_utils(backdoor_seq)',f:'reg_seq.sv',l:'359',h:'0',c:'r'}
+]}],
+b1728:[{dummy:0},
+{anchor:'cvg1729',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;POKE:Write -> Desired: %0h Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'371',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;POKE:Write -> Desired: %0h Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'371',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;POKE:Write -> Desired: %0h Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'371',h:'0',c:'r'}
+]},
+{anchor:'cvg1730',items:[{z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;AFTER PEEK--->Desired: %0h Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'377',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;AFTER PEEK--->Desired: %0h Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'377',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SEQ&#34;, $sformatf(&#34;AFTER PEEK--->Desired: %0h Mirrored: %0h&#34;...',f:'reg_seq.sv',l:'377',h:'0',c:'r'}
+]}],
+b1741:[{dummy:0},
+{anchor:'cvg1742',items:[{z:'    if(!uvm_config_db#(virtual top_if.mp_drv)::get(this,&#34;&#34;,&#34;vif&#34;...',f:'driver.sv',l:'13',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'    if(!uvm_config_db#(virtual top_if.mp_drv)::get(this,&#34;&#34;,&#34;vif&#34;...',f:'driver.sv',l:'13',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'    if(!uvm_config_db#(virtual top_if.mp_drv)::get(this,&#34;&#34;,&#34;vif&#34;...',f:'driver.sv',l:'13',h:'1',c:'g'}
+]},
+{anchor:'cvg1743',items:[{z:'      `uvm_error(&#34;drv&#34;,&#34;Unable to access Interface&#34;);',f:'driver.sv',l:'14',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'      `uvm_error(&#34;drv&#34;,&#34;Unable to access Interface&#34;);',f:'driver.sv',l:'14',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'      `uvm_error(&#34;drv&#34;,&#34;Unable to access Interface&#34;);',f:'driver.sv',l:'14',h:'0',c:'r'}
+]}],
+b1745:[{dummy:0},
+{anchor:'cvg1746',items:[{z:' if(tr.pwrite == 1\'b1)',f:'driver.sv',l:'39',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:' if(tr.pwrite == 1\'b1)',f:'driver.sv',l:'39',h:'10',c:'g'}
+,{cr:'c',t:'E',z:' else',f:'driver.sv',l:'54',h:'9',c:'g'}
+]},
+{anchor:'cvg1747',items:[{z:'     `uvm_info(&#34;DRV&#34;, $sformatf(&#34;Data Write -> Wdata : %0h&#34;...',f:'driver.sv',l:'49',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'     `uvm_info(&#34;DRV&#34;, $sformatf(&#34;Data Write -> Wdata : %0h&#34;...',f:'driver.sv',l:'49',h:'10',c:'g'}
+,{cr:'m',t:'A',z:'     `uvm_info(&#34;DRV&#34;, $sformatf(&#34;Data Write -> Wdata : %0h&#34;...',f:'driver.sv',l:'49',h:'0',c:'r'}
+]},
+{anchor:'cvg1748',items:[{z:'     `uvm_info(&#34;DRV&#34;, $sformatf(&#34;Data READ -> read data : %0h&#34;...',f:'driver.sv',l:'62',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'     `uvm_info(&#34;DRV&#34;, $sformatf(&#34;Data READ -> read data : %0h&#34;...',f:'driver.sv',l:'62',h:'9',c:'g'}
+,{cr:'m',t:'A',z:'     `uvm_info(&#34;DRV&#34;, $sformatf(&#34;Data READ -> read data : %0h&#34;...',f:'driver.sv',l:'62',h:'0',c:'r'}
+]}],
+b1754:[{dummy:0},
+{anchor:'cvg1755',items:[{z:'    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, &#34;&#34;, &#34;...',f:'monitor.sv',l:'14',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, &#34;&#34;, &#34;...',f:'monitor.sv',l:'14',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, &#34;&#34;, &#34;...',f:'monitor.sv',l:'14',h:'1',c:'g'}
+]},
+{anchor:'cvg1756',items:[{z:'    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, &#34;&#34;, &#34;...',f:'monitor.sv',l:'14',c:'R',p:'0.00'}
+,{cr:'m',t:'I',z:'    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, &#34;&#34;, &#34;...',f:'monitor.sv',l:'14',h:'0',c:'r'}
+,{cr:'m',t:'A',z:'    if(! uvm_config_db#(virtual top_if.mp_mon)::get (this, &#34;&#34;, &#34;...',f:'monitor.sv',l:'14',h:'0',c:'r'}
+]}],
+b1772:[{dummy:0},
+{anchor:'cvg1773',items:[{z:'      if (tr.psel == 1 && tr.penable == 1) begin',f:'scoreboard.sv',l:'156',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'      if (tr.psel == 1 && tr.penable == 1) begin',f:'scoreboard.sv',l:'156',h:'19',c:'g'}
+,{cr:'c',t:'A',z:'      if (tr.psel == 1 && tr.penable == 1) begin',f:'scoreboard.sv',l:'156',h:'57',c:'g'}
+]},
+{anchor:'cvg1774',items:[{z:'        if (tr.pwrite == 1\'b1) begin  // WRITE',f:'scoreboard.sv',l:'158',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if (tr.pwrite == 1\'b1) begin  // WRITE',f:'scoreboard.sv',l:'158',h:'10',c:'g'}
+,{cr:'c',t:'E',z:'        end else begin  // READ',f:'scoreboard.sv',l:'162',h:'9',c:'g'}
+]},
+{anchor:'cvg1775',items:[{z:'          `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;WRITE: Addr=%0h, Data Stored...',f:'scoreboard.sv',l:'160',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'          `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;WRITE: Addr=%0h, Data Stored...',f:'scoreboard.sv',l:'160',h:'10',c:'g'}
+,{cr:'m',t:'A',z:'          `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;WRITE: Addr=%0h, Data Stored...',f:'scoreboard.sv',l:'160',h:'0',c:'r'}
+]},
+{anchor:'cvg1776',items:[{z:'          `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;READ: Addr=%0h, DUT Data=%0h...',f:'scoreboard.sv',l:'163',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'          `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;READ: Addr=%0h, DUT Data=%0h...',f:'scoreboard.sv',l:'163',h:'9',c:'g'}
+,{cr:'m',t:'A',z:'          `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;READ: Addr=%0h, DUT Data=%0h...',f:'scoreboard.sv',l:'163',h:'0',c:'r'}
+]}],
+b1779:[{dummy:0},
+{anchor:'cvg1780',items:[{z:'  if (temp_data[tr.paddr] == tr.prdata) begin',f:'scoreboard.sv',l:'189',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'  if (temp_data[tr.paddr] == tr.prdata) begin',f:'scoreboard.sv',l:'189',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'  end else begin',f:'scoreboard.sv',l:'192',h:'6',c:'g'}
+]},
+{anchor:'cvg1781',items:[{z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;MATCH at Addr=%0h: Expected=%0h, G...',f:'scoreboard.sv',l:'191',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;MATCH at Addr=%0h: Expected=%0h, G...',f:'scoreboard.sv',l:'191',h:'3',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;MATCH at Addr=%0h: Expected=%0h, G...',f:'scoreboard.sv',l:'191',h:'0',c:'r'}
+]},
+{anchor:'cvg1782',items:[{z:'    `uvm_error(&#34;SCOREBOARD&#34;, $sformatf(&#34;MISMATCH at Addr=%0h: Expected=%0...',f:'scoreboard.sv',l:'194',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_error(&#34;SCOREBOARD&#34;, $sformatf(&#34;MISMATCH at Addr=%0h: Expected=%0...',f:'scoreboard.sv',l:'194',h:'6',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_error(&#34;SCOREBOARD&#34;, $sformatf(&#34;MISMATCH at Addr=%0h: Expected=%0...',f:'scoreboard.sv',l:'194',h:'0',c:'r'}
+]}],
+b1783:[{dummy:0},
+{anchor:'cvg1784',items:[{z:'    `uvm_info(&#34;SCOREBOARD&#34;, &#34;------------------ FINAL SCOREBOARD REPORT -...',f:'scoreboard.sv',l:'200',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SCOREBOARD&#34;, &#34;------------------ FINAL SCOREBOARD REPORT -...',f:'scoreboard.sv',l:'200',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SCOREBOARD&#34;, &#34;------------------ FINAL SCOREBOARD REPORT -...',f:'scoreboard.sv',l:'200',h:'0',c:'r'}
+]},
+{anchor:'cvg1785',items:[{z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;Total Matches   : %0d&#34;...',f:'scoreboard.sv',l:'201',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;Total Matches   : %0d&#34;...',f:'scoreboard.sv',l:'201',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;Total Matches   : %0d&#34;...',f:'scoreboard.sv',l:'201',h:'0',c:'r'}
+]},
+{anchor:'cvg1786',items:[{z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;Total Mismatches: %0d&#34;...',f:'scoreboard.sv',l:'202',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;Total Mismatches: %0d&#34;...',f:'scoreboard.sv',l:'202',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    `uvm_info(&#34;SCOREBOARD&#34;, $sformatf(&#34;Total Mismatches: %0d&#34;...',f:'scoreboard.sv',l:'202',h:'0',c:'r'}
+]}],
+dummyEnd:0
+};
+processBranchesData(g_data);

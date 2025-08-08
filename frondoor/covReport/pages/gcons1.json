@@ -1,0 +1,13 @@
+var g_db_data = [
+{dummy:0},
+{name:'cntrl_cov',f:1,type:6,id:1118,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/testbench_sv_unit/cntrl_field',parent:'1105'},
+{name:'reg1_cov',f:1,type:6,id:1138,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/testbench_sv_unit/reg1_field',parent:'1125'},
+{name:'reg2_cov',f:1,type:6,id:1158,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/testbench_sv_unit/reg2_field',parent:'1145'},
+{name:'reg3_cov',f:1,type:6,id:1178,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/testbench_sv_unit/reg3_field',parent:'1165'},
+{name:'reg4_cov',f:1,type:6,id:1198,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/testbench_sv_unit/reg4_field',parent:'1185'},
+{name:'cntrl_cov',f:1,type:6,id:1486,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],hdlPath:'work.testbench_sv_unit::cntrl_field',parent:'1473'},
+{name:'reg1_cov',f:1,type:6,id:1506,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],hdlPath:'work.testbench_sv_unit::reg1_field',parent:'1493'},
+{name:'reg2_cov',f:1,type:6,id:1526,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],hdlPath:'work.testbench_sv_unit::reg2_field',parent:'1513'},
+{name:'reg3_cov',f:1,type:6,id:1546,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],hdlPath:'work.testbench_sv_unit::reg3_field',parent:'1533'},
+{name:'reg4_cov',f:1,type:6,id:1566,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],hdlPath:'work.testbench_sv_unit::reg4_field',parent:'1553'}];
+processConsCovergroupsData(g_db_data);
