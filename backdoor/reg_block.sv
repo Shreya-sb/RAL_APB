@@ -186,29 +186,35 @@ class reg_block extends uvm_reg_block;
     cntrl_inst.build();
     cntrl_inst.configure(this);
    void'(cntrl_inst.set_coverage(UVM_CVR_FIELD_VALS)); //////enabling coverage for specific reg instance
-   
+   cntrl_inst.add_hdl_path_slice("cntrl",0,32); //reg name in rtl,starting position,no.of bits wide 
+
     reg1_inst = reg1_field::type_id::create("reg1_inst");
     reg1_inst.build();
     reg1_inst.configure(this);
    void'( reg1_inst.set_coverage(UVM_CVR_FIELD_VALS)); //////enabling coverage for specific reg instance
+   reg1_inst.add_hdl_path_slice("reg1",0,32); //reg name in rtl,starting position,no.of bits wide 
+
     
     reg2_inst = reg2_field::type_id::create("reg2_inst");
     reg2_inst.build();
     reg2_inst.configure(this);
-   void'(reg2_inst.set_coverage(UVM_CVR_FIELD_VALS)); //////enabling coverage for specific reg instance
-    //reg2_inst.add_hdl_path_slice("reg2",0,32); //reg name in rtl,starting position,no.of bits wide 
+    void'(reg2_inst.set_coverage(UVM_CVR_FIELD_VALS)); //////enabling coverage for specific reg instance
+    reg2_inst.add_hdl_path_slice("reg2",0,32); //reg name in rtl,starting position,no.of bits wide 
 
    
     reg3_inst = reg3_field::type_id::create("reg3_inst");
     reg3_inst.build();
     reg3_inst.configure(this);
     void'(reg3_inst.set_coverage(UVM_CVR_FIELD_VALS)); //////enabling coverage for specific reg instance
+    reg3_inst.add_hdl_path_slice("reg3",0,32); //reg name in rtl,starting position,no.of bits wide 
+
    
     reg4_inst = reg4_field::type_id::create("reg4_inst");
     reg4_inst.build();
     reg4_inst.configure(this);
     void'(reg4_inst.set_coverage(UVM_CVR_FIELD_VALS)); //////enabling coverage for specific reg instance
- 
+    reg4_inst.add_hdl_path_slice("reg4",0,32); //reg name in rtl,starting position,no.of bits wide 
+
     default_map = create_map("default_map",0,4,UVM_LITTLE_ENDIAN);
     default_map.add_reg(cntrl_inst,'h0,"RW");  
     default_map.add_reg(reg1_inst,'h04,"RW");

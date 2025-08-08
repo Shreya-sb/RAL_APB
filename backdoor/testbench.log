@@ -1,0 +1,10 @@
+# vsim testbench -voptargs="+acc=npr" -l testbench.log -c -do "run -all;quit;" 
+# Start time: 15:25:49 on Aug 07,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: (vopt-13130) Failed to find design unit testbench.
+#         Searched libraries:
+#             work
+# Optimization failed
+# Error loading design
+# End time: 15:25:49 on Aug 07,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
