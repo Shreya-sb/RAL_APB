@@ -15,3 +15,10 @@ vsim -c -do "run -all;exit;" tb
 
 ## BACKDOOR:
 vsim tb -voptargs=+acc=npr -l tb.log -c -do "run -all;quit;"
+
+## COVERAGE:
+vlog -sv +acc +cover +fcover -l tb. tb.sv
+vsim -vopt work.tb -voptargs=+acc=npr -assertdebug -l run.log -coverage -c -do "coverage save -onexit -assert -directive -cvg -codeAll coverage.ucdb; coverage report -detail;run -all; exit"; 
+vcover report -html coverage.ucdb -htmldir covReport -details;
+cd covReport
+firefox index.html
