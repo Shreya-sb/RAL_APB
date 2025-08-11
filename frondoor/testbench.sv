@@ -9,13 +9,16 @@ module tb;
   top_if vif(.clk(clk),.rst(rst));
   top DUT(.pclk(vif.clk),.presetn(vif.rst),.psel(vif.psel),.penable(vif.penable),.pwrite(vif.pwrite),.paddr(vif.paddr),.pwdata(vif.pwdata),.prdata(vif.prdata));
 
+  always #10 clk = ~clk;
+
  initial begin
- clk = 0;
+// clk = 0;
  rst = 0;
-//#10 rst =1;
+#10 rst =1;
+rst = 0;
+#10 rst = 1;
  end
 
-  always #10 clk = ~clk;
   
   
   initial begin
