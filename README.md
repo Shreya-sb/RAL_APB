@@ -8,3 +8,10 @@ The register offsets range from 0x00 to 0x10, with unique default values for eac
 
 <img width="844" height="442" alt="image" src="https://github.com/user-attachments/assets/181e618b-5385-4d4f-b3d6-88f2247b7d52" />
 
+# COMMANDS:
+## FRONTDOOR:
+vlog testbench.sv
+vsim -c -do "run -all;exit;" tb
+
+## BACKDOOR:
+vsim tb -voptargs=+acc=npr -l tb.log -c -do "run -all;quit;"
